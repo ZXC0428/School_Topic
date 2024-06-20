@@ -1,0 +1,115 @@
+@model List<TA.ViewModels.ReservedCourseViewModel>
+@{
+    ViewData["Title"] = "預約詳情";
+    var today = DateTime.Today;  //获取今天的日期
+}
+
+<style>
+    .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        margin-top:10px;
+    }
+    
+    .schedule-table th, .schedule-table td {
+        border: 1px solid #d7b377;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    .schedule-table th {
+        background-color: #334c72; /* 淡藍色背景 */
+        color: #ffffff; /* 深藍色文字 */
+        border-top-left-radius: 6px; /* 左上角原角 */
+        border-top-right-radius: 6px; /* 右上角原角 */
+    }
+    
+    .schedule-table tr:nth-child(even) {
+        background-color: #edecea;
+    }
+    
+    .schedule-table tr:hover {
+        background-color: #b3c1c4;
+    }
+    
+    .btn-success{
+        color: #ffffff !important;
+        background-color: #508268 !important;
+        font-weight: bold !important;
+        border-radius: 13px !important;
+        border-style: none !important;
+        width: 86px;
+    }
+    .btn-warning{
+        color: #ffffff !important;
+        background-color: #c5a05f !important;
+        font-weight: bold !important;
+        border-radius: 13px !important;
+        border-style: none !important;
+    }
+    .btn.btn-warning:active,
+    .btn.btn-warning:focus {
+        box-shadow: 0 0 0 0.2rem rgba(219, 184, 102, 0.5)!important; /* 設置陰影效果 */
+        background-color: #c5a05f !important; /* 設置按鈕背景色 */
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+
+@if (Model.Any())
+{
+    <table class="schedule-table">
+        <tr>
+            <th>課程名稱</th>
+            <th>TA名稱</th>
+            <th>上課日期</th>
+            <th>操作</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CourseName</td>
+                <td>@item.TAName</td>
+                <td>@item.Reservestime.ToShortDateString()</td>
+                <td>
+                    @if (item.Reservestime.Date > today)
+                    {
+                        <form id="cancelForm_@item.ReservationId" method="post" action="@Url.Action("CancelReservation", "TAReserve")">
+                            <input type="hidden" name="reservationId" value="@item.ReservationId" />
+                            <button class="btn btn-warning" type="button" onclick="cancelReservation('@item.ReservationId')">取消預約</button>
+                        </form>
+                    }
+                    else if (item.HasFeedback == false)
+                    {
+                        <form method="post" action="@Url.Action("TAreserves1", "TAReserve")">
+                            <input type="hidden" name="course_Id" value="@item.ReservationId" />
+                            <button type="submit" class="btn btn-primary">填寫回饋</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <button class="btn btn-success" disabled>已填寫</button>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p style="font-weight: bold;">沒有預約的課程</p>
+}
+
+<script>
+    function cancelReservation(reservationId) {
+        if (confirm('確定要取消預約嗎？')) {
+            document.getElementById('cancelForm_' + reservationId).submit();
+        }
+    }
+</script>

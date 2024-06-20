@@ -1,0 +1,259 @@
+@model List<student_platformdb.Classroom_information>
+@{
+    ViewData["Title"] = "管理者介面"; 
+}
+<div class="btn_booked">
+    <div class="bookedbtn" id = "review_bookedbtn" >
+        <p>預約教室審核</p>
+    </div>
+    <div class="bookedbtn" id = "history_bookedbtn" >
+        <p>預約教室歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "key_bookedbtn" >
+        <p>鑰匙管理</p>
+    </div>
+    <div class="bookedbtn" id = "keyhistory_bookedbtn" >
+        <p>鑰匙歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "classroom_bookedbtn" style="background-color: rgb(242, 241, 241);">
+        <p>教室介面修改</p>
+    </div>
+    <div class="bookedbtn" id = "rule_bookedbtn" >
+        <p>預約規則修改</p>
+    </div>
+</div>
+
+
+<!-- 教室資訊修改 -->
+@if (Model != null  && Model.Count > 0) {
+    <!--讓教室資訊兩個兩個放-->
+    <div class="classroom_management_rectangle2" >
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-create" onclick="createClassroom()" style="margin-top: 5px;">新增</button> 
+        </div>
+       
+    @for (var i = 0; i < Model.Count; i += 2)
+    {
+        <div class="classroom_information_container">
+            @for (var j = i; j < Math.Min(i + 2, Model.Count); j++)
+            {
+                var classroom = Model[j];
+                <div class="classroom_information_rectangle">
+                    <div class="classroom-header">
+                        <p>教室名稱&ensp;:&ensp;&ensp;@classroom.Classroom_id</p>
+                        <!-- 在這裡添加修改和刪除按鈕 -->
+                        <div class="classroom-options">
+                            <button class="btn btn-primary" onclick="editClassroom('@classroom.Classroom_id','@classroom.Equipment','@classroom.Capacity','@classroom.remark','@classroom.Path','@classroom.Classroom_state')">修改</button>
+                            <button class="btn btn-danger" onclick="deleteClassroom('@classroom.Classroom_id')">刪除</button>
+                        </div>
+                    </div>
+                    <p>容納人數&ensp;:&ensp;&ensp;@classroom.Equipment 人</p>
+                    <p>設&ensp;&ensp;&ensp;&ensp;備&ensp;:&ensp;&ensp;@classroom.Capacity</p>
+                    <p>教室現況&ensp;:&ensp;&ensp;@classroom.remark</p>
+                    <p>開放狀況: 
+                        @if(classroom.Classroom_state == 0)
+                        {
+                            <span>不開放</span>
+                        }
+                        else if(classroom.Classroom_state == 1)
+                        {
+                            <span>開放</span>
+                        }
+                        else
+                        {
+                            <span>未知</span> <!-- 或者根据具体情况显示其他文本，比如“未知状态” -->
+                        }
+                    </p>
+                    <p>備註&ensp;:&ensp;</p>
+                    <div class="classroom-images-container"> 
+                        @* 將下面的 .classroom-photo 的 img 標籤放在這，以顯示教室照片 *@
+                        <img  style="height: 200px; weith:200px;" src="~/images/@classroom.Path" alt="Classroom Photo" class="classroom-photo">
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+}
+else{
+    <div class="classroom_management_rectangle"  >
+        <button class="btn btn-create" onclick="createClassroom()">新增</button> 
+        <p class="classroom_management_rectanglep">沒有教室資訊</p>
+    </div> 
+
+}
+<!-- 刪除框跳! -->
+<div id="deleteModal1" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>確定刪除資料?</p>
+                <button class="btn btn-primary" onclick="class_confirmCancellation()">確認</button>
+                <button type="button" class="btn btn-danger" onclick="returnToQueryPage()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deleteModal2" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>資料已刪除</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+     function deleteClassroom(Classroom_id) {
+        // 使用 jQuery 選擇模態框並顯示
+        $('#deleteModal1').modal('show');
+        // 存儲要取消預約的數據，以便在確認時使用
+        $('#deleteModal1').data('cancellationData', {Classroom_id: Classroom_id });
+    }
+  
+    function returnToQueryPage1() {
+        clearTimeout(reloadTimeout); // 清除延遲，避免重複執行重新整理頁面
+        location.reload(); // 重新整理頁面
+    }
+    //不取消返回原頁面
+    function returnToQueryPage() {
+        // 在這裡添加返回查詢頁面的相應邏輯
+        window.location.href = '@Url.Action("interface_classroom_management", "ClassroomReserve")';
+    }
+
+    //確定取消 將資料傳到後端控制器
+    function class_confirmCancellation() {
+        // 取得要取消預約的資訊
+        var cancellationData = $('#deleteModal1').data('cancellationData');
+       
+        // 資料存到requestData傳到後端
+        var requestData = {
+            Classroom_id : cancellationData.Classroom_id,
+            deleteClassroom : 'deleteClassroom'
+        };
+        console.log("要發送的 JSON 數據：", JSON.stringify(requestData));
+
+        // 使用 Axios 發送 POST 請求
+        axios.post('/ClassroomReserve/interface_classroom_management', requestData)
+            .then(response => classroom_handleSuccess3(response.data))
+            .catch(error => classroom_handleError(error));
+    }
+
+    function classroom_handleSuccess3(data) {
+        // 成功取消跳這邊
+        if (data.success) {
+            $('#deleteModal1').modal('hide'); // 隱藏其他 Modal
+            $('#deleteModal2').modal('show'); // 先顯示 Modal
+            setTimeout(function() {
+                location.reload(); // 重新整理頁面
+            }, 800);
+            
+        } else {
+            alert('取消預約失敗！' + data.message);
+        }
+    }
+
+    function classroom_handleError(error) {
+        //處理錯誤
+        alert('取消預約失敗！');
+        console.error('Fetch Error:', error);
+    }
+</script>
+
+<script>
+
+    function editClassroom(Classroom_id,Equipment,Capacity,remark,Path,Classroom_state){
+        // 將相關資料存儲在localStorage中
+        localStorage.setItem('Classroom_id', Classroom_id);
+        localStorage.setItem('Equipment', Equipment);
+        localStorage.setItem('Capacity', Capacity);
+        localStorage.setItem('remark', remark);
+        localStorage.setItem('Path', Path);
+        localStorage.setItem('Classroom_state', Classroom_state);
+
+        var data = {
+        Classroom_id: Classroom_id,
+        Equipment: Equipment,
+        Capacity: Capacity,
+        remark: remark,
+        Path: Path,
+        Classroom_state: Classroom_state
+    };
+
+    // 发送 AJAX 请求到后端
+    fetch('/ClassroomReserve/editClassroom', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        // 处理响应
+        return response.json();
+    })
+    .then(data => {
+        // 处理后端返回的数据
+        console.log(data);
+    })
+    .catch(error => {
+        // 处理错误
+        console.error('Error:', error);
+    });
+        // editClassroom.cshtml
+        window.location.href = 'editClassroom';
+    }
+</script>
+
+<script>
+
+    function createClassroom(){
+       
+    };
+
+    function createClassroom() {
+    window.location.href = '/ClassroomReserve/createClassroom';
+}
+</script>
+
+
+
+
+
+
+<script>
+    // 获取按钮元素
+    var reviewBtn = document.getElementById("review_bookedbtn");
+    var historyBtn = document.getElementById("history_bookedbtn");
+    var keyBtn = document.getElementById("key_bookedbtn");
+     var keyhistoryBtn = document.getElementById("keyhistory_bookedbtn");
+    var classroomBtn = document.getElementById("classroom_bookedbtn");
+    var ruleBtn = document.getElementById("rule_bookedbtn");
+
+    // 添加点击事件处理程序
+    reviewBtn.addEventListener("click", function() {
+        window.location.href = "booked_classroom_management"; // 将页面重定向到“review_page.html”
+    });
+
+    historyBtn.addEventListener("click", function() {
+        window.location.href = "history_classroom_management"; // 将页面重定向到“history_page.html”
+    });
+
+    keyBtn.addEventListener("click", function() {
+        window.location.href = "key_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+    keyhistoryBtn.addEventListener("click", function() {
+        window.location.href = "keyhistory_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+
+    classroomBtn.addEventListener("click", function() {
+        window.location.href = "interface_classroom_management"; // 将页面重定向到“classroom_interface_page.html”
+    });
+
+    ruleBtn.addEventListener("click", function() {
+        window.location.href = "rule__classroom_management"; // 将页面重定向到“rule_modify_page.html”
+    });
+</script>

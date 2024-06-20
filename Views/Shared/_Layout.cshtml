@@ -1,0 +1,193 @@
+﻿@{
+    var userData = Context.Session.GetString("User");  
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["title"] - ScholaLink</title>
+    <link rel="icon" href="~/Resource/LOGO.png" type="image/x-icon" />
+    
+    <!-- FontAwesome 連結 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- JQuery連結 --> 
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StudentPlatform.styles.css" asp-append-version="true" />
+    <!-- AOS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@2"></script>
+
+    <!-- 引入 Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</head>
+<body>
+    <div id="loadingSpinner" class="spinner-border" role="status" style="display: none; position: fixed; top: 50%; left: 50%; z-index: 1050;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class = "container-all">
+        <!--左側導覽列-->
+        <!-- 左邊 -->
+        <div class="container-left">
+        <!-- 導覽列 -->
+        <!--左側導覽列-->
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 250px; height:100vh">
+                <button type="button" id="collapse" class="collapse-btn">
+                    <i class="fas fa-align-left"></i>
+                </button>           
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none page-transition">
+                    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                    <span class="fs-4">Student Platform</span>
+                </a>
+                <hr>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class = "nav-item">
+                        <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>借用教室
+                        </a>
+                        <ul class="nav-submenu">
+                            <li><a class="page-transition" href='@Url.Action("classroom_booking", "ClassroomReserve")'>預約教室</a></li>
+                            <li><a class="page-transition" href='@Url.Action("borrow_key", "ClassroomReserve")'>鑰匙借用</a></li>
+                            <li><a class="page-transition" href='@Url.Action("classroom_information", "ClassroomReserve")'>教室訊息</a></li>
+                            <li><a class="page-transition" href='@Url.Action("usage_rules", "ClassroomReserve")'>借用規則</a></li>
+                            <li><a class="page-transition" href='@Url.Action("already_booked", "ClassroomReserve")'>已預約資料</a></li>
+                            @if(userData != null) {
+                            var user = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(userData);
+                            var Level = user.Level;
+                                @if(Level == "管理員"){
+                                    
+                                    <li><a href='@Url.Action("booked_classroom_management", "ClassroomReserve")'>教室管理介面</a></li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                    <li class = "nav-item">
+                        <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>TA預約查詢
+                        </a>
+                        <ul class="nav-submenu">
+                            <li><a href='@Url.Action("TATables", "TAReserve")'>教學助理預約</a></li>
+                            <li><a href='@Url.Action("ReedFeedback", "TAReserve")'>教學助理回饋</a></li>
+                            <li><a href='@Url.Action("TAreserves", "TAReserve")'>預約詳情</a></li>
+                            <li><a href='@Url.Action("TASchedules", "TAReserve")'>預約表單</a></li>
+                        </ul>
+                    </li>
+                    <li class = "nav-item">
+                        <a class="nav-link text-white page-transition" asp-area="" asp-controller="Career" asp-action="Post_Version">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>職涯探索共享Hub
+                        </a>
+                    </li>
+                    <li class = "nav-item">                    
+                        <a class="nav-link text-white page-transition" asp-area="" asp-controller="Career" asp-action="CareerEchart">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>後續職涯追蹤
+                        </a>
+                    </li>
+                </ul>
+                <hr>    
+            </div>
+        </div>
+
+        <!--右側主內容-->
+        <!-- 右邊 -->
+        <div class="container-right">          
+            <div class="marquee"><!--跑馬燈-->
+                <marquee behavior="scroll" direction="right" scrollamount="5">
+                    <span style="color: rgb(81, 85, 154))120, 46, 46);font-weight: bold; white-space: nowrap;">@TempData["MarqueeMessage"]</span>
+                </marquee>
+            </div>
+            <div class="frist">
+                <div class="right-title">
+                    <div class="rectangle">@ViewData["title"]</div>
+                    <div id="timeDisplay" class="time">@ViewBag.nowtime</div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        @if (userData != null)
+                        {
+                            var user = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(userData);
+                            var studentName = user.student_name;
+                            <img src="" alt="UserPhoto" width="32" height="32" class="rounded-circle me-2" id="rounded-circle">
+                            <strong>你好~ @studentName</strong>
+                        }
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li>
+                            <a class="dropdown-item page-transition" href="/Member/MyInformation">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16"  style="margin-right:10px;">
+                                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                                    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                                </svg>設定
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item page-transition" href="/Member/Mytrend_SE">
+                                <svg class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="18" role="img" viewBox="0 0 24 24" width="18" style="margin-right:10px;"><title>你的動態</title>
+                                    <path d="M19 1H5C2.794 1 1 2.794 1 5v14c0 2.206 1.794 4 4 4h14c2.206 0 4-1.794 4-4V5c0-2.206-1.794-4-4-4ZM5 3h14c1.103 0 2 .897 2 2v6h-2.382l-2.723-5.447c-.34-.678-1.45-.678-1.79 0L9 15.764l-2.105-4.211A1 1 0 0 0 6 11H3V5c0-1.103.897-2 2-2Zm14 18H5c-1.103 0-2-.897-2-2v-6h2.382l2.723 5.447a1 1 0 0 0 1.79 0L15 8.236l2.105 4.211A1 1 0 0 0 18 13h3v6c0 1.103-.897 2-2 2Z"></path>
+                                </svg>我的動態
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/Member/Sign_out">登出</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 功能放置處 -->
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>                         
+    <script>
+        $(document).ready(function() {
+            $(document).on({
+                ajaxStart: function() {
+                    $('#loadingSpinner').show(); //測試停留下載跑圈圈
+                },
+                ajaxStop: function() {
+                    $('#loadingSpinner').hide(); //測試停留隱藏下載跑圈圈
+                }
+            });
+
+            //有page-transition才有特效
+            $('a.page-transition').on('click', function(e) {
+                var $this = $(this);
+                e.preventDefault();
+
+                //淡出效果
+                $('body').animate({ opacity: 0 }, 200, function() {
+                    //跳轉頁面
+                    window.location.href = $this.attr('href');
+                });
+            });
+
+            //切頁面會有載入的特效
+            $('body').animate({ opacity: 1 }, 200);
+
+            $.ajax({
+                url: '/Member/GetPhoto',
+                type: 'GET',
+                success: function(data) {
+                    if (data.photoUrl) {
+                        $('#userphoto').attr('src', data.photoUrl);
+                        $('#rounded-circle').attr('src', data.photoUrl);
+                    }
+                }
+            });
+        });
+   </script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,143 @@
+@model List<student_platformdb.usage_rules>
+@{
+    ViewData["Title"] = "管理者介面"; 
+}
+<div class="btn_booked">
+    <div class="bookedbtn" id = "review_bookedbtn" >
+        <p>預約教室審核</p>
+    </div>
+    <div class="bookedbtn" id = "history_bookedbtn" >
+        <p>預約教室歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "key_bookedbtn" >
+        <p>鑰匙管理</p>
+    </div>
+    <div class="bookedbtn" id = "keyhistory_bookedbtn" >
+        <p>鑰匙歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "classroom_bookedbtn" >
+        <p>教室介面修改</p>
+    </div>
+    <div class="bookedbtn" id = "rule_bookedbtn"style="background-color: rgb(242, 241, 241);" >
+        <p>預約規則修改</p>
+    </div>
+</div>
+
+
+<!-- 預約教室規則修改 -->
+@if (Model != null && Model.Count > 0)
+{
+    <div class="classroom_management_rectangle" style="padding: 18px;" id="ruleContent" >
+        <p>教室借用規則</p>
+      
+        <textarea style="width: 85% ; margin-bottom: 10px;" rows="15"  class="form-control" id="ruleData" name="ruleData" oninput="autoResize()"  placeholder="輸入資料">
+            @foreach (var Usage_rule in Model)
+            {
+                @Usage_rule.rules
+            }
+        </textarea>
+ 
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" onclick="saveRules()">儲存修改</button>
+        </div>
+   </div>
+}
+else
+{
+    <div class="classroom_management_rectangle" style="padding: 18px;" id="ruleContent" >
+        <p>教室借用規則</p>
+      
+        <textarea style="width: 85% ; margin-bottom: 10px;" rows="15"  class="form-control" id="ruleData" name="ruleData" oninput="autoResize()"  placeholder="輸入資料">
+            尚未定使用規則
+        </textarea>
+ 
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" onclick="saveRules()">儲存修改</button>
+        </div>
+   </div>
+}
+
+<!-- 顯示小框（模態框） -->
+<div id="successModal3" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>修改成功！</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var ruleData = $('#ruleData').val();
+    console.log("ruleData"+ruleData);
+    function saveRules() {
+        var ruleData = $('#ruleData').val();
+        console.log("ruleData"+ruleData);
+        var requestData = {
+           RuleData: ruleData
+        };
+
+
+        // 使用 Axios 發送 POST 請求
+        axios.post('/ClassroomReserve/rule__classroom_management', requestData)
+            .then(response => rule_handleSuccess(response.data))
+            .catch(error => rule_handleError(error));
+        
+    }
+
+    function rule_handleSuccess(data) {
+        // 成功取消跳這邊
+        if (data.success) {
+            $('#successModal3').modal('show'); // 先顯示 Modal
+            setTimeout(function() {
+                location.reload(); // 重新整理頁面
+            }, 800);
+            
+        } else {
+            alert('取消預約失敗！' + data.message);
+        }
+    }
+
+    function rule_handleError(error) {
+         處理錯誤
+        alert('取消預約失敗！');
+        console.error('Fetch Error:', error);
+    }
+           
+
+</script>
+
+
+<script>
+    // 获取按钮元素
+    var reviewBtn = document.getElementById("review_bookedbtn");
+    var historyBtn = document.getElementById("history_bookedbtn");
+    var keyBtn = document.getElementById("key_bookedbtn");
+     var keyhistoryBtn = document.getElementById("keyhistory_bookedbtn");
+    var classroomBtn = document.getElementById("classroom_bookedbtn");
+    var ruleBtn = document.getElementById("rule_bookedbtn");
+
+    // 添加点击事件处理程序
+    reviewBtn.addEventListener("click", function() {
+        window.location.href = "booked_classroom_management"; // 将页面重定向到“review_page.html”
+    });
+
+    historyBtn.addEventListener("click", function() {
+        window.location.href = "history_classroom_management"; // 将页面重定向到“history_page.html”
+    });
+
+    keyBtn.addEventListener("click", function() {
+        window.location.href = "key_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+    keyhistoryBtn.addEventListener("click", function() {
+        window.location.href = "keyhistory_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+
+    classroomBtn.addEventListener("click", function() {
+        window.location.href = "interface_classroom_management"; // 将页面重定向到“classroom_interface_page.html”
+    });
+
+    ruleBtn.addEventListener("click", function() {
+        window.location.href = "rule__classroom_management"; // 将页面重定向到“rule_modify_page.html”
+    });
+</script>

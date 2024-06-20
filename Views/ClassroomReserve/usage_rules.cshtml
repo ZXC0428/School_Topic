@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "預約規則"; 
+}
+@model List<student_platformdb.usage_rules>
+
+
+<div class = "rules" >
+    <hr>
+    @if (Model != null)
+    {
+        <pre>
+            @foreach (var rule in Model)
+            {
+                @rule.rules
+            }
+        </pre>
+    }
+    else{
+        <p>無資料</p>
+    }
+    
+    <hr>
+</div>

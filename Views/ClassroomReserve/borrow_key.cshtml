@@ -1,0 +1,190 @@
+@{
+    ViewData["Title"] = "借用鑰匙"; 
+    var userData = Context.Session.GetString("User");
+    
+}
+
+<div class = "brorrw_rectangle">
+  <div>
+        <form method="post" action="/ClassroomReserve/borrow_key"> 
+            <div class="row">
+            @if (userData != null)
+            {
+                var user = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(userData);
+                var Student_name = user.student_name;
+                var Student_ID = user.studentID; 
+                var Student_class = user.student_class; 
+                <p>借用人資料</p>
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label">班級：</label>
+                    <label for="exampleFormControlInput1" class="form-label">@Student_class</label>
+                </div>
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label">學號：</label>
+                    <label for="exampleFormControlInput2" class="form-label">@Student_ID</label>
+                </div>
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label">姓名：</label>
+                    <label for="exampleFormControlInput3" class="form-label">@Student_name</label>
+                </div>
+                <p style="margin-top: 10px;">借用資訊</p>
+                <div class="mb-3">
+                <label for="borrowtime" class="form-label">借用時間</label>
+                <input type="datetime-local" name="borrowtime" class="form-control" id="borrowtime" aria-describedby="emailHelp" oninput="validateDate()" onchange="updateReservation()">
+                </div>
+                <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">教室</label>
+                <select class="form-select" aria-label="Default select example" name="classroom" onchange="updateReservation()">
+                <option value="">請選擇要預約的教室</option>
+                </select>
+                </div>
+            }
+            </div>
+            
+            <div class="row second-row">
+                <button type="submit" class="btn btn-primary">確定借用</button>
+            </div>
+        </form>
+  
+</div>
+
+
+@if (ViewBag.ReservationSuccess == true)
+{
+    <!-- 顯示小框（模態框） -->
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>借用成功！</p>
+                    <!-- 不顯示 確認 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 定義 JavaScript 函數，處理預約成功後的操作 -->
+    <script>
+        // 在文檔準備就緒時自動顯示模態框
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+
+            // 延遲1，然後重新導向到 booking 頁面
+            setTimeout(function() {
+                window.location.href = '@Url.Action("borrow_key", "ClassroomReserve")';
+            }, 800);
+        });
+    </script>
+}
+else
+{
+    <p>@ViewBag.ErrorMessage</p>
+}
+
+
+
+<script>
+// 從資料庫抓取有開放的教室 監聽
+    document.addEventListener("DOMContentLoaded", function() {
+        // 取得 select 元素
+        var selectElement = document.getElementsByName("classroom")[0];
+
+        // 清空原有選項
+        selectElement.innerHTML = "";
+
+        // 添加固定選項
+        var fixedOption = document.createElement("option");
+        fixedOption.value = "";  // 設定選項值
+        fixedOption.textContent = "請選擇要預約的教室";  // 設定顯示文字
+        selectElement.appendChild(fixedOption);
+
+        // 使用 Fetch API 從後端取得教室資料
+        fetch('/ClassroomReserve/GetClassroom', {
+            method: 'POST', // 請確保這裡使用的是 POST 方法
+            headers: {
+                'Content-Type': 'application/json'
+                // 如果有需要，還可以添加其他 header
+            },
+            body: JSON.stringify({
+                // 如果有需要，可以添加 POST 資料
+            })
+        })
+        .then(response => response.json())
+        .then(classrooms => {
+            // 動態生成選項
+            classrooms.forEach(function(classroom) {
+                var option = document.createElement("option");
+                option.value = classroom.classroom_id; // 使用教室代號作為值
+                option.textContent = classroom.classroom_id; // 使用教室代號作為顯示文字
+                selectElement.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+
+
+@if (ViewBag.ReservationSuccess == true)
+{
+    <!-- 顯示小框（模態框） -->
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>借用成功！</p>
+                    <!-- 不顯示 確認 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 定義 JavaScript 函數，處理預約成功後的操作 -->
+    <script>
+        // 在文檔準備就緒時自動顯示模態框
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+
+            // 延遲1，然後重新導向到 booking 頁面
+            setTimeout(function() {
+                window.location.href = '@Url.Action("borrow_key", "ClassroomReserve")';
+            }, 800);
+        });
+    </script>
+}
+else
+{
+    <p>@ViewBag.ErrorMessage</p>
+}
+
+
+<script>
+    // 獲取當前時間
+    function getCurrentDateTime() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+
+        // 格式化日期時間為 ISO 8601 格式
+        var formattedDateTime = year + '-' + 
+                                (month < 10 ? '0' : '') + month + '-' + 
+                                (day < 10 ? '0' : '') + day + 'T' + 
+                                (hours < 10 ? '0' : '') + hours + ':' + 
+                                (minutes < 10 ? '0' : '') + minutes;
+
+        return formattedDateTime;
+    }
+
+    // 更新日期時間輸入框的值
+    function updateDateTime() {
+        var dateTimeInput = document.getElementById('borrowtime');
+        dateTimeInput.value = getCurrentDateTime();
+    }
+
+    // 初始化時更新日期時間
+    window.onload = function() {
+        updateDateTime();
+    };
+</script>

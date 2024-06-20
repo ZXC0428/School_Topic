@@ -1,0 +1,104 @@
+@model TA.ViewModels.CourseViewModel
+
+@{
+    ViewData["Title"] = "預約詳情";
+}
+
+<style>
+    .th.td {
+        text-align: left;  /*設置表格頭和表格數據文字對齊到左邊 */
+    }
+    .btn-success{
+        color: #ffffff !important;
+        background-color: #4a9551 !important;
+        font-weight: bold !important;
+        border-radius: 13px !important;
+        border-style: none !important;
+        border: none!important; /* 移除邊框 */
+        outline: none!important;/* 移除聚焦時的輪廓 */
+    }
+</style>
+<div style="margin-top:20px;">
+    <div style="display: flex;flex-direction: column; " >
+        <div style="display: inline-block; ">
+            <h2 style="font-weight:bold; text-align: left; " >課程資訊</h2>
+            <table class="table" style="text-align: left; ">
+                <tr>
+                    <th>日期</th>
+                    <td>
+                        <div style="margin-right: 10px;">@Model.CourseDetails.Overtime?.ToString(@"hh\:mm")</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>開始時間</th>
+                    <td>
+                        <div>@Model.CourseDetails.Coursename</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>結束時間</th>
+                    <td >@Model.CourseDetails.Overtime?.ToString(@"hh\:mm")</td>
+                </tr>
+                <tr>
+                    <th>課程名稱</th>
+                    <td >@Model.CourseDetails.Coursename</td>
+                </tr>
+                <tr>
+                    <th>TAID</th>
+                    <td >@Model.CourseDetails.TA_ID</td>
+                </tr>
+                <tr>
+                    <th>TA姓名</th>
+                    <td >@Model.CourseDetails.Taname</td>
+                </tr>
+                <tr>
+                    <th>教室</th>
+                    <td >@Model.CourseDetails.Classroom</td>
+                </tr>
+            </table>
+
+        </div>
+    
+    <div style="display: inline-block;">
+        <h2 style="font-weight:bold; text-align: left;">學生名單</h2>
+        <style>
+            .table1 th,
+            .table1 td {
+                width: 10.3%; /* 將欄位寬度縮小為原來的一半 */
+            }
+        </style>
+        <table class="table1" style="text-align: left;">
+            
+            @if(Model.Students.Any())
+            {
+                <tr>
+                    <th>學號</th>
+                    <th>姓名</th>
+                </tr>
+                foreach (var student in Model.Students)
+                {
+                    <tr>
+                        <td>@student.StudentId</td>
+                        <td>@student.StudentName</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2" style="font-weight:bold; ">無人預約</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    
+    <div style="margin-bottom:15px;margin-top:15px;">
+         <a href="@Url.Action("ExportToExcel", "TAReserve", new { reservationid = Model.CourseDetails.CourseID })" class="btn btn-success">下載Excel檔</a>
+        <a href="@Url.Action("DownloadCourseDocument", "TAReserve", new { reservationid = Model.CourseDetails.CourseID })" class="btn btn-primary">下載Word檔</a>
+    </div>
+   
+</div>
+
+</div>
+

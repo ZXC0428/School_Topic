@@ -1,0 +1,211 @@
+@{
+    ViewData["Title"] = "實習經驗";  
+}
+@model Student_web.Models.Share_intern_ViewModel
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/css/Share_internWeb.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    @using (Html.BeginForm("Share_internWeb", "Career", FormMethod.Post,new { enctype = "multipart/form-data" }))
+    {
+    <div class="card">
+        <div class="card-header text-center">
+            <button type="button" class="btn btn-secondary esc" style="position: absolute; left: 0;">
+                <a class="nav-link active " asp-area="" asp-controller="Career" asp-action="Post_version2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                    </svg>
+                </a>
+            </button>學生實習經驗分享
+        </div>
+        <div class="d-flex">
+            <div class="device-left">
+                <img src="~/Resource/student_intern.jpg" alt="student_intern" style="width:200px;height:1220.350px">
+            </div>
+            <div class="device-right" style="width: 900px;height:auto;position: relative;">
+                <div class="form-check form-switch" style="position: absolute; top: 0; right: 0;padding:0">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="SwitchValue">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">匿名
+                        <span class="special-tooltip" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="選擇是否關閉個人訊息">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                            </svg>
+                        </span>
+                    </label>
+                </div>
+                <div class="form-group" style="display: flex;align-items:flex-end;">
+                    <span class="star">★</span>
+                    @Html.LabelFor(model => model.share_interns.item, "標題名稱" ,new { @class = "form-label" })
+                    @Html.ValidationMessageFor(model => model.share_interns.item, "", new { @class = "text-danger" })
+                </div>    
+                <div class="input-group mb-3">
+                    @Html.EditorFor(model => model.share_interns.item, new { htmlAttributes = new { @class = "form-control ", @aria_label = "Sizing example input", @aria_describedby = "inputGroup-sizing-default",placeholder="您的標題..." }})
+                </div>
+                
+                <div class="form-group" style="display: flex;align-items:flex-end;">
+                    <span class="star">★</span>
+                    @Html.LabelFor(model => model.share_interns.company_name, "公司名稱" ,new { @class = "form-label" })
+                    @Html.ValidationMessageFor(model => model.share_interns.company_name, "", new { @class = "text-danger" })
+                </div>    
+                <div class="input-group mb-3">
+                    @Html.EditorFor(model => model.share_interns.company_name, new { htmlAttributes = new { @class = "form-control ", @aria_label = "Sizing example input", @aria_describedby = "inputGroup-sizing-default",placeholder="您的公司名稱..." } })
+                </div>
+                
+                <div class="form-group" style="display: flex;align-items:flex-end;">
+                        <span class="star">★</span>
+                        @Html.LabelFor(model => model.share_interns.post, "擔任職位" ,new { @class = "form-label" })
+                        @Html.ValidationMessageFor(model => model.share_interns.post, "", new { @class = "text-danger" })
+                </div>         
+                <div class="input-group mb-3">
+                    @Html.EditorFor(model => model.share_interns.post, new { htmlAttributes = new { @class = "form-control ", @aria_label = "Sizing example input", @aria_describedby = "inputGroup-sizing-default",placeholder="您擔任職位..." } })
+                </div>
+                <div class="d-flex box-form">  
+                    <div class="salary">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.share_interns.salary, "薪水(年)" ,new { @class = "form-label1 question" })
+                        </div>         
+                        <div class="input-group">
+                            @Html.EditorFor(model => model.share_interns.salary, new { htmlAttributes = new { @class = "form-control1 ", @aria_label = "Sizing example input", @aria_describedby = "inputGroup-sizing-default",placeholder="您的收入..." } })
+                        </div>
+                    </div> 
+                    <div class="form-group year-select">
+                        <label for="yearSelect" class="menu-form-label"><span class="text-danger">★</span>實習年度</label>
+                        <select asp-for="share_interns.year" class="form-select" aria-label="Default select example" id="yearSelect" name="share_interns.year"></select>
+                    </div>   
+                    <div class="form-group location-select">
+                        
+                        <label for="locationSelect" class="menu-form-label"><span class="text-danger">★</span>實習地點
+                            @Html.ValidationMessageFor(model => model.share_interns.location, "", new { @class = "text-danger" })
+                        </label>
+                        
+                        <select asp-for="share_interns.location" class="form-select" aria-label="Default select example" name="share_interns.location">
+                            <option selected value="">選擇位置</option>
+                            <option value="臺北市">臺北市</option>
+                            <option value="新北市">新北市</option>
+                            <option value="桃園市">桃園市</option>
+                            <option value="臺中市">臺中市</option>
+                            <option value="臺南市">臺南市</option>
+                            <option value="高雄市">高雄市</option>
+                            <option value="新竹市">新竹市</option>
+                            <option value="新竹縣">新竹縣</option>
+                            <option value="基隆市">基隆市</option>
+                            <option value="嘉義市">嘉義市</option>
+                            <option value="嘉義縣">嘉義縣</option>
+                            <option value="苗栗縣">苗栗縣</option>
+                            <option value="彰化縣">彰化縣</option>
+                            <option value="南投縣">南投縣</option>
+                            <option value="雲林縣">雲林縣</option>
+                            <option value="屏東縣">屏東縣</option>
+                            <option value="宜蘭縣">宜蘭縣</option>
+                            <option value="花蓮縣">花蓮縣</option>
+                            <option value="臺東縣">臺東縣</option>
+                            <option value="澎湖縣">澎湖縣</option>
+                            <option value="金門縣">金門縣</option>
+                            <option value="連江縣">連江縣</option>
+                            <option value="國外">國外</option>
+                        </select>
+                    </div>          
+                </div>
+                <div class="file-link d-flex">
+                    <div class="form-group file">
+                        <div class="item-file">
+                            <label class = "form-label intern-file question">檔案上傳</label>
+                            <span class="special-tooltip" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="選擇您在這間公司的目前狀態">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="file" name="files" multiple class="form-control form-control exclude" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" /> 
+                        </div>
+                    </div>                
+                    <div class="form-group links">
+                        <div class="item-link">
+                            @Html.LabelFor(model => model.share_interns.link, "公司連結" ,new { @class = "form-label intern-link question" })
+                            <span class="special-tooltip" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="提供您在這間公司或是相關連結">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
+                                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            @Html.EditorFor(model => model.share_interns.link, new { htmlAttributes = new { @class = "form-control form-control exclude", @id = "basic-url",@aria_label = "Sizing example input", @aria_describedby = "basic-addon3",placeholder="提供的連結"} })
+                        </div> 
+                    </div>
+                </div>
+               
+                <div class="form-group" style="display: flex;align-items:flex-end;">
+                    <span class="star">★</span>
+                    @Html.LabelFor(model => model.share_interns.work_content, "工作內容",new { @class = "form-label share_content" })
+                     <span class="special-tooltip content" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="提供實習的工作內容負責的部分">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                        </svg>
+                    </span>
+                    @Html.ValidationMessageFor(model => model.share_interns.work_content, "", new { @class = "text-danger" })
+                </div>   
+                <div class="form-group-content">
+                    @Html.TextAreaFor(model => model.share_interns.work_content, new { @class = "form-control", @aria_label = "Sizing example input", @aria_describedby = "inputGroup-sizing-default", id = "control-Content", placeholder = "有哪些工作內容", rows = 8 })
+                </div> 
+
+                <div class="form-group" style="display: flex;align-items:flex-end;">
+                    <span class="star">★</span>
+                    @Html.LabelFor(model => model.share_interns.experience, "實習心得分享",new { @class = "form-label share_content" })
+                    <span class="special-tooltip content" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="提供在這間公司實習的歷程或是勉勵的話語">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                        </svg>
+                    </span>
+                    @Html.ValidationMessageFor(model => model.share_interns.experience, "", new { @class = "text-danger" })
+                </div>  
+                <div class="form-group-content">
+                    @Html.TextAreaFor(model => model.share_interns.experience, new { @class = "form-control", @aria_label = "Sizing example input", @aria_describedby = "inputGroup-sizing-default", id = "control-Content", placeholder = "說說勉勵的話", rows = 8 })
+                </div>                          
+                <div class="text-center">
+                    <div>請確認<span class="text-danger">★</span>內容是否有填寫到，確認完畢再送出呦！</div>
+                    <button type="submit" class="btn btn-primary">送出分享
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                            <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
+    <script>
+        window.onload = function() {
+            var select = document.getElementById("yearSelect");
+            var currentYear = new Date().getFullYear();
+            var startYear = currentYear - 1911; //轉換為民國年
+
+            //清除現有的選項
+            while (select.firstChild) {
+                select.removeChild(select.firstChild);
+            }
+
+            //新增選項
+            for (var i = startYear; i >= 107; i--) {
+                var option = document.createElement("option");
+                option.text = i;
+                option.value = i;
+                select.add(option);
+            }
+        }
+
+        $(document).ready(function(){
+            $('[data-bs-toggle="popover"]').popover();   
+        }); 
+    </script>
+
+</body>

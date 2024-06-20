@@ -1,0 +1,910 @@
+html {
+  font-size: 14px;
+  position: relative;
+  min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-all{
+  display: flex;
+  align-items: stretch;
+  height: 100vh; /* 讓 .container-all 高度填滿整個視窗 */
+}
+.container-left{
+  min-height: 100%; /* 使用 min-height 以確保左側導覽列至少與內容區域一樣高 */
+}
+.container-right{
+  
+  width: 100%;
+  height: 100vh;
+  flex: 1; /* 充滿剩餘的空間 */
+  overflow: auto; /* 若內容高於視窗，則顯示捲軸 */
+}
+
+/*導覽列*/
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s; /* 添加过渡效果 */
+}
+.d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark {
+  width: 250px; /* 設定寬度為 250 像素，您可以根據需要調整數值 */
+  min-height: 100vh;
+  transition: margin-left 0.3s ease; /* 添加過渡效果，使動畫更流暢 */
+}
+
+.d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark.active {
+  margin-left: -200px; /* 移動元素 */
+}
+
+.collapse-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #2B4162; /*最左上角*/
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+.collapse-btn i {
+  margin-left: auto;
+}
+
+.collapse-btn:hover {
+  background-color: #2B4162;
+  transition: 0.4s;
+}
+.d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark.active .collapse-btn i {
+  margin-left: auto;
+  margin-left: 50px; /* 調整右邊距，您可以根據需要調整數值 */
+  padding-left: 20px;
+}
+.fs-4{
+  font-weight: bold!important;
+
+}
+
+@media (max-width:600px) {
+  .d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark {
+    margin-left: -200px;
+    width: 150px;
+    min-height: 100vh;
+  }
+
+  .collapse-btn {
+    position: relative;
+    top: 1%;
+  }
+
+  .d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark.active .collapse-btn i {
+    margin-left: auto;
+    margin-left: 20px; /* 調整右邊距，您可以根據需要調整數值 */
+    padding-left: 20px;
+  }
+
+  .d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark.active {
+    margin-left: 0px;
+  }
+  .d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.text-white.text-decoration-none .fs-4 {
+    display: none;
+  }
+
+  .d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark.active .d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.text-white.text-decoration-none .fs-4 {
+    display: block;
+  }
+}
+/*ul ul li a{
+  background: #3b415b;
+  font-size: 20px;
+}*/
+
+.d-flex.bg-dark {
+  background-color: #2B4162 !important;  /*左邊導覽列大致顏色*/
+}
+
+.d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.text-white.text-decoration-none{
+  display: block;
+
+}
+
+
+.nav-item a:hover{
+  color: #eaddaf!important; 
+  font-weight: bold!important;
+}
+
+/* 主選項文字 */
+.nav-link.text-white {
+  color: #ffffff!important; 
+  font-weight: bold!important;
+}
+
+/* 副菜單背景顏色 */
+.nav-submenu {
+  border-radius: 10px;
+  background-color: #bac3d2; /*#494d5c*/
+}
+
+/* 副菜單文字顏色 */
+.nav-submenu a {
+  text-decoration: none !important; /*取消超連結底線*/
+  font-weight: bold;
+  color: #2B4162 !important; 
+}
+/* 副菜單文字滑過更改顏色 */
+.nav-submenu a:hover{
+  color: #8F754F !important; }
+
+/* 副菜單文字 */
+.nav-submenu li{
+  list-style-type: none; /* 移除開頭點 */
+  padding: 10px;
+}
+
+
+
+/* 不知道有沒有用的怪東西 */
+@media screen and (max-width: 768px) {
+  .d-flex {
+      width: 100%; /* 使侧边栏占满屏幕宽度 */
+  }
+  
+  .nav ul {
+      flex-direction: column; /* 将主菜单项垂直排列 */
+  }
+  
+  .nav li {
+      margin: 10px 0; /* 调整主菜单项的垂直间距 */
+  }
+  
+  .nav-submenu {
+      display: none; /* 初始状态关闭子菜单 */
+  }
+}
+/*不知道有沒有用的怪東西*/
+
+
+
+
+
+
+
+
+/* 跑馬燈 */
+.marquee{
+  background-color: #385F71;
+  color:white;
+}
+
+
+/*右側主畫面--------------------------------------------------------------------------------------------------*/
+.frist {
+  display: flex;
+  justify-content: space-between; /* 將frist内的元素在水平方向上分散對齊 */
+  align-items: center; /* 垂直居中對齊 */
+}
+
+.right-title {
+  text-align: left; /* 文本右對齊 */
+  margin-left: 20px; /* 调整右侧距离，可以根据需要调整值 */
+  margin-top: 5px;
+}
+
+.rectangle {
+  background-color: #385F71; /* 背景颜色 */
+  color: white; /* 文字颜色 */
+  padding: 10px 20px; /* 调整宽度，可以根据需要调整值 */
+  font-weight: bold;
+  border-radius: 5px; /* 圆角 */
+  display: inline-block; /* 内容在水平方向上并排 */
+}
+.time{
+  display: inline-block; /* 内容在水平方向上并排 */
+  color: black; /* 文字颜色 */
+  font-weight: bold;
+  padding: 10px 20px; /* 调整宽度，可以根据需要调整值 */
+}
+
+.dropdown strong{
+  color: black !important; /* 文字颜色 */
+
+}
+
+.dropdown-menu-dark .dropdown-item { /*右上角的字體顏色*/
+  color: black;
+}
+
+.dropdown-menu-dark:hover .dropdown-item:hover { /*右上角的字體顏色*/
+  color: 	#A9A9A9;
+}
+
+/*可用教室-------------------------------------------------------------------------------------------------------*/
+.available_classrooms_rectangle {
+  background-color: #F8F8F8; /* 背景颜色 */
+  /* 调整宽度，可以根据需要调整值  padding: 250px 150px;*/
+  padding: 2%; /* 使用百分比或vw适应不同屏幕尺寸 */
+  font-weight: bold;
+  color: #707070; /* 文字颜色 */
+  border-radius: 10px; /* 圆角 */
+  position: relative; /* 添加定位 */
+  margin-bottom: 20px;
+  overflow-x: auto; /* 添加这一行来处理水平溢出 */
+  word-break: break-all; /* 添加这一行来处理文本断句 */
+}
+@media only screen and (max-width: 600px) {
+  /* 在小屏幕上应用的样式规则 */
+  .available_classrooms_rectangle {
+    padding: 5%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* 在中等屏幕上应用的样式规则 */
+  .available_classrooms_rectangle {
+    padding: 3%;
+  }
+}
+.main_content {
+  margin-top: 30px; /* 在上方添加空间 */
+  height: 900px;
+  margin-bottom: 20px;
+
+}
+/* 網頁高度height: auto; */
+.container{
+  flex: 1; /* 不再根據內容的長度動態調整高度 */
+  box-sizing: border-box;
+
+}
+
+.subtitle {
+  background-color: #ABA9D1; /* 背景颜色 */
+  color: #ffffff; /* 文字颜色 */
+  padding: 10px 20px; /* 调整宽度，可以根据需要调整值 */
+  font-weight: bold;
+  border-radius: 20px; /* 圆角 */
+  display: inline-block;
+  position: absolute; /* 添加定位 */
+  top: 10px; /* 距離頂部的距離 */
+  left: 10px; /* 距離左邊的距離 */
+}
+/* 內容高度自動調整 */ /* 增加底部間距 */
+/*.main_content, .available_classrooms_rectangle {
+  height: auto; 
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}*/
+.main_content, .available_classrooms_rectangle {
+  height: auto; 
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main_content {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.available_classrooms_rectangle {
+  background-color: #F8F8F8;
+  padding: 20px; /* 减小 padding，以减小间距 */
+  font-weight: bold;
+  color: #707070;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 让内容从上方开始 */
+  
+}
+/* 调整表格的外边距和内边距 */
+.table-container {
+  margin: 30px auto;
+  padding: 0;
+  justify-content: center; /* 使用justify-content来水平居中 */
+}
+/* 區隔---------------------------------------------------------------------------------------------------------- */
+
+.table {
+  width: 100%;
+  text-align: center; 
+  border-collapse: separate;
+  border-spacing: 10px;
+  border: none !important; /* 移除所有边框 */
+  border-collapse: collapse !important;
+}
+/* 調整表格單元格的內邊距 */
+td, th {
+  padding: 15px; /* 調整單元格內容的內邊距，根據需求調整值 */
+  border: none!important; /* 移除所有边框 */
+}
+tr{
+  border: none!important;/* 移除所有边框 */
+
+}
+
+.usagetitle {
+  color:#74511b!important; }
+
+/*查詢預約教室---------------------------------------------------------*/
+.query-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* 在垂直方向上置中 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.query-container form {
+  display: flex;
+  flex: 1; /* Distribute available space among form elements */
+  align-items: center; /* 在垂直方向上置中 */
+}
+
+.query-container form > div {
+  flex: 1; /* Make each form element flexible */
+  margin-right: 10px; /* Add some margin between form elements */
+}
+
+/* Optional: Set a fixed width for the labels to align them */
+.query-container form label {
+  width: 100%; /* Adjust the width as needed */
+}
+
+/* Optional: Set a fixed width for the input elements to align them */
+.query-container form input {
+  width: 100%; /* Take up the entire available width */
+}
+
+.query-container form button {
+  padding: 8px 8px;
+  height: 38px; /* 設定您希望的高度值 */ /* 設定為 auto 以使高度根據內容自動調整 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  background-color: #C9F2FF;
+  color:#234C6C;
+  border: none;
+  font-weight: bold;
+}
+
+/* 媒體查詢：在小螢幕時改為垂直排列 */
+@media (max-width: 768px) {
+  .query-container form {
+    flex-direction: column;
+    float:left;
+  }
+ 
+}
+.query-container form select,
+.query-container form input[type="date"] {
+  width: 100%; /* 設定下拉選單和日期輸入框的寬度為100% */
+  box-sizing: border-box; /* 確保寬度包括內邊距和邊框 */
+  min-width: 300px; /* 設定一個最小寬度，確保元素不會過小 */
+}
+
+.form-label{
+  font-weight: bold!important;
+  color:#385F71;
+}
+
+.form-control{
+  border-color: #D7B377 !important;
+}
+
+.form-select{
+  border-color: #D7B377 !important;
+}
+
+
+.search-result{
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F8F8; /* 背景颜色 */
+  /* 调整宽度，可以根据需要调整值  padding: 250px 150px;*/
+  padding: 2%; /* 使用百分比或vw适应不同屏幕尺寸 */
+  font-weight: bold;
+  color: #707070; /* 文字颜色 */
+  border-radius: 10px; /* 圆角 */
+  position: relative; /* 添加定位 */
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.search-result p{
+  font-weight: bold!important;
+  color:#2B4162;
+  font-size: 20px;
+}
+
+.search-result1{
+  height: 90px;
+  background-color: #F8F8F8; /* 背景颜色 */
+  /* 调整宽度，可以根据需要调整值  padding: 250px 150px;*/
+  padding: 2%; /* 使用百分比或vw适应不同屏幕尺寸 */
+  font-weight: bold;
+  color: #707070; /* 文字颜色 */
+  border-radius: 10px; /* 圆角 */
+  position: relative; /* 添加定位 */
+  margin-bottom: 20px;
+  overflow-x: auto; /* 添加这一行来处理水平溢出 */
+  word-break: break-all; /* 添加这一行来处理文本断句 */
+}
+.search-result1 p{
+font-weight: bold!important;
+color:#2c2c2c;
+font-size: 20px;
+}
+
+.btn-secondary{
+  background-color:#C9F2FF ;
+  color:#234C6C;
+  border: none;
+  font-weight: bold;
+}
+
+/*-預借教室CSS---------------------------------------------------------------------------------------*/
+.reserve_classroom_rectangle {
+  background-color: #ECF1F9; /* 背景颜色 */
+  /* 调整宽度，可以根据需要调整值  padding: 250px 150px;*/
+  padding: 2%; /* 使用百分比或vw适应不同屏幕尺寸 */
+  font-weight: bold;
+  color: #234C6C; /* 文字颜色 */
+  border-radius: 10px; /* 圆角 */
+  position: relative; /* 添加定位 */
+  margin-bottom: 20px;
+  margin-top: 30px;
+  overflow-x: auto; /* 添加这一行来处理水平溢出 */
+  word-break: break-all; /* 添加这一行来处理文本断句 */
+}
+@media only screen and (max-width: 600px) {
+  /* 在小屏幕上应用的样式规则 */
+  .reserve_classroom_rectangle {
+    padding: 5%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* 在中等屏幕上应用的样式规则 */
+  .reserve_classroom_rectangle {
+    padding: 3%;
+  }
+}
+.reserve_classroom_rectangle form .second-row {
+  flex-direction: column;
+  display: flex;
+  /* 水平置中 */
+  justify-content: center;    
+  /* 垂直置中 */
+  align-items: center; 
+}
+.reserve_classroom_rectangle form button {
+ 
+  align-items: center;
+  justify-content: center;
+  background-color: #0F488A;
+  color:#ffffff;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+  width: 40%;
+}
+
+/*教室資訊-------------------------------------------------------------------------------------*/
+
+.classroom_information_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.classroom_information_rectangle {
+  width: 48%; /* 控制每個元素的寬度，留白為 2% */
+  height: 450px;
+  background-color: #F8F8F8;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #707070;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.classroom_information_rectangle p{
+  color:#14181d;
+  font-weight: bold;
+
+
+}
+.classroom-images-container {
+  display: flex;
+  justify-content: center;
+}
+
+.classroom-images-container img {
+  width: 70%;
+  height: auto;
+  max-height: 230px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.classroom-photo {
+  width: 70%;
+  height: auto;
+  max-height: 230px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.classroom_information_rectangle img {
+  width: 70%;
+  height: auto;
+  max-height: 230px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.classroom_information_rectangle p {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.next-arrow {
+  position: absolute;
+  top: 70%;
+  right: 55px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .classroom_information_rectangle {
+    width: 100%;
+  }
+}
+
+
+/*-教室規則CSS---------------------------------------------------------------------------------------*/
+
+.rules {
+  margin-bottom: 20px; /* 設定上方的空隙 */
+  margin-top: 50px; /* 設定上方的空隙 */
+  font-weight: bold;
+  font-size: 17px;
+  width: auto;
+}
+
+.rules hr {
+  border: 1.5px solid rgb(85, 103, 134); /* 設定hr的邊框樣式，這裡是實線，可以根據需要調整 */
+  margin-top: 30px; /* 設定hr上方的空隙 */
+  margin-bottom: 30px; /* 設定hr下方的空隙 */
+}
+
+/*-已預約教室CSS---------------------------------------------------------------------------------------*/
+
+.alreadybooked_rectangle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F8F8F8;
+  font-weight: bold;
+  color: #707070;
+  border-radius: 0px 7px 7px 7px; 
+  margin-bottom: 15px;
+  margin-top: 0px;
+  overflow-x: auto;
+  word-break: break-all;
+  overflow-y:auto;
+}
+/* 调整表格的外边距和内边距 */
+.alreadybooked_table-container {
+  margin: 5px auto;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* 使用justify-content来水平居中 */
+}
+/* 區隔---------------------------------------------------------------------------------------------------------- */
+
+.alreadybooked_table {
+  width: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 10px;
+   /* 移除所有边框border: none !important; */
+  border-collapse: collapse !important;
+}
+
+.alreadybooked_table tbody tr td {
+  padding: 5px 30px/* 上下    左右 */
+}
+@media (max-width: 1000px) {
+  .alreadybooked_table tbody tr td {
+    padding: 5px 5px/* 上下    左右 */
+  }
+}
+hr {
+  border: 1px solid #ddd; /* 设置分隔线的颜色和样式 */
+  margin: 0; /* 去除默认的外边距 */
+}
+
+.btn-danger{
+  color: #ffffff !important;
+  background-color: #c5a05f !important;
+  font-weight: bold !important;
+  border-radius: 13px !important;
+  border-style: none !important;
+  border: none!important; /* 移除邊框 */
+  outline: none!important;/* 移除聚焦時的輪廓 */
+
+}
+
+.btn.btn-danger:active,
+.btn.btn-danger:focus {
+    box-shadow: 0 0 0 0.2rem rgba(219, 184, 102, 0.5)!important; /* 設置陰影效果 */
+    background-color: #c5a05f !important; /* 設置按鈕背景色 */
+}
+
+.btn-primary{
+  color: #ffffff !important;
+  background-color: #2B4162 !important;
+  font-weight: bold !important;
+  border-radius: 13px !important;
+  border-style: none !important;
+
+}
+
+.btn-create{
+  color:  #ffffff !important;
+  background-color:  #224251!important;
+  font-weight: bold !important;
+  border-radius: 13px !important;
+  border-style: none !important;
+
+}
+
+.alreadybooked_table-container p{
+  font-size: 18px;
+  margin-top: 10px;
+
+}
+.modal-body p {
+  color:#234C6C ;
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.btn_booked{
+  display: flex;
+  margin-top: 10px;
+  
+}
+.btn_booked{
+  display: flex;
+  margin-top: 10px;
+  
+}
+
+.bookedbtn{
+  width: auto;
+  height: 45px;
+  background-color: #F8F8F8;
+  border-radius: 7px 7px 0px 0px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.bookedbtn p{
+  color: rgb(58, 58, 58);
+  font-weight: bold;
+  margin: 10px;
+}
+.bookedbtn.selected {
+  background-color: rgb(242, 241, 241); /* 替換成你想要的底色 */
+ 
+}
+.alreadybooked_rectangle.selected {
+  background-color: rgb(242, 241, 241); /* 替換成你想要的底色 */
+  padding: 5px 30px;/* 上下    左右 */
+  
+}
+/*管理者css*/
+
+.classroom_management_rectangle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 將元素置中 */
+  background-color: rgb(242, 241, 241);
+  font-weight: bold;
+  color: #707070;
+  border-radius: 0px 7px 7px 7px; 
+  margin-bottom: 15px;
+}
+.classroom_management_rectangle2 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(242, 241, 241);
+  font-weight: bold;
+  color: #707070;
+  border-radius: 0px 7px 7px 7px; 
+  margin-bottom: 15px;
+  padding: 18px; /* 添加填充 */
+  
+}
+/* 调整表格的外边距和内边距 */
+.classroom_management_table-container {
+  margin: 5px auto;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* 使用justify-content来水平居中 */
+}
+.classroom_management_rectanglep{
+  margin-top: 10px;
+}
+/* 區隔---------------------------------------------------------------------------------------------------------- */
+
+.classroom_management_table {
+  width: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 10px;
+   /* 移除所有边框border: none !important; */
+  border-collapse: collapse !important;
+}
+
+.classroom_management_table tbody tr td {
+  padding: 5px 15px/* 上下    左右 */
+}
+@media (max-width: 1000px) {
+  .classroom_management_table tbody tr td {
+    padding: 5px 5px/* 上下    左右 */
+  }
+}
+hr {
+  border: 1px solid #ddd; /* 设置分隔线的颜色和样式 */
+  margin: 0; /* 去除默认的外边距 */
+}
+
+
+.usagecontent {
+  color:#234C6C!important; }
+
+.classroom_management_table-container p{
+  font-size: 18px;
+  margin-top: 10px;
+
+}
+
+
+
+.classroom_management_rectangle.selected {
+  background-color: rgb(242, 241, 241); /* 替換成你想要的底色 */
+  padding: 5px 30px;/* 上下    左右 */
+  
+}
+.classroom-options {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+
+/*教室資訊修改*/
+.editClassroom_form {
+  margin-top: 15px;
+  width: auto;
+}
+
+
+/*借用鑰匙--------------------------------------------------------------------------------------------------------*/
+.brorrw_rectangle {
+  background-color: #ECF1F9; /* 背景颜色 */
+  padding: 2%; /* 使用百分比或vw适应不同屏幕尺寸 */
+  font-weight: bold;
+  color: #234C6C; /* 文字颜色 */
+  border-radius: 10px; /* 圆角 */
+  position: relative; /* 添加定位 */
+  margin-bottom: 20px;
+  margin-top: 30px;
+  overflow-x: auto; /* 添加这一行来处理水平溢出 */
+  word-break: break-all; /* 添加这一行来处理文本断句 */
+}
+
+.brorrw_rectangle form button {
+  display: block; /* 将按钮转换为块级元素 */
+  margin: 0 auto; /* 自动水平居中 */
+  align-items: center;
+  justify-content: center;
+  background-color: #0F488A;
+  color:#ffffff;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+  width: 40%;
+}
+
+
+p.brorrw_rectangle_tittle{
+  font-size: 20px !important;
+  font-weight: bolder !important;
+}
+
+.navbar-toggler{
+  border-color: #2B4162;
+}
+
+.page_object{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.editClassroom_rectangle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F8F8F8;
+  font-weight: bold;
+  color: #707070;
+  border-radius: 7px 7px 7px 7px; 
+  margin: 10px;
+  word-break: break-all;
+}
+
+.editClassroom_form {
+  width: auto;
+  margin: 5px auto;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* 使用justify-content来水平居中 */
+  margin: 10px;
+}

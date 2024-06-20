@@ -1,0 +1,249 @@
+.form-control{
+    padding: 10px; 
+    max-width: 100%; 
+    height: auto;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.comment-container{
+    margin-top: 10px;
+}
+.comment-box {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#userphoto{
+    border-radius: 50%;
+    width: 4%;
+    height: 4%;
+    margin-right: 10px;
+}
+
+.author-box{
+    background-color: #ededed;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.comment-author {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.comment-time{
+    font-size:12px
+}
+.comment-content {
+    font-size:16px
+}
+
+.message-input{
+    justify-content: center;
+    align-items: center;
+}
+
+#send-message{
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    
+}
+
+#send-message:hover{
+    background-color: transparent;
+}
+
+.form-container {
+    position: absolute;
+    bottom: 0;
+    max-width: 90vw; /* 最大寬度不超過視窗寬度 */
+    max-height: 100vh; /* 最大高度不超過視窗高度 */
+    overflow: auto; /* 超出部分顯示滾動條 */
+}
+
+.form-container{
+    display: flex;
+    width: 100%;
+    border: rgb(174, 174, 174) 0.5px solid;
+    border-radius: 10px;
+    bottom: 0;
+    position: sticky;
+}
+
+
+.container-board{
+    position: sticky;
+    bottom: 0;
+    background-color: #fff; /* 設定背景顏色 */
+    z-index: 9999;
+}
+
+.internship-details {
+    width: 100%;
+    background-color: #f8f9fa; /* Newspaper-like background color */
+    font-family: Arial, sans-serif;
+    color: #333; /* Text color */
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
+    margin-bottom: 20px;
+}
+.internship-details h5 {
+    color: #3b5774; /* Blue color for headings */
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.information{
+    display: flex;
+}
+.id-company {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.id-label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.Question {
+    font-weight: bold;
+}
+
+.badge {
+    margin-left: 10px;
+}
+.preformatted-text {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+    font-size: 15px;
+}
+
+.message-input .form-control {
+    display: block;      /* 確保 div 行為像一個塊級元素 */
+    min-height: 40px;    /* 最小高度 */
+    max-height: 200px;   /* 最大高度，避免無限增長 */
+    width: 100%;         /* 寬度根據父容器調整 */
+    overflow-y: auto;    /* 內容超過最大高度時顯示滾動條 */
+    word-wrap: break-word;/* 斷詞以適應容器寬度 */
+    white-space: pre-wrap;/* 保持空白字符並允許換行 */
+}
+
+.thumbnail {
+    max-width: 100px;  /* 或您想要的具体数值 */
+    max-height: 100px; /* 保持宽高比例相同 */
+    object-fit: cover; /* 保证图片在容器中正确填充 */
+}
+
+/*裡面箭頭的背景*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; 
+    left:100;
+}
+
+/*包著裡面箭頭的背景(左)*/
+.carousel-control-prev{
+    width:20px;
+    right:500;
+}
+
+/*包著裡面箭頭的背景(右)*/
+.carousel-control-next{
+    width:20px;
+    left:500;
+}
+
+.flex-fill {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rounded_img{
+    display: block;
+    margin: 0;
+    height: auto;
+    width:220px;
+    height:188px;
+    background-color: white;
+
+}
+
+.swiper-slide{
+    width:100px;
+}
+
+.display-img{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.few-img{
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.swiper-container {
+    width: 100%; /* 或者更大的固定寬度 */
+}
+
+.swiper-slide {
+    width: auto; /* 自動基於內容確定寬度 */
+    flex-shrink: 0; /* 防止滑動項縮小 */
+}
+
+
+/* 設定分頁點點的顏色 */
+.swiper-pagination-bullet {
+    background: #000000; /* 更改為您想要的顏色，這裡使用黑色作為示例 */
+}
+
+/* 設定當前活動分頁點點的顏色 */
+.swiper-pagination-bullet-active {
+    background: #131212; /* 更改為您想要的顏色，這裡使用白色作為示例 */
+}
+
+.Vicc {
+    margin-top:30px;
+}
+
+.content{
+    width:500px;
+    height:334px;
+    align-items: center;
+    justify-content: center;
+    Display:flex;
+}
+
+.tool{
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

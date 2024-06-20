@@ -1,0 +1,314 @@
+@{
+    ViewData["Title"] = "修改已預約資料"; 
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // 取得 select 元素
+    var selectElement = document.getElementsByName("classroom")[0];
+
+    // 清空原有選項
+    selectElement.innerHTML = "";
+
+    // 添加固定選項
+    var fixedOption = document.createElement("option");
+    fixedOption.value = "";  // 設定選項值
+    fixedOption.textContent = "請選擇要預約的教室";  // 設定顯示文字
+    selectElement.appendChild(fixedOption);
+
+    // 使用 Fetch API 從後端取得教室資料
+    fetch('/ClassroomReserve/GetClassroom', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            // 如果有需要，可以添加 POST 資料
+        })
+    })
+    .then(response => response.json())
+    .then(classrooms => {
+        // 動態生成選項
+        classrooms.forEach(function (classroom) {
+            var option = document.createElement("option");
+            option.value = classroom.classroom_id; // 使用教室代號作為值
+            option.textContent = classroom.classroom_id; // 使用教室代號作為顯示文字
+            selectElement.appendChild(option);
+        });
+
+        // 從 localStorage 中獲取參數
+        var startTime_B = localStorage.getItem('startTime');
+        var endTime_B = localStorage.getItem('endTime');
+        var classroomId_B = localStorage.getItem('classroomId');
+        var reservationtime_B = localStorage.getItem('reservationTime');
+        var studentid_B = localStorage.getItem('Student_id');
+        // 使用 Date 對象來解析時間字符串
+        //var startDate = new Date(startTime_B);
+        //var endDate = new Date(endTime_B);
+
+        // 將日期格式化為 "yyyy-MM-ddTHH:mm" 格式
+        //var formattedStartTime_B = startDate.toISOString().slice(0, 16);
+        //var formattedEndTime_B = endDate.toISOString().slice(0, 16);// 使用 Date 對象來解析時間字符串
+
+
+        document.getElementById('classroomId_B').value = classroomId_B;
+        document.getElementById('studentid_B').value = studentid_B;
+        document.getElementById('reservationtime_B').value = reservationtime_B;
+        
+        
+
+
+        
+
+        console.log("有");
+        
+
+
+        if (startTime_B) {
+            console.log("原始 startTime:", startTime_B);
+
+            // 解析 startTime 的值
+            var dateParts1 = startTime_B.match(/(\d+)\/(\d+)\/(\d+) 上午 (\d+):(\d+):(\d+)/);
+            var dateParts2 = startTime_B.match(/(\d+)\/(\d+)\/(\d+) 下午 (\d+):(\d+):(\d+)/);
+            console.log("原始 dateParts1:", dateParts1);
+            console.log("原始 dateParts2:", dateParts2);
+            var dateParts = "";
+            if (dateParts1 != null) {
+                dateParts = dateParts1;
+            } else {
+                dateParts = dateParts2;
+            }
+
+            console.log("dateParts:", dateParts);
+            if (dateParts) {
+                var year = parseInt(dateParts[1], 10);
+                var month = parseInt(dateParts[2], 10) - 1; // 月份在 JavaScript 中是以 0 到 11 表示的
+                var day = parseInt(dateParts[3], 10);
+                var hours = parseInt(dateParts[4], 10);
+                var minutes = parseInt(dateParts[5], 10);
+                console.log("dateParts[4]", dateParts[4]);
+                console.log("hours", hours);
+                var tenthFromEnd = dateParts[0].charAt(dateParts[0].length - 11); // 取得倒數第10個字元
+
+                if (tenthFromEnd === '下') {
+                    hours += 12;
+                }
+
+                // 建立 Date 物件
+                var date = new Date(year, month, day, hours, minutes);
+                console.log("date:", date);
+                // 檢查是否成功建立有效的日期
+                if (!isNaN(date.getTime())) {
+                    console.log("成功建立有效日期:", date);
+
+                    // 轉換為台北時區
+                    date.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+
+                    // 格式化 Date 物件以符合 datetime-local 欄位的格式
+                    var year = date.getFullYear();
+                    var month = String(date.getMonth() + 1).padStart(2, '0');
+                    var day = String(date.getDate()).padStart(2, '0');
+                    var hours = String(date.getHours()).padStart(2, '0');
+                    var minutes = String(date.getMinutes()).padStart(2, '0');
+
+                    var formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+                    console.log("格式化後的日期字串:", formattedDateTime);
+
+                    // 設置 <input> 欄位的初始值
+                    document.getElementById('starttime').value = formattedDateTime;
+                    document.getElementById('startTime_B').value = formattedDateTime;
+                    
+
+                    // 如果 classroomId 是一個 select 元素的值，則需要找到對應的 option 並將其設為 selected
+                    // 這裡只是一個簡單的範例，實際中你可能需要根據具體情況進行調整
+                    for (var i = 0; i < selectElement.options.length; i++) {
+                        if (selectElement.options[i].value == classroomId_B) {
+                            selectElement.options[i].selected = true;
+                            break;
+                        }
+                    }
+                } else {
+                    console.log("無效的日期格式:", startTime_B);
+                }
+            } else {
+                console.log("日期格式不匹配:", startTime_B);
+            }
+        }
+        if (endTime_B) {
+  
+            var dateParts1 = endTime_B.match(/(\d+)\/(\d+)\/(\d+) 上午 (\d+):(\d+):(\d+)/);
+            var dateParts2 = endTime_B.match(/(\d+)\/(\d+)\/(\d+) 下午 (\d+):(\d+):(\d+)/);
+
+            var dateParts = "";
+            if (dateParts1 != null) {
+                dateParts = dateParts1;
+            } else {
+                dateParts = dateParts2;
+            }
+
+            if (dateParts) {
+                var year = parseInt(dateParts[1], 10);
+                var month = parseInt(dateParts[2], 10) - 1; // 月份在 JavaScript 中是以 0 到 11 表示的
+                var day = parseInt(dateParts[3], 10);
+                var hours = parseInt(dateParts[4], 10);
+                var minutes = parseInt(dateParts[5], 10);
+
+                var tenthFromEnd = dateParts[0].charAt(dateParts[0].length - 11); // 取得倒數第10個字元
+
+                if (tenthFromEnd === '下') {
+                    hours += 12;
+                }
+
+                // 建立 Date 物件
+                var date = new Date(year, month, day, hours, minutes);
+                console.log("date:", date);
+                // 檢查是否成功建立有效的日期
+                if (!isNaN(date.getTime())) {
+                    console.log("成功建立有效日期:", date);
+
+                    // 轉換為台北時區
+                    date.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+
+                    // 格式化 Date 物件以符合 datetime-local 欄位的格式
+                    var year = date.getFullYear();
+                    var month = String(date.getMonth() + 1).padStart(2, '0');
+                    var day = String(date.getDate()).padStart(2, '0');
+                    var hours = String(date.getHours()).padStart(2, '0');
+                    var minutes = String(date.getMinutes()).padStart(2, '0');
+
+                    var formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+                    console.log("格式化後的日期字串:", formattedDateTime);
+
+                    // 設置 <input> 欄位的初始值
+                    document.getElementById('endtime').value = formattedDateTime;
+                    document.getElementById('endTime_B').value = formattedDateTime;
+                    
+                    // 如果 classroomId 是一個 select 元素的值，則需要找到對應的 option 並將其設為 selected
+                    // 這裡只是一個簡單的範例，實際中你可能需要根據具體情況進行調整
+                    for (var i = 0; i < selectElement.options.length; i++) {
+                        if (selectElement.options[i].value == classroomId_B) {
+                            selectElement.options[i].selected = true;
+                            break;
+                        }
+                    }
+                } else {
+                    console.log("無效的日期格式:", endTime);
+                }
+            } else {
+                console.log("日期格式不匹配:", endTime);
+            }
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+
+
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();//阻止表單默認
+
+    // Validate the form
+    if (validateForm()) {
+    
+
+        // 创建 FormData 对象并添加表单数据
+        var formData = new FormData(document.getElementById('bookingForm'));
+    
+
+        // 向后端发送表单数据
+        fetch('/ClassroomReserve/ReviseData', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => {
+            // 处理后端的响应
+            console.log(response);
+        })
+        .catch(error => {
+            // 处理错误
+            console.error('Error:', error);
+        });
+    }
+});
+
+</script>
+
+    <!-- 以下是原本的表單部分 -->
+    <form id="bookingForm" method="post" action="/ClassroomReserve/ReviseData" onsubmit="return validateForm()">
+        <div class="mb-3">
+            <label for="starttime" class="form-label">開始時間</label>
+            <input type="datetime-local" value = "" name="starttime" class="form-control" id="starttime" aria-describedby="emailHelp"  >
+        </div>
+        <div class="mb-3">
+            <label for="endtime" class="form-label">結束時間</label>
+            <input type="datetime-local"  value = ""  name="endtime" class="form-control" id="endtime" aria-describedby="emailHelp"  >
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">教室</label>
+            <select class="form-select" aria-label="Default select example" name="classroom" id="classroom" >
+                <option value="">請選擇要預約的教室</option>
+                <!-- 這裡可能需要動態生成option元素，具體內容根據你的需求而定 -->
+            </select>
+        </div>
+        <input type="hidden" name="startTime_B" id="startTime_B" value="">
+        <input type="hidden" name="endTime_B" id="endTime_B" value="">
+        <input type="hidden" name="classroomId_B" id="classroomId_B" value="">
+        <input type="hidden" name="reservationtime_B" id="reservationtime_B" value="">
+        <input type="hidden" name="studentid_B" id="studentid_B" value="">
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary  me-2">確定修改</button>
+            <button type="button" class="btn btn-danger"  onclick="returnToQueryPage()">取消修改</button>
+        </div>
+        
+    </form>
+<script>
+    function returnToQueryPage() {
+            // 這裡可以使用 JavaScript 進行頁面導航，例如 window.location.href = 'your_query_page_url';
+            window.location.href = '@Url.Action("already_booked", "ClassroomReserve")';
+        }
+
+</script>
+
+<!-- 修改成功跳此框 -->
+@if (ViewBag.ReservationSuccess == true)
+{
+    <!-- 顯示小框（模態框） -->
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>修改成功！</p>
+                    <!-- 不顯示 "確認" 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 在文檔準備就緒時自動顯示模態框
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+
+            // 延遲1，然後重新導向到 booking 頁面
+            setTimeout(function() {
+                window.location.href = '@Url.Action("already_booked", "ClassroomReserve")';
+            }, 800);
+        });
+    </script>
+
+}
+@if (ViewBag.ReservationSuccess == false)
+{
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>修改失敗!</p>
+                    <!-- 不顯示 "確認" 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+}

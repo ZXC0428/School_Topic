@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.first{
+  align-items: center; 
+}
+
+.button-74,.button-19 {
+  position: fixed;
+  min-width: 100px;
+  border: 2px solid #111111;
+  bottom: 20px;
+  right: 20px; 
+  z-index: 9999;
+}
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+.button-19 {
+  appearance: button;
+  background-color: #f4f4f4;
+  border: solid black;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #ce1f25;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+.button-19:active {
+  border-width: 4px 0 0;
+  background: none;
+}
+.find_intern_active{
+  color: black;
+  font-weight: 1000;
+  font-size: 15px;
+} 
+.active{
+  color: rgb(188, 187, 187);
+  font-weight: 1000;
+  font-size: 15px;
+}
+.active:hover,.find_intern_active:hover{
+  color: rgb(0, 0, 0);
+  font-weight: 1000;
+}
+
+.version-container,.content-nav {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  margin-top: 3px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(2, 34, 63, 0.2)
+}
+
+.nav-container{
+  background-color: rgb(242, 241, 241); 
+  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px 0px rgba(89,75,75,1);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(89,75,75,1);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(89,75,75,1);
+  
+}
+.item-location{
+  display: flex;
+}
+.item-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-text{
+  font-size: 25px;
+  margin-right: 20px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: bold;
+}
+
+.item-content,.search,.linkbutton{
+  width: 33%;
+}
+
+.linkbutton {
+  margin-top: auto;
+  margin-left: 30px;
+}
+
+.nav-item-button{
+  background-color: rgb(242, 241, 241);
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a,.dropdown-menu a{
+  text-decoration: none;
+}
+
+.modal-dialog {
+  width: 500px; /* 更新這個值來設定您想要的寬度 */
+  height: 300px; /* 更新這個值來設定您想要的高度 */
+}
+
+.post {
+  background: #fdfcfc;
+  margin: 1px 0;
+  padding: 15px 15px 0px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(2, 34, 63, 0.2)
+}
+
+.post img {
+  max-width: 100%;
+}
+
+.post-name,.post-time,.location-name{
+  color: #444444;
+  text-align: left;
+}
+
+.post-time,.location-name{
+  font-size: 13px;
+  margin-left: 10px;
+  border-bottom: 0.5px #444444 solid;
+}
+
+.post-name{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+.tool-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.tool {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.tool:focus, .tool:active ,.tool:hover{
+  background: none;
+  box-shadow: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.post-content {
+  margin-top: 10px;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight:bold;
+  color:black;
+}
+
+.post-text{
+  font-size: 14px;
+  color: #000000;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.rounded{
+  margin: 15px 5px 0px 30px;
+}
+
+.userbutton{
+  background-color: #f8f9fa;
+  border-top: 1px solid #0000002a;
+  border-bottom: none;;
+  border-left: none;;
+  border-right: none;
+  margin: 8px 0px 0px 0px;
+}
+
+.a-text{
+  float: right;
+  color: #666;
+}
+
+.a-text.message{
+  margin-left: 10px;
+}
+
+.message_text{
+  font-size: 13px;
+}
+
+.btn-light{
+  width:33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.message{
+  margin: 0px 5px 0px 5px;
+}
+
+.thumb.clicked{
+  background-color: blue; 
+}
+
+.uesr-text{
+  font-weight: bold;
+  color: #666;
+}
+
+h5{
+  font-weight: bold; 
+}
+
+.notfound{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.notfound-text{
+  font-size: 30px;
+}
+
+.notfound-All{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+
+
+.form-container {
+  display: flex; /* 啟用flexbox */
+  align-items: center; /* 垂直居中 */
+  justify-content: space-between; /* 元素間隔均勻分佈 */
+}
+
+#MessageForm {
+  flex-grow: 1; /* 表單填滿除按鈕外的所有可用空間 */
+}
+
+.message-input {
+  display: flex;
+  margin-right: 10px; /* 留言框和按鈕之間的間隔 */
+}
+
+.btn-primary {
+  flex-shrink: 0; /* 防止按鈕縮小 */
+}
+
+.modal-body {
+  height: 70vh; /* 或者根據您的需求調整 */
+  overflow-y: auto; /* 允許內容滾動 */
+}
+.modal-dialog-custom {
+
+  max-height: 200px;
+  max-width: 500px;
+}
+
+.modal-body-custom{
+  max-height: 125px;
+  max-width: 500px;
+
+}
+
+.modal-footer{
+  max-width: 500px;
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+  .nav-container {
+    flex-direction: column; 
+  }
+  .linkbutton,.search,.item-content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .post-text{
+    font-size: 12px;
+  }
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+  .item-text{
+    font-size: 20px;
+  }
+  .linkbutton{
+    display: flex;
+    width: 33%;
+  }
+  .company_post-img{
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+  .linkbutton{
+    display: flex;
+    width: 33%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container,.company_item-img,.company_post-img{
+      max-width: 100%;
+  }
+}

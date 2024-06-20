@@ -1,0 +1,134 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+    
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+h1 {
+    color: #8F754F;
+    font-family: "source-han-serif-tw-subset", sans-serif;
+    font-weight: Bold;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    width: 100%;
+    background-color: #D7B377;
+    font-size: 48px;
+    display: flex;
+    justify-content: flex-start; /* 标题左对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    padding-left: 25px; 
+}
+
+p{
+    font-family: "source-han-sans-traditional", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* 垂直居中对齐 */
+    font-size: 14px;
+    padding-left: 50px; 
+    padding-right: 50px;
+    background-color: #D7B377;
+}
+
+.text-muted{
+    color: #8F754F !important;
+    display: flex;
+    text-align: justify;
+    justify-content: space-between; /* 將子元素分散對齊 */
+    align-items: center; /* 垂直居中對齊 */
+}
+
+ul {
+    list-style-type: none;
+}
+
+.card_title{
+    font-size: 36px !important;
+    justify-content: flex-start !important;
+    padding-left:0 !important;
+}
+
+/* .card_content{
+    justify-content: flex-start;
+} */
+
+.class_room_card{
+    color:#2B4162;
+    display: flex;
+    font-size: large;
+    /* justify-content: space-between;  */
+    align-items: center; 
+}
+
+.card_button{
+    font-family: "source-han-sans-traditional", sans-serif;
+    border-radius: 10px;
+    width: 100%;
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.class_room_button{
+    color: #F5F0F6;
+    background-color: #2B4162;
+    border-color: #2B4162;
+    box-shadow:#2B4162;
+}
+
+.ta_card{
+    color:#385F71;
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    align-items: center; 
+}
+
+.ta_button{
+    color: #F5F0F6;
+    background-color: #385F71;
+    border-color: #385F71;
+    box-shadow:#385F71;
+}
+
+.career_card{
+    color:#8F754F;
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    align-items: center; 
+}
+
+.career_button{
+    color: #D7B377;
+    background-color: #8F754F;
+    border-color: #8F754F;
+    box-shadow:#8F754F;
+}

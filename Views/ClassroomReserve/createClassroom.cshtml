@@ -1,0 +1,159 @@
+@{
+    ViewData["Title"] = "新增教室"; 
+}
+
+
+
+
+<div class="editClassroom_rectangle">
+    <div class="editClassroom_form" >
+    <!-- 以下是原本的表單部分 -->
+<form  class="row g-3" id="editForm" enctype="multipart/form-data"  method="post" action="/ClassroomReserve/createClassroom" onsubmit="editdateForm()">
+    <div class="col-md-6"> 
+        <label for="classroomid" class="form-label">教室名稱</label>
+        <input class="form-control" name="classroomid" value="" id="classroomid" >
+    </div>
+    <div class="col-md-6">
+        <label for="Equipment" class="form-label">容納人數</label>
+        <input class="form-control" name="Equipment" value="" id="Equipment">
+    </div>
+    <div class="col-md-6">
+        <label for="Capacity" class="form-label">設備</label>
+        <input class="form-control" name="Capacity" value="" id="Capacity" >
+    </div>
+    <div class="col-md-6">
+        <label for="remark" class="form-label">教室現況</label>
+        <input class="form-control" name="remark" value="" id="remark" >
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>選擇一個選項：</label><br>
+            <input type="radio" id="option1" name="selectOption" value="1">
+            <label for="option1">開放</label><br>
+            <input type="radio" id="option2" name="selectOption" value="0">
+            <label for="option2">不開放預約</label><br>
+        </div>
+    </div>
+   <div class="col-md-6">
+    <label for="photo" class="form-label">教室照片</label><br>
+    <div id="photoContainer"></div>
+    <label for="photo" class="custom-file-upload">
+    <i class="fa fa-cloud-upload"></i> 上傳圖片
+    </label>
+    <input type="file" id="photo" name="photo" accept="image/*" style="display: none;">
+ 
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" id="submitButton" class="btn btn-primary me-2">確定新增</button>
+        <button type="button" class="btn btn-danger"  onclick="returnToQueryPage()">取消新增</button>
+    </div>
+ 
+    
+    
+</form>
+</div>
+</div>
+<script>
+    function returnToQueryPage() {
+            // 這裡可以使用 JavaScript 進行頁面導航，例如 window.location.href = 'your_query_page_url';
+            window.location.href = '@Url.Action("interface_classroom_management", "ClassroomReserve")';
+        }
+
+</script>
+
+
+<!-- 修改成功跳此框 -->
+@if (ViewBag.ReservationSuccess == true)
+{
+    <!-- 顯示小框（模態框） -->
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>修改成功！</p>
+                    <!-- 不顯示 "確認" 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 在文檔準備就緒時自動顯示模態框
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+
+            // 延遲1，然後重新導向到 booking 頁面
+            setTimeout(function() {
+                window.location.href = '@Url.Action("interface_classroom_management", "ClassroomReserve")';
+            }, 800);
+        });
+    </script>
+
+}
+@if (ViewBag.ReservationSuccess == false)
+{
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>修改失敗!</p>
+                    <!-- 不顯示 "確認" 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<script>
+
+
+
+
+
+        
+
+document.getElementById('editForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // 阻止表單默認提交行為
+
+    // 向后端发送表单数据
+    fetch('/ClassroomReserve/createClassroom', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        // 處理後端響應
+        console.log(response);
+    })
+    .catch(error => {
+        // 處理錯誤
+        console.error('Error:', error);
+    });
+});
+
+// 新增事件監聽器，只有當按鈕點擊時才執行表單提交
+document.getElementById('submitButton').addEventListener('click', function(event) {
+    // 手動觸發表單提交
+    document.getElementById('editForm').submit();
+});
+
+</script>
+<script>
+document.getElementById('photo').addEventListener('change', function(event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var newImage = document.createElement('img');
+    newImage.src = e.target.result;
+    newImage.alt = 'New Photo';
+    newImage.style.height = '200px';
+    newImage.style.width = '250px';
+    var photoContainer = document.getElementById('photoContainer');
+    photoContainer.innerHTML = ''; // 清空之前的图片预览
+    photoContainer.appendChild(newImage); // 添加新的图片预览
+    console.log("New Photo File Name:", file.name);
+    document.getElementById('photoName').value = file.name;
+  };
+  reader.readAsDataURL(file);
+});
+   
+</script>

@@ -1,0 +1,342 @@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core.Fluent
+@using X.PagedList.Web.Common
+@model List<student_platformdb.Appointment_record>
+
+@{
+    ViewData["Title"] = "已預約資料"; 
+    var pagedList = (IPagedList)ViewBag.Appointment_record;
+    
+}
+
+<div class="btn_booked">
+    <div class="bookedbtn" id = "booked_bookedbtn" style="background-color: rgb(242, 241, 241);">
+        <p>已預約資料</p>
+    </div>
+    <div class="bookedbtn" id = "history_bookedbtn" >
+        <p>個人歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "key_bookedbtn" >
+        <p>鑰匙借用歷史資料</p>
+    </div>
+</div>
+
+<script>
+    // 按钮元素
+    var bookedBtn = document.getElementById("booked_bookedbtn");
+    var historyBtn = document.getElementById("history_bookedbtn");
+    var keyhistoryBtn = document.getElementById("key_bookedbtn");
+
+    // 點擊處理事項
+    bookedBtn.addEventListener("click", function() {
+        window.location.href = "already_booked"; 
+    });
+
+    historyBtn.addEventListener("click", function() {
+        window.location.href = "history_booked"; 
+    });
+    keyhistoryBtn.addEventListener("click", function() {
+        window.location.href = "keyhistory"; 
+    });
+
+</script>
+
+@if (Model != null  && Model.Count > 0) {
+    <div class="alreadybooked_rectangle" id="bookedContent" >
+        <div class="alreadybooked_table-container">
+            <table class="alreadybooked_table">
+                <thead>
+                    <tr class="usagetitle">
+                        <th>開始時間</th>
+                        <th>結束時間</th>
+                        <th>教室</th>
+                        <th>狀態</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @if(Model != null){
+                    foreach (var alreadydata in Model){
+                        
+                        
+                            <tr class="usagecontent">
+                                <td>
+                                    <div>@Html.Raw(alreadydata.StartTime?.ToString("yyyy-MM-dd ttHH:mm:ss").Replace(" ", "<br>"))</div>
+                                </td>
+                                <td>
+                                    <div>@Html.Raw(alreadydata.EndTime?.ToString("yyyy-MM-dd ttHH:mm:ss").Replace(" ", "<br>"))</div>
+                                </td>
+                                <td>
+                                   <div>@Html.Raw(alreadydata.Classroom_id.Replace(" ", "<br>"))</div>
+                                </td>
+                                <td> @if (alreadydata.State == 0) {
+                                    <text>待審核</text>
+                                    } else if (alreadydata.State == 1) {
+                                        <text>審核成功</text>
+                                    } else if (alreadydata.State == 2) {
+                                        <text>審核失敗</text>}
+                                    else if (alreadydata.State == 3) {
+                                        <text>預約取消</text>}
+                                    else if (alreadydata.State == 4) {
+                                        <text>修改待審核</text>}
+                                </td>
+                                <td><button class="btn btn-primary" onclick="ReviseModal('@alreadydata.StartTime', '@alreadydata.EndTime', '@alreadydata.Classroom_id','@alreadydata.ReservationTime','@alreadydata.Student_id')">修改<br>預約</button></td>
+                                <td><button class="btn btn-danger" onclick="showCancellationSuccessModal1('@alreadydata.StartTime', '@alreadydata.EndTime', '@alreadydata.Classroom_id')">取消<br>預約</button></td>
+                                
+                            </tr>
+                            <tr>
+                                <td colspan="6"><hr size="7"></td> <!-- 使用 colspan 来让分隔线横跨所有列 -->
+                            </tr>
+                    }
+                }
+                else{
+                    <div class="alreadybooked_rectangle" id="bookedContent">
+                        <p>無預約紀錄</p>   
+                    </div>
+                }
+            </tbody>
+            @if (Model != null && pagedList != null)
+            {
+                <td class="text-muted" colspan="5">
+                    第 @(pagedList.PageCount < pagedList.PageNumber ? 0 : pagedList.PageNumber) 頁，共 @pagedList.PageCount 頁。
+                    每頁 @pagedList.PageSize 筆資料，全部共有 @pagedList.TotalItemCount 筆資料。
+                </td>
+
+            }
+            </table>
+            <hr>
+        </div>
+    </div>
+   <div class="page_object">
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="@(pagedList.PageNumber == 1 ? "page-item disabled" : "page-item")">
+                    <a class="page-link" href="@Url.Action("already_booked", new { page = 1 })" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                @foreach (var pageNumber in GeneratePageNumbers(pagedList.PageNumber, pagedList.PageCount))
+                {
+                    if (pageNumber == -1)
+                    {
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                    }
+                    else
+                    {
+                        <li class="@(pagedList.PageNumber == pageNumber ? "page-item active" : "page-item")">
+                            <a class="page-link" href="@Url.Action("already_booked", new { page = pageNumber })">@pageNumber</a>
+                        </li>
+                    }
+                }
+                <li class="@(pagedList.PageNumber == pagedList.PageCount ? "page-item disabled" : "page-item")">
+                    <a class="page-link" href="@Url.Action("already_booked", new { page = pagedList.PageNumber + 1 })">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+}
+else{
+    <div class="alreadybooked_rectangle" id="bookedContent">
+        <div class="alreadybooked_table-container">
+            <p>無預約教室</p>
+        </div>
+    </div>
+
+}
+
+
+
+<div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>是否確定取消預約</p>
+                <button class="btn btn-primary" onclick="confirmCancellation3()">確認</button>
+                <button type="button" class="btn btn-danger" onclick="returnToQueryPage()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="successModal2" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>預約已取消成功</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+@functions {
+    public List<int> GeneratePageNumbers(int currentPage, int totalPages)
+    {
+        var pageNumbers = new List<int>();
+
+        // 添加當前頁面
+        pageNumbers.Add(currentPage);
+
+        // 添加當前頁面的前面幾個頁碼
+        for (int i = currentPage - 1; i >= Math.Max(currentPage - 2, 1); i--)
+        {
+            pageNumbers.Insert(0, i);
+        }
+
+        // 添加當前頁面的後面幾個頁碼
+        for (int i = currentPage + 1; i <= Math.Min(currentPage + 2, totalPages); i++)
+        {
+            pageNumbers.Add(i);
+        }
+
+        // 如果開始沒有1，添加省略號
+        if (!pageNumbers.Contains(1))
+        {
+            pageNumbers.Insert(0, 1);
+            pageNumbers.Insert(1, -1); // 使用-1來表示省略號
+        }
+
+        // 如果結尾不是最後一頁，添加省略號
+        if (!pageNumbers.Contains(totalPages))
+        {
+            pageNumbers.Add(-1); // 使用-1來表示省略號
+            pageNumbers.Add(totalPages);
+        }
+
+        return pageNumbers;
+    }
+}
+
+</script>
+
+<script>
+    function ReviseModal(startTime, endTime, classroomId,reservationTime,Student_id) {
+        // 將相關資料存儲在localStorage中
+        localStorage.setItem('startTime', startTime);
+        localStorage.setItem('endTime', endTime);
+        localStorage.setItem('classroomId', classroomId);
+        localStorage.setItem('reservationTime', reservationTime);
+        localStorage.setItem('Student_id', Student_id);
+
+        console.log('startTime:', startTime); // 檢查 startTime 是否有值
+        console.log('reservationTime:', reservationTime); // 檢查 reservationTime 是否有值
+        console.log('1234564487987456456486748749748');
+
+        var data = {
+        starttime: startTime,
+        endtime: endTime,
+        classroom: classroomId,
+        reservationtime: reservationTime,
+        Student_id: Student_id
+    };
+
+    // 发送 AJAX 请求到后端
+    fetch('/ClassroomReserve/ReviseData', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        // 处理响应
+        return response.json();
+    })
+    .then(data => {
+        // 处理后端返回的数据
+        console.log(data);
+    })
+    .catch(error => {
+        // 处理错误
+        console.error('Error:', error);
+    });
+        // 轉跳到ReviseData.cshtml
+        window.location.href = 'ReviseData';
+    }
+
+
+    //點選取消預約跳出訊息框
+    function showCancellationSuccessModal1(StartTime, EndTime, Classroom_id) {
+        // 使用 jQuery 選擇模態框並顯示
+        $('#successModal').modal('show');
+        // 存儲要取消預約的數據，以便在確認時使用
+        $('#successModal').data('cancellationData', { StartTime: StartTime, EndTime: EndTime, Classroom_id: Classroom_id });
+    }
+    function returnToQueryPage1() {
+        clearTimeout(reloadTimeout); // 清除延遲，避免重複執行重新整理頁面
+        location.reload(); // 重新整理頁面
+    }
+    //不取消返回原頁面
+    function returnToQueryPage() {
+        // 在這裡添加返回查詢頁面的相應邏輯
+        window.location.href = '@Url.Action("already_booked", "ClassroomReserve")';
+    }
+
+    //時間格式轉換
+    function formatDateTime(dateTimeStr) {
+    var parts = dateTimeStr.split(' ');
+    var datePart = parts[0];
+    var amPm = parts[1];
+    var timePart = parts[2];
+
+    // 转换日期格式
+    var dateParts = datePart.split('/');
+    var formattedDate = `${dateParts[0]}-${dateParts[1].padStart(2, '0')}-${dateParts[2].padStart(2, '0')}`;
+
+    // 转换时间为24小时制
+    var timeParts = timePart.split(':');
+    if (amPm === '下午' && +timeParts[0] < 12) {
+        timeParts[0] = (+timeParts[0] + 12).toString();
+    } else if (amPm === '上午' && +timeParts[0] === 12) {
+        timeParts[0] = '00';
+    }
+    var formattedTime = `${timeParts[0].padStart(2, '0')}:${timeParts[1]}:${timeParts[2]}`;
+
+    return `${formattedDate}T${formattedTime}`;
+    }
+
+    
+    //確定取消 將資料傳到後端控制器
+    function confirmCancellation3() {
+        // 取得要取消預約的資訊
+        var cancellationData = $('#successModal').data('cancellationData');
+        console.log("Cancellation Data:", cancellationData);
+
+       // 对StartTime和EndTime进行格式化
+        var formattedStartTime = formatDateTime(cancellationData.StartTime);
+        var formattedEndTime = formatDateTime(cancellationData.EndTime);
+
+        // 使用格式化后的时间...
+        console.log("Formatted StartTime:", formattedStartTime);
+        console.log("Formatted EndTime:", formattedEndTime);
+        var requestData = {
+            // 假设这里是其他需要发送的数据
+            StartTime: formattedStartTime,
+            EndTime: formattedEndTime,
+            Classroom_id : cancellationData.Classroom_id
+        };
+
+        // 使用 Axios 發送 POST 請求
+        axios.post('/ClassroomReserve/already_booked', requestData)
+            .then(response => handleSuccess3(response.data))
+            .catch(error => handleError(error));
+    }
+
+    function handleSuccess3(data) {
+        // 成功取消跳這邊
+        if (data.success) {
+            $('#successModal').modal('hide'); // 隱藏其他 Modal
+            $('#successModal2').modal('show'); // 先顯示 Modal
+            setTimeout(function() {
+                location.reload(); // 重新整理頁面
+            }, 800);
+            
+        } else {
+            alert('取消預約失敗！' + data.message);
+        }
+    }
+
+    function handleError(error) {
+         處理錯誤
+        alert('取消預約失敗！');
+        console.error('Fetch Error:', error);
+    }
+</script>
+

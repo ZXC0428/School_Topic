@@ -1,0 +1,1030 @@
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\appsettings.json
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.exe
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.deps.json
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.pdb
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.pdb
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Owin.dll
+D:\Student_web\bin\Debug\net6.0\appsettings.Development.json
+D:\Student_web\bin\Debug\net6.0\appsettings.json
+D:\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+D:\Student_web\bin\Debug\net6.0\Student_web.exe
+D:\Student_web\bin\Debug\net6.0\Student_web.deps.json
+D:\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+D:\Student_web\bin\Debug\net6.0\Student_web.dll
+D:\Student_web\bin\Debug\net6.0\Student_web.pdb
+D:\Student_web\bin\Debug\net6.0\Azure.Core.dll
+D:\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+D:\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+D:\Student_web\bin\Debug\net6.0\Humanizer.dll
+D:\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+D:\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+D:\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Student_web\bin\Debug\net6.0\MySql.Data.dll
+D:\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+D:\Student_web\bin\Debug\net6.0\ZstdNet.dll
+D:\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+D:\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+D:\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Student_web\bin\Debug\net6.0\Owin.dll
+D:\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+D:\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+D:\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+D:\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+D:\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+D:\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+D:\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+D:\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+D:\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+D:\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+D:\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+D:\Student_web\obj\Debug\net6.0\Student_web.dll
+D:\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+D:\Student_web\obj\Debug\net6.0\Student_web.pdb
+D:\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+D:\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+D:\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.dll
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.pdb
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\appsettings.json
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Student_web.exe
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Student_web.deps.json
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Student_web.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Student_web.pdb
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Humanizer.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Owin.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\asus\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+C:\Users\asus\Desktop\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\appsettings.json
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.exe
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.deps.json
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Student_web.pdb
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Humanizer.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Owin.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\88696\OneDrive\桌面\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.dll
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.pdb
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+C:\Users\88696\OneDrive\桌面\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+c:\Student_web\bin\Debug\net6.0\appsettings.Development.json
+c:\Student_web\bin\Debug\net6.0\appsettings.json
+c:\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+c:\Student_web\bin\Debug\net6.0\Student_web.exe
+c:\Student_web\bin\Debug\net6.0\Student_web.deps.json
+c:\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+c:\Student_web\bin\Debug\net6.0\Student_web.dll
+c:\Student_web\bin\Debug\net6.0\Student_web.pdb
+c:\Student_web\bin\Debug\net6.0\Azure.Core.dll
+c:\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+c:\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+c:\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+c:\Student_web\bin\Debug\net6.0\Humanizer.dll
+c:\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+c:\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+c:\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+c:\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+c:\Student_web\bin\Debug\net6.0\MySql.Data.dll
+c:\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+c:\Student_web\bin\Debug\net6.0\ZstdNet.dll
+c:\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+c:\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+c:\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+c:\Student_web\bin\Debug\net6.0\Owin.dll
+c:\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+c:\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+c:\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+c:\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+c:\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+c:\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+c:\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+c:\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+c:\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+c:\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+c:\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+c:\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+c:\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+c:\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+c:\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+c:\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+c:\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+c:\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+c:\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+c:\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+c:\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+c:\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+c:\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+c:\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+c:\Student_web\obj\Debug\net6.0\Student_web.dll
+c:\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+c:\Student_web\obj\Debug\net6.0\Student_web.pdb
+c:\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+c:\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+D:\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\appsettings.json
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Student_web.exe
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Student_web.deps.json
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Student_web.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Student_web.pdb
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Humanizer.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Owin.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\PdfSharp.Charting.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\PdfSharp.Quality.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\PdfSharp.Snippets.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\PdfSharp.System.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\PdfSharp.WPFonts.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\PdfSharp.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\de\PdfSharp.Charting.resources.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\de\PdfSharp.resources.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.pdb
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+C:\Users\leoan\OneDrive\桌面\school project\0410\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+C:\0410\Student_web\bin\Debug\net6.0\appsettings.Development.json
+C:\0410\Student_web\bin\Debug\net6.0\appsettings.json
+C:\0410\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+C:\0410\Student_web\bin\Debug\net6.0\Student_web.exe
+C:\0410\Student_web\bin\Debug\net6.0\Student_web.deps.json
+C:\0410\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+C:\0410\Student_web\bin\Debug\net6.0\Student_web.dll
+C:\0410\Student_web\bin\Debug\net6.0\Student_web.pdb
+C:\0410\Student_web\bin\Debug\net6.0\Azure.Core.dll
+C:\0410\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+C:\0410\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\0410\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+C:\0410\Student_web\bin\Debug\net6.0\Humanizer.dll
+C:\0410\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\0410\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\0410\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\0410\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\0410\Student_web\bin\Debug\net6.0\MySql.Data.dll
+C:\0410\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\0410\Student_web\bin\Debug\net6.0\ZstdNet.dll
+C:\0410\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+C:\0410\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+C:\0410\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\0410\Student_web\bin\Debug\net6.0\Owin.dll
+C:\0410\Student_web\bin\Debug\net6.0\PdfSharp.Charting.dll
+C:\0410\Student_web\bin\Debug\net6.0\PdfSharp.Quality.dll
+C:\0410\Student_web\bin\Debug\net6.0\PdfSharp.Snippets.dll
+C:\0410\Student_web\bin\Debug\net6.0\PdfSharp.System.dll
+C:\0410\Student_web\bin\Debug\net6.0\PdfSharp.WPFonts.dll
+C:\0410\Student_web\bin\Debug\net6.0\PdfSharp.dll
+C:\0410\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\0410\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\0410\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\0410\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\0410\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+C:\0410\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\0410\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\0410\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\0410\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\0410\Student_web\bin\Debug\net6.0\de\PdfSharp.Charting.resources.dll
+C:\0410\Student_web\bin\Debug\net6.0\de\PdfSharp.resources.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\0410\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+C:\0410\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+C:\0410\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+C:\0410\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\0410\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+C:\0410\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.dll
+C:\0410\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.pdb
+C:\0410\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+C:\0410\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\appsettings.json
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Student_web.exe
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Student_web.deps.json
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Student_web.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Student_web.pdb
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Humanizer.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Owin.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\PdfSharp.Charting.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\PdfSharp.Quality.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\PdfSharp.Snippets.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\PdfSharp.System.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\PdfSharp.WPFonts.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\PdfSharp.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\de\PdfSharp.Charting.resources.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\de\PdfSharp.resources.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.pdb
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+C:\Users\leoan\OneDrive\桌面\school project\0413\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.pdb
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\appsettings.Development.json
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\appsettings.json
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Student_web.exe
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Student_web.deps.json
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Student_web.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Student_web.pdb
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Azure.Core.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Humanizer.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\MySql.Data.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\ZstdNet.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Owin.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\PdfSharp.Charting.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\PdfSharp.Quality.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\PdfSharp.Snippets.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\PdfSharp.System.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\PdfSharp.WPFonts.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\PdfSharp.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\X.PagedList.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\X.PagedList.Web.Common.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\de\PdfSharp.Charting.resources.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\de\PdfSharp.resources.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cs
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+c:\Users\88696\OneDrive\桌面\整合\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\X.PagedList.Web.Common.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\ClosedXML.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\ClosedXML.Parser.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\ExcelNumberFormat.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\RBush.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\SixLabors.Fonts.dll
+C:\Users\Chia0\OneDrive\桌面\Student_web\bin\Debug\net6.0\System.IO.Packaging.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\appsettings.Development.json
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\appsettings.json
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Student_web.exe
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Student_web.deps.json
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Student_web.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Student_web.pdb
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Azure.Core.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\ClosedXML.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\ClosedXML.Parser.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\DocumentFormat.OpenXml.Framework.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\ExcelNumberFormat.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Humanizer.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\MySql.Data.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\ZstdNet.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Owin.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\RBush.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\SixLabors.Fonts.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.IO.Packaging.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\X.PagedList.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\X.PagedList.Web.Common.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cs
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.pdb
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+c:\Users\88696\OneDrive\桌面\ScholaLink\Student_web\obj\Debug\net6.0\ref\Student_web.dll
+D:\Student_web\bin\Debug\net6.0\ClosedXML.dll
+D:\Student_web\bin\Debug\net6.0\ClosedXML.Parser.dll
+D:\Student_web\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+D:\Student_web\bin\Debug\net6.0\DocumentFormat.OpenXml.Framework.dll
+D:\Student_web\bin\Debug\net6.0\ExcelNumberFormat.dll
+D:\Student_web\bin\Debug\net6.0\RBush.dll
+D:\Student_web\bin\Debug\net6.0\SixLabors.Fonts.dll
+D:\Student_web\bin\Debug\net6.0\System.IO.Packaging.dll
+D:\Student_web\bin\Debug\net6.0\X.PagedList.dll
+D:\Student_web\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+D:\Student_web\bin\Debug\net6.0\X.PagedList.Web.Common.dll
+D:\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\appsettings.json
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Student_web.staticwebassets.runtime.json
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Student_web.exe
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Student_web.deps.json
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Student_web.runtimeconfig.json
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Student_web.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Student_web.pdb
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\ClosedXML.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\ClosedXML.Parser.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\ExcelNumberFormat.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Humanizer.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\ZstdNet.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Owin.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\RBush.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\SixLabors.Fonts.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.IO.Packaging.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\X.PagedList.Web.Common.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\Desktop\Student_web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.AssemblyInfo.cs
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cache
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.RazorAssemblyInfo.cs
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\scopedcss\bundle\Student_web.styles.css
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\scopedcss\projectbundle\Student_web.bundle.scp.css
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.csproj.CopyComplete
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.dll
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\refint\Student_web.dll
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.pdb
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\Student_web.genruntimeconfig.cache
+C:\Users\user\Desktop\Student_web\obj\Debug\net6.0\ref\Student_web.dll

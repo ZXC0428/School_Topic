@@ -1,0 +1,126 @@
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+@model Student_web.Models.LoginViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>系所資源預約與未來職業統計之學生平台-ScholaLink</title>
+  <link rel="icon" href="~/Resource/LOGO.png" type="image/x-icon" />
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+  <link href="~/css/Login.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="~/snowman.png" type="image/x-icon" />
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h3 class="logo">ScholaLink</h3>
+    <form action="/Member/Login" method="POST">
+        <div class="form-floating mb-3">
+          @Html.EditorFor(model => model.member.studentID, new { htmlAttributes = new { @class = "form-control", @type = "account", @id = "account", placeholder = "輸入帳號" } })
+          <label for="floatingPassword" class="form-label">帳號</label>
+        </div>
+
+        <div class="form-floating">
+          @Html.EditorFor(model => model.member.password, new { htmlAttributes = new { @class = "form-control", @type = "password", @id = "password", placeholder = "輸入密碼" } })
+          <label for="floatingPassword" class="form-label">密碼</label>
+          <div><i id="checkEye" class="fas fa-eye"></i></div>
+        </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <button type="submit" class="btn btn-login" href="javascript: void(0)">登入</button>
+    </form>
+
+    <form method="post" action="/Career/InputCode">
+      <div class="input-group flex-nowrap randomCode">
+        <span class="input-group-text" id="addon-wrapping">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building-fill-lock" viewBox="0 0 16 16">
+            <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.764a3 3 0 0 0-4.989 2.497 2 2 0 0 0-.743.739H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5"/>
+            <path d="M9 13a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1"/>
+          </svg>
+        </span>
+        <input type="text" class="form-control input-code" name="randomCode" placeholder="請輸入公司代碼" aria-describedby="addon-wrapping">
+        <button type="submit" class="btn btn-dark">送出</button>
+      </div>
+    </form>
+  </div>
+  <div>
+    
+  </div>
+  @if (TempData["SuccessfulPost"]!= null && (bool)TempData["SuccessfulPost"])
+  {
+      <script>
+          Swal.fire({
+              title: "Successful",
+              text: "公司的貼文已發佈成功",
+              icon: "success"
+          });
+      </script>
+      TempData["SuccessfulPost"] = false;
+  }
+  @if (TempData["ErrorCode"]!= null && (bool)TempData["ErrorCode"])
+  {
+      <script>
+          Swal.fire({
+              icon: 'error',
+              title: '輸入代碼無效',
+              text: '洽詢國立虎尾科技大學資管三優6人小組【05-6315731】',
+          });
+      </script>
+      TempData["ErrorCode"] = false;
+  }
+  @if (TempData["NoCode"]!= null && (bool)TempData["NoCode"])
+  {
+      <script>
+          Swal.fire({
+              icon: 'warning',
+              title: '未輸入代碼',
+              text: '請再輸入一次',
+          });
+      </script>
+      TempData["NoCode"] = false;
+  }
+  @if (TempData["SuccessfulEdit"]!= null && (bool)TempData["SuccessfulEdit"])
+  {
+      <script>
+          Swal.fire({
+              title: "Successful",
+              text: "您的公司貼文修改成功",
+              icon: "success"
+          });
+      </script>
+      TempData["SuccessfulEdit"] = false;
+  }
+  <script>
+    var checkEye = document.getElementById("checkEye");
+    var password =  document.getElementById("password");
+
+    checkEye.addEventListener("click", function(e){
+      if(e.target.classList.contains('fa-eye')){
+        e.target.classList.remove('fa-eye');
+        e.target.classList.add('fa-eye-slash');
+        password.setAttribute('type','text')
+      }
+      else{
+        password.setAttribute('type','password');
+        e.target.classList.remove('fa-eye-slash');
+        e.target.classList.add('fa-eye')
+      }
+    });
+
+    $("#checkEye").click(function () {
+      if($(this).hasClass('fa-eye')){
+        $("#password").attr('type', 'text');
+      }
+      else{
+        $("#password").attr('type', 'password');
+      }
+      $(this).toggleClass('fa-eye').toggleClass('fa-eye-slash');
+    });
+  </script>
+</body>

@@ -1,0 +1,490 @@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core.Fluent
+@using X.PagedList.Web.Common
+@model List<student_platformdb.Appointment_record>
+
+@{
+    ViewData["Title"] = "管理者介面"; 
+    var pagedList = (IPagedList)ViewBag.Appointment_record;
+    
+}
+
+<div class="btn_booked">
+    <div class="bookedbtn" id = "review_bookedbtn" style="background-color: rgb(242, 241, 241);" >
+        <p>預約教室審核</p>
+    </div>
+    <div class="bookedbtn" id = "history_bookedbtn" >
+        <p>預約教室歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "key_bookedbtn" >
+        <p>鑰匙管理</p>
+    </div>
+    <div class="bookedbtn" id = "keyhistory_bookedbtn" >
+        <p>鑰匙歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "classroom_bookedbtn" >
+        <p>教室介面修改</p>
+    </div>
+    <div class="bookedbtn" id = "rule_bookedbtn" >
+        <p>預約規則修改</p>
+    </div>
+</div>
+
+@if (Model != null  && Model.Count > 0) {
+    <div class="classroom_management_rectangle" id="reviewContent">
+    <div class="classroom_management_table-container">
+        <table class="classroom_management_table">
+            <thead>
+                <tr class="usagetitle">
+                    <th>開始時間</th>
+                    <th>結束時間</th>
+                    <th>教室</th>
+                    <th>班級</th>
+                    <th>學號</th>
+                    <th>姓名</th>
+                    <th>狀態</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model != null) {
+                    @foreach (var bookingdata in Model) {
+                        <tr class="usagecontent">
+                            <td> 
+                                <div>@Html.Raw(bookingdata.StartTime?.ToString("yyyy-MM-dd ttHH:mm:ss").Replace(" ", "<br>"))</div>
+                            </td>
+                            <td>
+                                <div>@Html.Raw(bookingdata.EndTime?.ToString("yyyy-MM-dd ttHH:mm:ss").Replace(" ", "<br>"))</div>
+                            </td>
+                            <td>
+                                <div>@Html.Raw(bookingdata.Classroom_id.Replace(" ", "<br>"))</div>
+                            </td>
+                            <td>
+                                <div>@bookingdata.Class</div>
+                            </td>
+                            <td>
+                                <div>@bookingdata.Student_id</div>
+                            </td>
+                            <td>
+                                <div>@bookingdata.Student_name</div>
+                            </td>
+                            <td> @if (bookingdata.State == 0) {
+                                    <text>待審核</text>
+                                    } else if (bookingdata.State == 1) {
+                                        <text>審核成功</text>
+                                    } else if (bookingdata.State == 2) {
+                                        <text>審核失敗</text>}
+                                    else if (bookingdata.State == 3) {
+                                        <text>預約取消</text>}
+                                    else if (bookingdata.State == 4) {
+                                        <text>修改待審核</text>}
+                            </td>
+                            <td>
+                                <button class="btn btn-primary" onclick="showCancellationSuccessModal('@bookingdata.StartTime', '@bookingdata.EndTime', '@bookingdata.Classroom_id', '@bookingdata.Student_id')">允許<br>預約</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" onclick="rejectModal('@bookingdata.StartTime', '@bookingdata.EndTime', '@bookingdata.Classroom_id' , '@bookingdata.Student_id')">拒絕<br>預約</button>
+                            </td>
+                        </tr>
+                      
+                      
+                        <tr class="usagecontent">
+                            <td colspan="7">
+                                <div style="background-color: white; colrgb(13, 24, 61)blue; border-radius: 10px; padding: 10px; margin-top: 10px;  text-align: left;width: 100%;">
+                                    預約時間   :  @bookingdata.ReservationTime<br>
+                                    預約用途   :  @bookingdata.Use
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">
+                                <hr size="7">
+                            </td>
+                        </tr>
+                    }
+                } else {
+                    <div class="classroom_management_rectangle" id="reviewContent">
+                        <p>無預約紀錄</p>
+                    </div>
+                }
+            </tbody>
+            @if (Model != null && pagedList != null)
+            {
+                <td class="text-muted" colspan="5" style="padding: 0px !important;">
+                    第 @(pagedList.PageCount < pagedList.PageNumber ? 0 : pagedList.PageNumber) 頁，共 @pagedList.PageCount 頁。
+                    每頁 @pagedList.PageSize 筆資料，全部共有 @pagedList.TotalItemCount 筆資料。
+                </td>
+
+            }
+        </table>
+        <hr>
+    </div>
+</div>
+<div class="page_object">
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="@(pagedList.PageNumber == 1 ? "page-item disabled" : "page-item")">
+                <a class="page-link" href="@Url.Action("booked_classroom_management", new { page = 1 })" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            @foreach (var pageNumber in GeneratePageNumbers(pagedList.PageNumber, pagedList.PageCount))
+            {
+                if (pageNumber == -1)
+                {
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                }
+                else
+                {
+                    <li class="@(pagedList.PageNumber == pageNumber ? "page-item active" : "page-item")">
+                        <a class="page-link" href="@Url.Action("booked_classroom_management", new { page = pageNumber })">@pageNumber</a>
+                    </li>
+                }
+            }
+            <li class="@(pagedList.PageNumber == pagedList.PageCount ? "page-item disabled" : "page-item")">
+                <a class="page-link" href="@Url.Action("booked_classroom_management", new { page = pagedList.PageNumber + 1 })">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+}
+else{
+    <div class="classroom_management_rectangle" id="reviewContent">
+        <div class="classroom_management_table-container">
+            <p>無預約教室</p>
+        </div>
+    </div>
+
+}
+
+
+
+<script>
+    // 获取按钮元素
+    var reviewBtn = document.getElementById("review_bookedbtn");
+    var historyBtn = document.getElementById("history_bookedbtn");
+    var keyBtn = document.getElementById("key_bookedbtn");
+     var keyhistoryBtn = document.getElementById("keyhistory_bookedbtn");
+    var classroomBtn = document.getElementById("classroom_bookedbtn");
+    var ruleBtn = document.getElementById("rule_bookedbtn");
+
+    // 添加点击事件处理程序
+    reviewBtn.addEventListener("click", function() {
+        window.location.href = "booked_classroom_management"; // 将页面重定向到“review_page.html”
+    });
+
+    historyBtn.addEventListener("click", function() {
+        window.location.href = "history_classroom_management"; // 将页面重定向到“history_page.html”
+    });
+
+    keyBtn.addEventListener("click", function() {
+        window.location.href = "key_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+    keyhistoryBtn.addEventListener("click", function() {
+        window.location.href = "keyhistory_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+
+    classroomBtn.addEventListener("click", function() {
+        window.location.href = "interface_classroom_management"; // 将页面重定向到“classroom_interface_page.html”
+    });
+
+    ruleBtn.addEventListener("click", function() {
+        window.location.href = "rule__classroom_management"; // 将页面重定向到“rule_modify_page.html”
+    });
+</script>
+
+<script>
+    //點選取消預約跳出訊息框
+    function showCancellationSuccessModal(StartTime, EndTime, Classroom_id,Student_id) {
+        // 使用 jQuery 選擇模態框並顯示
+        $('#successModal').modal('show');
+        // 存儲要取消預約的數據，以便在確認時使用
+        $('#successModal').data('cancellationData', { StartTime: StartTime, EndTime: EndTime, Classroom_id: Classroom_id ,Student_id: Student_id});
+    }
+    function returnToQueryPage1() {
+        clearTimeout(reloadTimeout); // 清除延遲，避免重複執行重新整理頁面
+        location.reload(); // 重新整理頁面
+    }
+    //不取消返回原頁面
+    function returnToQueryPage() {
+        // 在這裡添加返回查詢頁面的相應邏輯
+        window.location.href = '@Url.Action("booked_classroom_management", "ClassroomReserve")';
+    }
+
+    //時間格式轉換
+    function formatDateTime(dateTimeStr) {
+    var parts = dateTimeStr.split(' ');
+    var datePart = parts[0];
+    var amPm = parts[1];
+    var timePart = parts[2];
+
+    // 轉換日期格式
+    var dateParts = datePart.split('/');
+    var formattedDate = `${dateParts[0]}-${dateParts[1].padStart(2, '0')}-${dateParts[2].padStart(2, '0')}`;
+
+    // 轉換時間為24小時制
+    var timeParts = timePart.split(':');
+    if (amPm === '下午' && +timeParts[0] < 12) {
+        timeParts[0] = (+timeParts[0] + 12).toString();
+    } else if (amPm === '上午' && +timeParts[0] === 12) {
+        timeParts[0] = '00';
+    }
+    var formattedTime = `${timeParts[0].padStart(2, '0')}:${timeParts[1]}:${timeParts[2]}`;
+
+    return `${formattedDate}T${formattedTime}`;
+    }
+
+    
+    //確定取消 將資料傳到後端控制器
+    function confirmCancellation() {
+        // 取得要取消預約的資訊
+        var cancellationData = $('#successModal').data('cancellationData');
+        console.log("Cancellation Data:", cancellationData);
+
+       // 時間轉換
+        var formattedStartTime = formatDateTime(cancellationData.StartTime);
+        var formattedEndTime = formatDateTime(cancellationData.EndTime);
+        // 資料存到requestData傳到後端
+        var requestData = {
+            StartTime: formattedStartTime,
+            EndTime: formattedEndTime,
+            Classroom_id : cancellationData.Classroom_id,
+            Student_id : cancellationData.Student_id
+        };
+        console.log("要發送的 JSON 數據：", JSON.stringify(requestData));
+
+        // 使用 Axios 發送 POST 請求
+        axios.post('/ClassroomReserve/booked_classroom_management', requestData)
+            .then(response => handleSuccess(response.data))
+            .catch(error => handleError(error));
+    }
+
+    function handleSuccess(data) {
+        // 成功取消跳這邊
+        if (data.success) {
+            $('#successModal').modal('hide'); // 隱藏其他 Modal
+            $('#successModal2').modal('show'); // 先顯示 Modal
+            setTimeout(function() {
+                location.reload(); // 重新整理頁面
+            }, 800);
+            
+        } else {
+            alert('取消預約失敗！' + data.message);
+        }
+    }
+
+    function handleError(error) {
+         處理錯誤
+        alert('取消預約失敗！');
+        console.error('Fetch Error:', error);
+    }
+</script>
+
+
+<div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>確定允許預約</p>
+                <button class="btn btn-primary" onclick="confirmCancellation()">確認</button>
+                <button type="button" class="btn btn-danger" onclick="returnToQueryPage()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 預約教室審核 預約審核成功 -->
+<div id="successModal2" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>預約已審核成功</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 預約教室審核 預約審核未成功 -->
+<div id="rejectmessage" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>預約失敗原因</p>
+                <div id="errorMessage"></div>
+                <div id="successMessage"></div>
+                <div id="reasonForm">
+                    <div class="form-group">
+                        <label>選擇一個選項：</label><br>
+                        <input type="radio" id="option1" name="selectOption" value="使用用途不合理">
+                        <label for="option1">使用用途不合理</label><br>
+                        <input type="radio" id="option2" name="selectOption" value="時間與系上活動使用時間衝突">
+                        <label for="option2">時間與系上活動使用時間衝突</label><br>
+                        <input type="radio" id="option3" name="selectOption" value="其他原因">
+                        <label for="option3">其他原因：</label>
+                        <input type="text" class="form-control" id="inputData" name="inputData" placeholder="輸入資料">
+                    </div>
+                    <button class="btn btn-primary" onclick="confirmCancellation1()">提交</button>
+                    <button type="button" class="btn btn-danger" onclick="returnToQueryPage()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="rejectmessage2" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>預約失敗理由已傳送</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+// 在選項改變時觸發的函數
+function handleOptionChange() {
+    var selectOption = document.getElementById("selectOption");
+    var inputData = document.getElementById("inputData");
+
+    // 如果選擇了選項
+    if (selectOption.value !== "") {
+        // 禁用輸入框
+        inputData.disabled = true;
+        // 清空輸入框的值
+        inputData.value = "";
+    } else {
+        // 否則啟用輸入框
+        inputData.disabled = false;
+    }
+}
+
+
+    //拒絕預約跳出訊息框
+    function rejectModal(StartTime, EndTime, Classroom_id,Student_id) {
+        // 使用 jQuery 選擇模態框並顯示
+        $('#rejectmessage').modal('show');
+        // 存儲要取消預約的數據，以便在確認時使用
+        $('#rejectmessage').data('cancellationData1', { StartTime: StartTime, EndTime: EndTime, Classroom_id: Classroom_id ,Student_id: Student_id});
+    }
+  
+    
+    //確定取消 將資料傳到後端控制器
+    function confirmCancellation1() {
+        // 取得要取消預約的資訊
+        var cancellationData1 = $('#rejectmessage').data('cancellationData1');
+        console.log("Cancellation Data:", cancellationData1);
+
+       // 時間轉換
+        var formattedStartTime = formatDateTime(cancellationData1.StartTime);
+        var formattedEndTime = formatDateTime(cancellationData1.EndTime);
+
+        // 拒絕預約理由
+        // 獲取選擇的選項
+        var selectedOption = $('input[name=selectOption]:checked').val();
+
+        // 如果選擇了其他原因
+        if (selectedOption === '其他原因') {
+            // 獲取輸入的其他原因
+            var otherReason = $('#inputData').val();
+            Reasondata = otherReason;
+            // 如果沒有輸入其他原因，提示用戶輸入
+            if (!otherReason) {
+                alert("請輸入其他原因");
+                return; // 避免提交
+            }
+        }else{
+            Reasondata = selectedOption;
+
+        }
+        // 資料存到requestData傳到後端
+        var requestData = {
+            StartTime: formattedStartTime,
+            EndTime: formattedEndTime,
+            Classroom_id : cancellationData1.Classroom_id,
+            Student_id : cancellationData1.Student_id,
+            Reason : Reasondata
+        };
+        console.log("要發送的 JSON 數據：", JSON.stringify(requestData));
+
+        // 使用 Axios 發送 POST 請求
+        axios.post('/ClassroomReserve/booked_classroom_management', requestData)
+            .then(response => handleSuccess1(response.data))
+            .catch(error => handleError(error));
+        
+    }
+
+    function handleSuccess1(data) {
+        // 成功取消跳這邊
+        if (data.success) {
+            $('#rejectmessage').modal('hide'); // 隱藏其他 Modal
+            $('#rejectmessage2').modal('show'); // 先顯示 Modal
+            setTimeout(function() {
+                location.reload(); // 重新整理頁面
+            }, 800);
+            
+        } else {
+            alert('取消預約失敗！' + data.message);
+        }
+    }
+
+    function handleError(error) {
+         處理錯誤
+        alert('取消預約失敗！');
+        console.error('Fetch Error:', error);
+    }
+
+
+
+// 在頁面加載完成後綁定選項改變事件
+window.onload = function() {
+    var selectOption = document.getElementById("selectOption");
+    // 綁定事件
+    selectOption.addEventListener("change", handleOptionChange);
+}
+</script>
+
+
+<script>
+@functions {
+    public List<int> GeneratePageNumbers(int currentPage, int totalPages)
+    {
+        var pageNumbers = new List<int>();
+
+        // 添加當前頁面
+        pageNumbers.Add(currentPage);
+
+        // 添加當前頁面的前面幾個頁碼
+        for (int i = currentPage - 1; i >= Math.Max(currentPage - 2, 1); i--)
+        {
+            pageNumbers.Insert(0, i);
+        }
+
+        // 添加當前頁面的後面幾個頁碼
+        for (int i = currentPage + 1; i <= Math.Min(currentPage + 2, totalPages); i++)
+        {
+            pageNumbers.Add(i);
+        }
+
+        // 如果開始沒有1，添加省略號
+        if (!pageNumbers.Contains(1))
+        {
+            pageNumbers.Insert(0, 1);
+            pageNumbers.Insert(1, -1); // 使用-1來表示省略號
+        }
+
+        // 如果結尾不是最後一頁，添加省略號
+        if (!pageNumbers.Contains(totalPages))
+        {
+            pageNumbers.Add(-1); // 使用-1來表示省略號
+            pageNumbers.Add(totalPages);
+        }
+
+        return pageNumbers;
+    }
+}
+
+</script>

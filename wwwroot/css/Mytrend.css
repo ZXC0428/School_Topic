@@ -1,0 +1,357 @@
+.trend-item {
+    display: flex;
+    justify-content: center;
+    border-bottom: 0.5px solid #cbcbcb;
+}
+
+.link, .mypost, .mypost-left, .link-left {
+    width: 15%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    margin-right: 5px;
+}
+
+.mypost-left, .mypost-left:hover{
+    border-left: 5px solid #000;
+}
+
+.mypost, .mypost:hover {
+    border-bottom: 3px solid #000;
+}
+
+.link:hover, .user-text:hover, a.nav-link.user-text:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+.user-text {
+    margin-left: -10px;
+    color: #9f9f9f;
+    font-weight: bold;
+}
+.SE{
+    fill: #eb942f;
+}
+.FI{
+    fill: #00AEAE;
+}
+.SI{
+    fill: #e7c800;
+}
+.item-nav{
+    fill: #9f9f9f;
+}
+.btn.link-left:hover .nav-work, .btn.link-left:hover .nav-link.user-text {
+    fill: #000000;;
+    color: black;
+}
+
+.btn.link:hover .find-company, .btn.link:hover .nav-link.user-text {
+    fill: #00AEAE;
+    color: black;
+}
+
+.btn.link:hover .emp, .btn.link:hover .nav-link.user-text {
+    fill: #eb942f;
+    color: black;
+}
+
+.btn.link:hover .intern, .btn.link:hover .nav-link.user-text {
+    fill: #e7c800;;
+    color: black;
+}
+
+.btn.link:hover .find-company, .btn.link:hover .nav-link.user-text {
+    fill: #00AEAE;
+    color: black;
+}
+
+.btn.link:hover .emp, .btn.link:hover .nav-link.user-text {
+    fill: #eb942f;
+    color: black;
+}
+
+.mypost-text, .mypost-text:hover {
+    margin-left: -10px;
+    color: #000;
+    font-weight: bold;
+}
+
+svg:hover {
+    fill: black;
+}
+
+.trend {
+    height: 650px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+
+.flex_container {
+    justify-content: center;
+    width: 15%;
+
+}
+
+.name-photo, .dept, .Click-time {
+    margin: 0px 10px 0px 10px;
+}
+.name-photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name,.Click-time{
+    font-weight: bold;
+}
+
+.datamodel, .datamodel:hover {
+    width: 100%;
+    background: #edf1f8;
+    text-align: left;
+    border: none;
+    border-radius: 0;
+    border-bottom: 0.5px solid #cbcbcb;
+}
+
+.content-text {
+    white-space: pre-wrap;
+    margin: 10px 2px 6px 10px;
+    
+}
+
+.post_item {
+    color: #808080;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-text {
+    color: black;
+    text-decoration: underline;
+}
+
+.item {
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Click-time {
+    color: #808080;
+    font-size: 13px;
+}
+
+.company, .location, .salary, .emp_status, .post, .first {
+    display: flex;
+    align-items: center;
+}
+
+.content-item {
+    font-weight: bold;
+    margin: 10px 0 10px 10px;
+}
+
+.img {
+    border-radius: 50%;
+}
+
+.mypost-left, .link-left {
+    width: 100%;
+}
+
+.trend-container {
+    display: flex;
+}
+
+.mytrend {
+    width: 85%;
+}
+
+.mytrend-text {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.mytrend-button {
+    width: 85%;
+    display: flex;
+    border-left: 0.5px solid #cbcbcb;
+    justify-content: center;
+}
+a,.dropdown-menu a{
+    text-decoration: none;
+}
+.a-svg {
+    display: flex;
+    align-items: center;
+}
+
+.link,.mypost,.mypost-left,.link-left{
+    background-color: #ffffff;
+}
+
+.find-company:hover{
+    fill: #00AEAE;
+    color: #00AEAE;
+}
+
+.emp:hover{
+    fill: #eb942f;
+    color:#eb942f ;
+}
+
+.intern:hover{
+    fill: #e7c800;
+    color: #e7c800;
+}
+
+.thumbnail {
+    max-width: 100px;  /* 或您想要的具体数值 */
+    max-height: 100px; /* 保持宽高比例相同 */
+    object-fit: cover; /* 保证图片在容器中正确填充 */
+}
+
+/*裡面箭頭的背景*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; 
+    left:100;
+}
+
+/*包著裡面箭頭的背景(左)*/
+.carousel-control-prev{
+    width:20px;
+    right:500;
+}
+
+/*包著裡面箭頭的背景(右)*/
+.carousel-control-next{
+    width:20px;
+    left:500;
+}
+
+.flex-fill {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rounded_img{
+    display: block;
+    margin: 0;
+    height: auto;
+    width:280px;
+    height:220px;
+    max-width: 100%;
+    max-height: 100%; 
+    background-color: white;
+
+}
+
+.swiper-slide{
+    width:100px;
+}
+
+.display-img{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.few-img{
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.swiper-container {
+    width: 100%; /* 或者更大的固定寬度 */
+}
+
+.swiper-slide {
+    width: auto; /* 自動基於內容確定寬度 */
+    flex-shrink: 0; /* 防止滑動項縮小 */
+}
+
+
+/* 設定分頁點點的顏色 */
+.swiper-pagination-bullet {
+    background: #000000; /* 更改為您想要的顏色，這裡使用黑色作為示例 */
+}
+
+/* 設定當前活動分頁點點的顏色 */
+.swiper-pagination-bullet-active {
+    background: #131212; /* 更改為您想要的顏色，這裡使用白色作為示例 */
+}
+
+.Vicc {
+    margin-top:30px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+      max-width: 750px;
+    }
+    .mypost,.link{
+        width:30%;
+    }
+    .mytrend-text,.nav-link,.post_item,.Click-time{
+        font-size: 10px;
+    }
+    .rounded-circle{
+        width: 23px;
+        height: 23px;
+    }
+    .nav-work{
+        display: none;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 970px;
+    }
+    .mypost,.link{
+        width:20%;
+    }
+    .mytrend-text,.nav-link{
+        font-size: 13px;
+    }
+    .nav-work{
+        display: none;
+    }
+    
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1170px;
+    }
+    .mytrend-text,.nav-link{
+        font-size: 15px;
+    }
+    .mypost,.link{
+        width:20%;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .container{
+        max-width: 100%;
+    }
+  }
+  

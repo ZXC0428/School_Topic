@@ -1,0 +1,430 @@
+@{
+    ViewData["Title"] = "後續職涯發展"; 
+    var results = ViewBag.Results as List<career>;  
+}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <link href="~/css/CareerEchart.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body style="background-color: #FCFCFC;">
+    <!--篩選表單-->
+    <form method="post" action="/Career/Filter">
+        <div class="select_option">
+            <div class="select-group">
+                <div class="text" >年度</div>
+                <select class="form-select" aria-label="Default select example" name="selectYear">
+                    <option disabled selected hidden>選擇年度</option> 
+                    @if(ViewBag.MinYear == null && ViewBag.MaxYear ==null){
+                        <option value="">未有資料</option>
+                    }  
+                    else
+                    {
+                        @for (int year = @ViewBag.MinYear; year <= @ViewBag.MaxYear; year++)
+                        {
+                            <option value="@year">@year</option>
+                        }
+                    }                 
+                        
+                </select>
+            </div>
+
+            <div class="select-group">
+                <div class="text" style="font-size: 12px;">科系</div>
+                <select class="form-select" aria-label="Default select example" name="selectDepartment">
+                    <option disabled selected hidden>選擇科系</option>
+
+                    <optgroup label="工程學院"></optgroup>
+                    <option value="車輛工程系">車輛工程系</option>
+                    <option value="飛機工程系">飛機工程系</option>
+                    <option value="自動化工程系">自動化工程系</option>
+                    <option value="機械設計工程系">機械設計工程系</option>
+                    <option value="動力機械工程系">動力機械工程系</option>
+                    <option value="機械與電腦輔助工程系">機械與電腦輔助工程系</option>
+
+                    <optgroup label="電機資訊學院"></optgroup>
+                    <option value="電機工程系">電機工程系</option>
+                    <option value="光電工程系">光電工程系</option>
+                    <option value="資訊工程系">資訊工程系</option>
+                    <option value="電子工程系">電子工程系</option>
+
+                    <optgroup label="管理學院"></optgroup>
+                    <option value="工業管理系">工業管理系</option>
+                    <option value="資訊管理系">資訊管理系</option>
+                    <option value="財務金融系">財務金融系</option>
+                    <option value="企業管理系">企業管理系</option>
+
+                    <optgroup label="文理學院"></optgroup>
+                    <option value="生物科技系">生物科技系</option>
+                    <option value="休閒遊憩系">休閒遊憩系</option>
+                    <option value="農業科技系">農業科技系</option>
+                    <option value="應用外語系">應用外語系</option>
+                    <option value="多媒體設計系">多媒體設計系</option>
+                </select>
+            </div>
+            
+            <div class="select-group" >
+                <div class="text" style="font-size: 12px;">學位</div>
+                <select class="form-select" aria-label="Default select example" name="selectScience">
+                    <option disabled selected hidden>選擇學位</option>
+                    <option value="學士">學士</option>
+                    <option value="碩士">碩士</option>
+                    <option value="博士">博士</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-danger" value="Submit">送出</button>
+        </div>
+    </form>
+
+    <div class="data-container">
+        <div class="careerCount">
+            <div class="timeStart shadow">
+                <div class="item DataTtime">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
+                    <div class="time-text">資料統計區間</div>
+                </div>
+                <div class="YearOption">
+                    <div class="timeStart-year">@ViewBag.minYear 學年度 <span>-</span>@ViewBag.maxYear 學年度</div>
+                </div>
+                
+            </div>
+
+            <div class="dataCount shadow">
+                <div class="item AllData">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><path d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z"/></svg>
+                    <div class="count-text">資料總筆數</div>
+                </div>
+                <div class="CountData">
+                    <div class="allCount"></div>
+                </div>   
+            </div>
+
+            <div class="companyTop shadow">
+                <div class="item Company">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><path d="M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h89.9c-6.3-10.2-9.9-22.2-9.9-35.1c0-46.9 25.8-87.8 64-109.2V271.8 48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zM576 272a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM352 477.1c0 19.3 15.6 34.9 34.9 34.9H605.1c19.3 0 34.9-15.6 34.9-34.9c0-51.4-41.7-93.1-93.1-93.1H445.1c-51.4 0-93.1 41.7-93.1 93.1z"/></svg>
+                    <div class="company-text">學生就業公司TOP3</div>
+                </div>
+                <div class="CompanyRank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-building-fill-up" viewBox="0 0 16 16">
+                        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0"/>
+                        <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-3.59 1.787A.5.5 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.5 4.5 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+                    </svg>
+                    <div class="Top3Company"></div>
+                </div>
+                    
+            </div>
+
+        </div> 
+        <div class="pie" >
+            <div id="locationPie" class="locationPie shadow"></div>
+            <div id="statePie" class="statePie shadow"></div>
+        </div>
+        <div class="barChart shadow" id="barChart"></div> 
+    </div>
+    <script>
+        
+        $(window).resize(function() {
+            // 就業位置分布
+            myChartLocationPie.resize();
+            // 就業狀態分布
+            myChartStatePie.resize();
+            // 就業工作統計
+            myChartBarChart.resize();
+        });
+    </script>
+    <script type="text/javascript">
+    $("form").on("submit", function(e) {
+        e.preventDefault();
+        var selectYear = $('select[name="selectYear"]').val() || null;
+        var selectScience = $('select[name="selectScience"]').val() || null;
+        var selectDepartment = $('select[name="selectDepartment"]').val() || null;
+        console.log(selectYear);
+        //存篩選過的selectYear、selectScience、selectDepartment
+        var Selectdata = {selectYear: selectYear, 
+                    selectScience: selectScience, 
+                    selectDepartment: selectDepartment};
+        $.ajax({
+            url: '/Career/SelectMap', //傳參數到SelectMap
+            method: 'POST',
+            contentType: "application/x-www-form-urlencoded",
+            data: Selectdata,
+            success: function(response) {
+                //公司前三名
+                var top3Company = response.top3Company;
+                var top3CompanyDiv = $('.Top3Company');
+                top3CompanyDiv.empty();
+                top3Company.forEach(function(company) {
+                    top3CompanyDiv.append('<p>' + company + '</p>');});
+
+                //全部人數
+                var allCount = response.allCount;
+                var allCountDiv = $('.allCount');
+                allCountDiv.empty();
+                allCountDiv.html(allCount);
+                console.log(allCount)
+
+                $('.timeStart').show();
+                $('.dataCount').show();
+                $('.companyTop').show();
+                $('.locationPie').show();
+                $('.statePie').show();
+                $('.barChart').show();
+
+                if (selectYear == null){
+                    selectYear = "不篩選年";
+                }
+                if(selectDepartment == null){
+                    selectDepartment = "不篩選系別";
+                }
+                if(selectScience == null){
+                    selectScience = "不篩選學歷";
+                }
+                //就業位置分布
+                var locationData = response.locationData;
+                console.log(locationData);
+                var formattedData = locationData.map(function(item) {
+                    return {
+                        name: item.location,
+                        value: item.count,
+                        labelLine: {
+                                    show: item.count !== 0},
+                        label: {
+                                show: item.count !== 0}
+                    };});
+                
+                var myChart = echarts.init(document.getElementById('locationPie'));
+                var option = {
+                    title: {
+                        text: '就業位置分布',
+                        subtext: `【${selectYear}-${selectDepartment}-${selectScience}】`,
+                        left: 'center'},
+
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: function(params) {
+                            var total = 0;
+                            formattedData.forEach(function(item) {
+                                total += item.value;
+                            });
+                            var percentage = ((params.value / total) * 100).toFixed(2);
+                            return `${params.name}：${params.value}<br>百分比：${percentage}%`;}},
+
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left'},
+                        
+                    labelLine: {
+                        show: false},
+
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataView: { show: true,readOnly: false ,
+                                optionToContent: function(opt) {
+                                    var series = opt.series[0]; // 假設我們只有一個系列
+                                    var table = '<table style="width:100%;text-align:center"><tbody><tr>'
+                                                + '<td>區域位置</td>'
+                                                + '<td>總計</td>'
+                                                + '</tr>';
+                                    for (var i = 0, l = series.data.length; i < l; i++) {
+                                        table += '<tr>'
+                                                + '<td>' + series.data[i].name + '</td>'
+                                                + '<td>' + series.data[i].value + '</td>'
+                                                + '</tr>';
+                                    }
+                                    table += '</tbody></table>';
+                                    return table;
+                                }
+                            },
+                            saveAsImage: {show: true}}},
+
+                    series: [{
+                        name: '區域位置',
+                        type: 'pie',
+                        radius: '60%',
+                        data: formattedData,
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)' }}}],
+                    color:['#219C90', '#E9B824', '#EE9322','#D83F31','#DAC0A3','#0F2C59']
+                    
+                };
+                myChart.setOption(option);
+        
+                //就業狀態分布
+                var myChart = echarts.init(document.getElementById('statePie'));
+                var stateData = response.stateData;
+                console.log(stateData);
+                var stateData = stateData.map(function(item) {
+                    return {
+                        name: item.state,
+                        value: item.count};});
+        
+                var option = {
+                title: {
+                        text: '就職狀態',
+                        subtext: `【${selectYear}-${selectDepartment}-${selectScience}】`,
+                        left: 'center'},
+
+                tooltip: {
+                        trigger: 'item',
+                        formatter: function(params) {
+                            var total = 0;
+                            formattedData.forEach(function(item) {
+                                total += item.value;
+                            });
+                            var percentage = ((params.value / total) * 100).toFixed(2);
+                            return `${params.name}：${params.value}<br>百分比：${percentage}%`;}},
+
+                legend: {
+                        orient: 'vertical',
+                        left: 'left'},
+                toolbox: {
+                        show: true,
+                        feature: {
+                            dataView: { show: true,readOnly: false,
+                            optionToContent: function(opt) {
+                                    var series = opt.series[0]; //假設我們只有一個系列
+                                    var table = '<table style="width:100%;text-align:center"><tbody><tr>'
+                                                + '<td>狀態</td>'
+                                                + '<td>總計</td>'
+                                                + '</tr>';
+                                    for (var i = 0, l = series.data.length; i < l; i++) {
+                                        table += '<tr>'
+                                                + '<td>' + series.data[i].name + '</td>'
+                                                + '<td>' + series.data[i].value + '</td>'
+                                                + '</tr>';
+                                    }
+                                    table += '</tbody></table>';
+                                    return table;
+                                }},
+                            saveAsImage: {show: true}
+                        }},
+
+                series: [{
+                        name: '狀態',
+                        type: 'pie',
+                        radius: ['30%', '60%'],
+                        avoidLabelOverlap: false,
+                        label: {
+                            show: false,
+                            position: 'center'},
+                        color:['#BE3144', '#00ADB5', '#F4CE14'], 
+                        emphasis: {
+                            label: {
+                            show: true,
+                            fontSize: 30,
+                            fontWeight: 'bold'}},
+
+                        labelLine: {
+                            show: false},
+
+                        data: stateData}]
+                };
+                myChart.setOption(option);
+
+                //就業工作統計
+                var myChart = echarts.init(document.getElementById('barChart'));
+                var combinedData = response.combinedData;
+                console.log(combinedData);
+
+                //x軸共同名稱
+                var names = combinedData.map(function(item) { return item.position; });
+                console.log(names);
+
+                var State1values = combinedData.map(function(item) { return item.state1Count; });
+                var State2values = combinedData.map(function(item) { return item.state2Count; });
+                var State3values = combinedData.map(function(item) { return item.state3Count; });    
+                option = {
+                title: {
+                    text: '就業工作相關統計',
+                    subtext: `【${selectYear}-${selectDepartment}-${selectScience}】`,
+                    left: 'center'},
+
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                    type: 'shadow'}},
+
+                grid: {
+                    left: '0%',
+                    right: '0%',
+                    bottom: '0%',
+                    containLabel: true},
+
+                xAxis: [
+                    {
+                    type: 'category',
+                    data: names,
+                    axisTick: {
+                        alignWithLabel: true }}],
+
+                yAxis: [
+                    {
+                    type: 'value'}],
+
+                legend: {
+                    data: ['實習','兼職','全職'],
+                    orient: 'horizontal',
+                    left: 'left',  },
+
+                series: [
+                    {
+                        name: '實習',
+                        type: 'bar',
+                        data: State1values,
+                        stack: 'x',
+                        itemStyle: {
+                        color: '#BE3144',}},
+                    {
+                        name: '兼職',
+                        type: 'bar',
+                        data: State2values,
+                        stack: 'x',
+                        itemStyle: {
+                        color: '#00ADB5'}},
+                    {
+                        name: '全職',
+                        type: 'bar',
+                        data: State3values,
+                        stack: 'x',
+                        itemStyle: {
+                        color: '#F4CE14'}},
+                    ],
+
+                toolbox: {
+                    show: true,
+                    feature: {
+                    mark: { show: true },
+                    dataView: { show: true, readOnly: true,                
+                        optionToContent: function(opt) {
+                    var axisData = opt.xAxis[0].data; // X 軸的數據
+                    var series = opt.series; // 系列數據
+                    var table = '<table style="width:100%;text-align:center"><tbody><tr><td>類別</td>';
+                    for (var i = 0, l = series.length; i < l; i++) {
+                        table += '<td>' + series[i].name + '</td>';
+                    }
+                    table += '</tr>';
+                    for (var i = 0, l = axisData.length; i < l; i++) {
+                        table += '<tr><td>' + axisData[i] + '</td>';
+                        for (var j = 0; j < series.length; j++) {
+                            table += '<td>' + series[j].data[i] + '</td>';
+                        }
+                        table += '</tr>';
+                    }
+                    table += '</tbody></table>';
+                    return table;
+                    }},
+                    magicType: { show: true, type: ['line', 'bar'] },
+                    saveAsImage: { show: true }}},
+                
+                };
+                myChart.setOption(option);
+
+                }
+                });});
+    </script>
+</body>

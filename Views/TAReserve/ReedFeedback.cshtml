@@ -1,0 +1,101 @@
+@model IEnumerable<TA.ViewModels.FeedbackViewModel>
+
+@{
+    ViewData["Title"] = "教學助理回饋";
+    //序列化模型數據為 JSON 字符串，並過濾掉回饋為 null 的項目
+    var jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(Model
+        .Where(item => !string.IsNullOrEmpty(item.Txt))
+        .Select(item => new {
+            CourseName = item.CourseName,
+            Answers = new[] { item.answer_1, item.answer_2, item.answer_3, item.answer_4, item.answer_5 }
+    }));
+}
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #radarChart {
+            width: 600px;
+            height: 600px;
+            margin: 20px auto; /* 將雷達圖置中並增加上下邊距 */
+        }
+    </style>
+</head>
+<body>
+    <title>回饋</title>
+    <div style="text-align: right; margin: 20px;">
+        <a href="@Url.Action("TAreserves", "TAReserve")" class="button-link" style="font-weight:bold;padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">填寫回饋</a>
+    </div>
+
+    <!-- 雷達圖容器 -->
+    <div id="radarChart"></div>
+    <table>
+        <tr>
+            <th>課程名稱</th>
+            <th>TA姓名</th>
+            <th>回饋</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (!string.IsNullOrEmpty(item.Txt)) // 檢查回饋是否為 null 或空
+            {
+                <tr>
+                    <td>@item.CourseName</td>
+                    <td>@item.TAName</td>
+                    <td>@item.Txt</td>
+                </tr>
+            }
+        }
+    </table>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('radarChart'));
+        var feedbackData = @Html.Raw(jsonData);
+
+        var option = {
+            title: {
+                text: '教學回饋雷達圖',
+                top: '0%',
+                left: 'center'
+            },
+            tooltip: {},
+            legend: {
+                data: feedbackData.map(data => data.CourseName),
+                orient: 'horizontal', // 將圖例水平顯示
+                top: '80%', // 調整圖例位置至底部
+                left: 'center' // 中間對齊
+            },
+            radar: {
+                center: ['50%', '45%'], // 調整雷達圖的中心點位置，使得底部有空間顯示圖例
+                radius: '65%', // 可能需要調整雷達圖的半徑大小，以適應調整後的布局
+                indicator: [
+                    { name: '解釋清晰易懂', max: 5},
+                    { name: '有效引導討論', max: 5},
+                    { name: '專業知識和技能', max: 5},
+                    { name: '溝通技巧和耐心', max: 5},
+                    { name: '整體滿意度', max: 5}
+                ]
+            },
+            series: [{
+                name: '課程回饋',
+                type: 'radar',
+                data: feedbackData.map(data => ({
+                    value: data.Answers,
+                    name: data.CourseName
+                }))
+            }]
+        };
+        myChart.setOption(option);
+    </script>
+</body>

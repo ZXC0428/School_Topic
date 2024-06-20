@@ -1,0 +1,180 @@
+@model List<TA.ViewModels.ReservedCourseViewMode2>
+@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "預約表單";
+    var userInput = Context.Session.GetString("User");
+    dynamic user = null;
+    if (!string.IsNullOrEmpty(userInput))
+    {
+        user = JsonConvert.DeserializeObject<dynamic>(userInput);
+    }
+
+    // 獲取用於篩選的日期、課程名稱和TA姓名的唯一值
+    var distinctDates = Model.Select(m => m.CourseDay.Date).Distinct().OrderBy(d => d);
+    var distinctCourseNames = Model.Select(m => m.CourseName).Distinct().OrderBy(c => c);
+    var distinctTANames = Model.Select(m => m.TAName).Distinct().OrderBy(t => t);
+    var distinctTAIDs = Model.Select(m => m.TA_ID).Distinct().OrderBy(id => id);
+}
+
+@if (User != null && user != null)
+{
+    var Level = user?.Level;
+    var stid = user?.studentID;
+    var ta_name = user?.student_name;
+    var distinctTAIDsList = distinctTAIDs.ToList();
+    if (Level == "管理員")
+    {
+
+        <div class="main_content">
+            <div class="filter-section" style=" margin-left: 15px;" >
+                <label for="filter" style="font-weight: bold; ">篩選：</label>
+                <select id="filter">
+                    <option value="">全部</option>
+                    <optgroup label="日期">
+                        @foreach (var date in distinctDates)
+                        {
+                            <option value="@date.ToString("yyyy-MM-dd")">@date.ToString("yyyy-MM-dd")</option>
+                        }
+                    </optgroup>
+                    <optgroup label="課程名稱">
+                        @foreach (var courseName in distinctCourseNames)
+                        {
+                            <option value="@courseName">@courseName</option>
+                        }
+                    </optgroup>
+                    <optgroup label="TA姓名">
+                        @foreach (var taName in distinctTANames)
+                        {
+                            <option value="@taName">@taName</option>
+                        }
+                    </optgroup>
+                </select>
+            </div>
+            <div class="TAreserves">
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr style="background-color: #334c72; color:#ffffff;">
+                                <th>日期</th>
+                                <th>課程名稱</th>
+                                <th>TA姓名</th>
+                                <th>預約名單</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var course in Model)
+                            {
+                                <tr class="filter-row" data-date="@course.CourseDay.Date.ToString("yyyy-MM-dd")" data-course="@course.CourseName" data-ta="@course.TAName">
+                                    <td>@course.CourseDay.ToShortDateString()</td>
+                                    <td>@course.CourseName</td>
+                                    <td>@course.TAName</td>
+                                    <td>
+                                        <form method="post" action="@Url.Action("Appointmentrecord", "TAReserve")">
+                                            <input type="hidden" name="reservationid" value="@course.ReservationId" />
+                                            <button type="submit" class="btn btn-primary">預約表單</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    }
+    else if (distinctTAIDsList.Contains(stid.ToString()))
+    {
+
+        <div class="main_content">
+            <div class="filter-section" style=" margin-left: 15px;" >
+                <label for="filter" style="font-weight: bold; ">篩選：</label>
+                <select id="filter">
+                    <option value="">全部</option>
+                    <optgroup label="日期">
+                        @foreach (var date in distinctDates)
+                        {
+                            <option value="@date.ToString("yyyy-MM-dd")">@date.ToString("yyyy-MM-dd")</option>
+                        }
+                    </optgroup>
+                    <optgroup label="課程名稱">
+                        @foreach (var courseName in distinctCourseNames)
+                        {
+                            <option value="@courseName">@courseName</option>
+                        }
+                    </optgroup>
+                    <optgroup label="TA姓名">
+                        @foreach (var taName in distinctTANames)
+                        {
+                            <option value="@taName">@taName</option>
+                        }
+                    </optgroup>
+                </select>
+            </div>
+            <div class="TAreserves">
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>課程名稱</th>
+                                <th>TA姓名</th>
+                                <th>預約名單</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var course in Model)
+                            {
+                                // 只渲染当前 TA 的课程
+                                if (stid == course.TA_ID)
+                                {
+                                    <tr class="filter-row" data-date="@course.CourseDay.Date.ToString("yyyy-MM-dd")" data-course="@course.CourseName" data-ta="@course.TAName">
+                                        <td>@course.CourseDay.ToShortDateString()</td>
+                                        <td>@course.CourseName</td>
+                                        <td>@course.TAName</td>
+                                        <td>
+                                            <form method="post" action="@Url.Action("Appointmentrecord", "TAReserve")">
+                                                <input type="hidden" name="reservationid" value="@course.ReservationId" />
+                                                <button type="submit" class="btn btn-primary">預約表單</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div style="display: flex; align-items: center; justify-content: center;margin-top: 200px;">
+            <img src="~/Resource/login_2495830.png" alt="Notfound" width="120px">
+            <p style="font-weight: bold ;font-size:50px; color: red; margin-left: 20px;">權限不足</p>
+        </div>
+    }
+}
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#filter').change(function () {
+                var selectedValue = $(this).val();
+                $('.filter-row').hide();
+                if (selectedValue === '') {
+                    $('.filter-row').show();
+                } else {
+                    $('.filter-row').each(function () {
+                        var date = $(this).data('date');
+                        var course = $(this).data('course');
+                        var ta = $(this).data('ta');
+                        if (date === selectedValue || course === selectedValue || ta === selectedValue) {
+                            $(this).show();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,180 @@
+@{
+    ViewData["Title"] = "設定";
+    var userData = Context.Session.GetString("User"); 
+}
+@model Student_web.Models.Member
+<head>
+    <link href="~/css/MyInformation.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div class="card shadow">
+    <div class="card-header text-center">
+        <button type="button" class="btn btn-secondary" style="position: absolute; left: 0;">
+            <a class="nav-link active " asp-area="" asp-controller="Home" asp-action="Index">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                </svg>
+            </a>
+        </button>個人資訊
+    </div>
+
+    @if (userData != null)
+    {
+        var user = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(userData);
+        <div class="Mycontainer">
+            <div class="right">
+                <div class="myphoto">
+                    <img src="" alt="個人頭貼" width="60%" height="auto" id="userphoto">
+                </div>
+                <div id="error-message" class="error-message"></div>
+                <div class="user-button">
+                    
+                    <form id="uploadForm" action="/Member/UploadPhoto" method="post" enctype="multipart/form-data">
+                        <input type="file" id="upload" name="photo" multiple class="form-control form-control exclude" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                        <button type="button" class="btn btn-primary" onclick="document.getElementById('upload').click()">上傳圖片</button>
+                    </form>
+
+                    @if(Model.myPhoto!=null){
+                        <form action="/Member/RemovePhoto" method="post">        
+                            <button type="submit" class="btn btn-danger" value="移除">移除圖片</button>
+                        </form> 
+                    }
+                </div>
+            </div>
+
+            <div class="mydata">
+                
+                <div class="mydata-text">
+                    <div class="mydata-item">學校名稱</div>
+                    <div class="mydata-data">@user.school</div>
+                </div>
+
+                <div class="mydata-text">
+                    <div class="mydata-item">姓　　名</div>
+                    <div class="mydata-data">@user.student_name</div>
+                </div>
+
+                <div class="mydata-text">
+                    <div class="mydata-item">學　　號</div>
+                    <div class="mydata-data">@user.studentID</div>
+                </div>
+
+                <div class="mydata-text">
+                    <div class="mydata-item">系　　別</div>
+                    <div class="mydata-data">@user.department</div>
+                </div>
+
+                <div class="mydata-text"> 
+                    <div class="mydata-item">班　　級</div>
+                    <div class="mydata-data">@user.student_class</div>
+                </div>
+
+                <div class="mydata-text">
+                    <div class="mydata-item">平台角色</div>
+                    <div class="mydata-data">@user.Level</div>
+                </div>
+                @if(Model.AccessToken == null){
+                    <form id="lineNotifyForm" action="/LineNotify/Authenticate" method="get">
+                        <button type="submit" class="btn btn-primary">連動LINE Notify</button>
+                    </form>
+                }
+                else{
+                    <div class="d-flex align-center">
+                        <form action="/LineNotify/RevokeLineNotify" method="post">
+                            <button type="submit" class="btn btn-primary">解除LINE Notify綁定</button>
+                        </form>
+
+                        <form id="notificationForm" action="/Member/CheckNotify" method="post">
+                            <div class="checkbox-wrapper-24">
+                                <input type="hidden" name="Check" value="false" />
+                                <input type="checkbox" id="check-24" name="Check" value="true" @(Model.CheckNotify ? "checked" : "") />
+                                <label for="check-24" class="label-text">
+                                    <span></span>貼文通知
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                }     
+                
+            </div>    
+        </div>
+    }
+
+</div>
+    @if (TempData["ShowSuccess"]!= null && (bool)TempData["ShowSuccess"])
+    {
+        <script>
+            Swal.fire({
+                title: "Successful",
+                text: "成功綁定LINE Notify",
+                icon: "success"
+            });
+        </script>
+        TempData["ShowSuccess"] = false;
+    }
+    @if (TempData["ShowRevoke"]!= null && (bool)TempData["ShowRevoke"])
+    {
+        <script>
+            Swal.fire({
+                title: "Successful",
+                text: "已解除LINE Notify",
+                icon: "info"
+            });
+        </script>
+        TempData["ShowRevoke"] = false;
+    }
+   <script>
+        document.addEventListener('DOMContentLoaded',function() {
+            var checkbox = document.getElementById('check-24');
+            var form = document.getElementById('notificationForm');
+
+            checkbox.addEventListener('change',function() {
+                var isChecked = this.checked;
+                var checked = new XMLHttpRequest();
+                checked.open('POST','/Member/CheckNotify', true);
+                checked.setRequestHeader('Content-Type','application/json');
+                checked.send(JSON.stringify({ CheckNotify: isChecked }));
+            });
+        });
+    //上傳頭貼
+    document.getElementById('upload').addEventListener('change',function() {
+        if (this.value) {
+            var form = $('#uploadForm')[0];
+            var formData = new FormData(form);
+            $.ajax({
+                url:'/Member/UploadPhoto',
+                type:'POST',
+                data:formData,
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    //更新頭像
+                    $('#userphoto').attr('src', data.photoUrl);
+                    $('#rounded-circle').attr('src', data.photoUrl);
+                    //清除錯誤訊息
+                    $('#error-message').text('');
+                },
+                error: function(jqXHR){
+                    //伺服器回應 400 ，則取得錯誤訊息
+                    var error = JSON.parse(jqXHR.responseText);
+                    $('#error-message').text(error.message);
+                }
+            });
+        }
+    });
+
+
+    //移除頭貼
+    $('form[action="/Member/RemovePhoto"]').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/Member/RemovePhoto',
+            type: 'POST',
+            success: function(data) {
+                // 移除頭像
+                $('#userphoto').attr('src', 'https://imgs.gotrip.hk/wp-content/uploads/2017/11/nhv4dxh3MJN7gxp/blank-profile-picture-973460_960_720_2583405935a02dfab699c6.png');
+                $('#rounded-circle').attr('src', 'https://imgs.gotrip.hk/wp-content/uploads/2017/11/nhv4dxh3MJN7gxp/blank-profile-picture-973460_960_720_2583405935a02dfab699c6.png');
+            }
+        });
+    });
+</script>

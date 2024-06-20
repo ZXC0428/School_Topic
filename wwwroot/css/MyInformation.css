@@ -1,0 +1,205 @@
+.card{
+    margin-top:5px; 
+    border: none;
+    background-color: #f4f4f4;
+    border-bottom: 30px #494d5c solid;
+}
+
+.card-header{
+    font-weight: bold; 
+    background-color: #8a93a1; 
+    font-size: 20px; 
+    color:#ffffff;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.myphoto{
+    display: flex;
+    justify-content: center;
+}
+.right{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.mydata{
+    display: flex; 
+    flex-direction: column; 
+    align-items: left; 
+    justify-content: left;
+    margin-left: 30px;
+}
+
+.mydata-text{
+    display: flex;
+    justify-content: left;
+}
+
+.Mycontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.right,.mydata{
+    width: 40%;
+}
+
+.mydata-item{
+    font-size: 16px;
+    margin: 0px 20px 20px 0px;
+    color: #000000;
+    width: 30%;
+    text-align:justify;
+}
+
+.mydata-data{
+    font-size: 16px;
+    font-weight: bold;
+    color: #3a3a3a;
+    width: 40%;
+}
+
+#upload {
+    display: none;
+}
+
+.user-button{
+    display: flex;
+    margin:10px;
+}
+
+.btn-danger{
+    margin-left: 5px;
+}
+
+.btn-secondary{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-secondary:hover{
+    background-color: transparent;
+    border-color: transparent;
+}
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    color: rgb(0, 0, 0);
+}
+
+.error-message{
+    color: red;
+    font-weight: bold;
+}
+
+#userphoto{
+    border-radius: 50%;
+}
+.label-text{
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.checkbox-wrapper-24 .checkbox {
+    display: table-cell;
+    width: 90%;
+    height: 90%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.checkbox-wrapper-24 label {
+    display: inline-block;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+}
+.checkbox-wrapper-24 label span {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    transform-origin: center;
+    border: 2px solid #333;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+    transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+}
+.checkbox-wrapper-24 label span:before {
+    content: "";
+    width: 0px;
+    height: 2px;
+    border-radius: 2px;
+    background: #333;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 12px;
+    left: 9px;
+    transition: width 50ms ease 50ms;
+    transform-origin: 0% 0%;
+}
+.checkbox-wrapper-24 label span:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: #333;
+    position: absolute;
+    transform: rotate(305deg);
+    top: 16px;
+    left: 10px;
+    transition: width 50ms ease;
+    transform-origin: 0% 0%;
+    text-align: center;
+}
+.checkbox-wrapper-24 label:hover span:before {
+    width: 5px;
+    transition: width 100ms ease;
+}
+.checkbox-wrapper-24 label:hover span:after {
+    width: 10px;
+    transition: width 150ms ease 100ms;
+}
+
+.checkbox-wrapper-24 input[type=checkbox] {
+    display: none;
+}
+.checkbox-wrapper-24 input[type=checkbox]:checked + label span {
+    background-color: #333;
+    transform: scale(1.25);
+}
+.checkbox-wrapper-24 input[type=checkbox]:checked + label span:after {
+    width: 10px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+}
+.checkbox-wrapper-24 input[type=checkbox]:checked + label span:before {
+    width: 5px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+}
+.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span {
+    background-color: #333;
+    transform: scale(1.25);
+}
+.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:after {
+    width: 10px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+}
+.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:before {
+    width: 5px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+}
+

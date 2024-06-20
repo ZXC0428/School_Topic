@@ -1,0 +1,246 @@
+@{
+    ViewData["Title"] = "我的珍藏-公司實習";
+    var userData = Context.Session.GetString("User"); 
+}
+@model Student_web.Models.MyTrendViewModel
+@functions {
+    public static string FormatTime(DateTime createTime)
+    {
+        var timeSpan = DateTime.Now - createTime;
+
+        if (timeSpan.TotalDays > 365)
+        {
+            return createTime.ToString("yyyy 年 MM 月 dd 日");
+        }
+        else if (timeSpan.TotalDays > 5)
+        {
+            return createTime.ToString(" MM 月 dd 日");
+        }
+        else if (timeSpan.TotalDays >= 1)
+        {
+            return string.Format("{0} 天前", (int)Math.Floor(timeSpan.TotalDays));
+        }
+        else if (timeSpan.TotalHours >= 1)
+        {
+            return string.Format("{0} 小時前", (int)Math.Floor(timeSpan.TotalHours));
+        }
+        else if (timeSpan.TotalMinutes >= 1)
+        {
+            return string.Format("{0} 分鐘前", (int)Math.Floor(timeSpan.TotalMinutes));
+        }
+        else
+        {
+            return "剛剛";
+        }
+    }
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="~/css/Mytrend.css" rel="stylesheet" type="text/css"/>
+</head>
+
+    <div class="trend shadow">
+        <div class="trend-item">
+            <div class="mytrend-text">動態內容</div>
+            <div class="mytrend-button">
+                <button type="button" class="btn btn-light mypost">
+                    <div class="a-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"class="bi bi-circle-fill find-company FI" viewBox="0 0 16 16">
+                            <circle cx="8" cy="8" r="8"/>
+                        </svg>
+                    <a class="nav-link mypost-text" asp-area="" asp-controller="Member" asp-action="Myfavorite_FI">公司實習</a>
+                    </div>
+                </button>
+                <button type="button" class="btn btn-light link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="bi bi-circle-fill emp item-nav SE" viewBox="0 0 16 16">
+                        <circle cx="8" cy="8" r="8"/>
+                    </svg>
+                    <a class="nav-link user-text" asp-area="" asp-controller="Member" asp-action="Myfavorite_SE">就業分享</a>
+                </button>
+                <button type="button" class="btn btn-light link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="bi bi-circle-fill intern item-nav SI" viewBox="0 0 16 16">
+                        <circle cx="8" cy="8" r="8"/>
+                    </svg>     
+                    <a class="nav-link user-text" asp-area="" asp-controller="Member" asp-action="Myfavorite_SI">實習經驗</a>
+                </button>
+            </div>              
+        </div>
+
+        <div class="trend-container">
+            <div class="flex_container">
+                <button type="button" class="btn btn-light link-left">
+                    <div class="a-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18" width="16" viewBox="0 0 512 512" fill="#9f9f9f" class="nav-work" >
+                            <path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/>
+                        </svg>
+                        <a class="nav-link user-text" asp-area="" asp-controller="Member" asp-action="Mytrend_SE">我的貼文</a>
+                    </div>        
+                </button>
+                <button type="button" class="btn btn-light link-left" >
+                    <div class="a-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18" width="16" viewBox="0 0 512 512"  class="nav-work" fill="#9f9f9f">
+                            <path d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.2s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z"/>
+                        </svg>                      
+                        <a class="nav-link user-text" asp-area="" asp-controller="Member" asp-action="Mythumb_FI">按讚內容</a>
+                    </div> 
+                </button>
+                <button type="button" class="btn btn-light mypost-left">
+                    <div class="a-svg">
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="18" height="16" class="bi bi-star-fill nav-work" viewBox="0 0 16 16"  >
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>  
+                        <a class="nav-link mypost-text" asp-area="" asp-controller="Member" asp-action="Myfavorite_FI">我的珍藏</a>
+                    </div>                    
+                </button>   
+            </div>
+            <div class="mytrend">
+                @foreach (var collection in Model.collection_FindInterns)
+                {
+                    var collapseId = "collapseExample" + collection.id;
+                    var Collection = Model.collections.FirstOrDefault(c => c.post_id == collection.id.ToString());
+                    var collectionTime = Collection.collection_click_time;
+                    <button class="btn btn-light datamodel" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseId" aria-expanded="false" aria-controls="@collapseId">   
+                        <div class="item">
+                            <div class="post_item">
+                                <img class="rounded-circle me-2" id="rounded-circle" src="@Model.MyPhoto" alt="myPhoto" width="28" height="28">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/>
+                                </svg>你在公司實習版上珍藏了
+                                <span class="item-text">@collection.item</span>
+                            </div>
+                            <div class="Click-time">@FormatTime(collectionTime)</div>
+                        </div>
+                    </button>
+                    <div class="collapse" id="@collapseId">
+                        <div class="card card-body">
+                        
+                            <div class="first d-flex">
+                                <div class="name-photo">
+                                    <img class="rounded-circle me-2" id="rounded-circle" src="~/Resource/buildings.png" alt="myPhoto" width="25" height="25">
+                                    <div class="name">@collection.company_name</div>
+                                </div>
+                                
+                                <div class="Click-time">@FormatTime(collection.create_time)</div>
+                            </div>
+                            <div class="between">
+                                <div class="location">
+                                        <div class="content-item">上班地點：</div>
+                                        <pre class="content-text">@collection.location</pre> 
+                                </div>
+
+                                <div class="content">
+                                    <div class="content-item">工作內容：</div>
+                                    <pre class="content-text">@collection.work_Content</pre> 
+                                </div>
+                                
+                                <div class="salary">
+                                        <div class="content-item">收入【年】：</div> 
+                                        <pre class="content-text">@collection.salary</pre> 
+                                </div>
+
+                                <div class="links">
+                                        <div class="content-item">報名連結：
+                                            <a href="@collection.links" >@collection.links</a>
+                                        </div>                                         
+                                </div>
+                                @{
+                                        var PDFFiles = Model.FilesPost.Where(f => f.file_name.EndsWith(".pdf") && f.post_id == collection.id && f.post_Type == "公司版").ToList();    
+                                        var imageFiles = Model.FilesPost.Where(f => f.file_type.StartsWith("image/") && f.post_id == collection.id && f.post_Type == "公司版").ToList();
+                                        int totalImages = imageFiles.Count;
+                                        <div id="thumbnailCarousel" class="carousel slide" data-bs-interval="false">
+                                            <div class="carousel-inner">
+                                                @if (imageFiles != null)
+                                                {
+                                                    @if (totalImages <= 3)
+                                                    {
+                                                        <div class="carousel-item active">
+                                                            <div class="d-flex">
+                                                                @foreach (var imageFile in imageFiles)
+                                                                {
+                                                                    <div class="few-img">
+                                                                        <img class="rounded_img" src="@Url.Content($"~/PostFile/{imageFile.file_name}")" alt="Image"
+                                                                            data-bs-toggle="modal" data-bs-target="#imageModal"
+                                                                            onclick="showImageInModal('@Url.Content($"~/PostFile/{imageFile.file_name}")')">
+                                                                    </div>
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="swiper mySwiper">
+                                                            <div class="swiper-wrapper">
+                                                                @foreach (var imageFile in imageFiles)
+                                                                {
+                                                                    <div class="swiper-slide">
+                                                                        <img class="rounded_img" src="@Url.Content($"~/PostFile/{imageFile.file_name}")" alt="Image"
+                                                                            data-bs-toggle="modal" data-bs-target="#imageModal"
+                                                                            onclick="showImageInModal('@Url.Content($"~/PostFile/{imageFile.file_name}")')">
+                                                                    </div>
+                                                                }
+                                                            </div>
+                                                            <div class=Vicc>
+                                                                <div class="swiper-pagination"></div>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                }
+                                           </div>
+                                        </div>
+                                        @if (PDFFiles.Count > 0)
+                                        {
+                                            <div class="btn-group dropend">
+                                                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    查看詳情
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    @foreach (var file in PDFFiles)
+                                                    {
+                                                        var lastDotIndex = file.file_name.LastIndexOf('.');
+                                                        var lastUnderscoreIndex = file.file_name.LastIndexOf('_');
+                                                        var PDFName = file.file_name.Substring(lastUnderscoreIndex + 1, lastDotIndex - lastUnderscoreIndex - 1);               
+                                                        <li>
+                                                            <a href="@Url.Action("GetPDF", "Career", new { fileName = file.file_name })" target="_blank">
+                                                                <button class="dropdown-item" type="button">@PDFName</button>
+                                                            </a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }     
+                                    }
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                }
+            </div>
+        </div>
+    </div>
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+        <div class="modal-body display-img">
+            <img src="" id="modalImage" class="img-fluid" alt="大圖">
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+    function showImageInModal(imageUrl) {
+        var modalImage = document.getElementById('modalImage');
+        modalImage.src = imageUrl;
+        $('#imageModal').modal('show');
+    }
+
+   var mySwiper = new Swiper('.mySwiper', {
+    freeMode: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20, // Adjust the space between slides
+    pagination: {
+      el: '.swiper-pagination', // Here, we target the pagination container
+      clickable: true, // This makes the pagination bullets clickable
+    },
+  });
+</script>

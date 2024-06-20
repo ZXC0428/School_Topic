@@ -1,0 +1,259 @@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core.Fluent
+@using X.PagedList.Web.Common
+
+@model List<student_platformdb.borrow_key>
+
+
+@{
+    ViewData["Title"] = "管理者介面"; 
+    var pagedList = (IPagedList)ViewBag.borrow_key;
+}
+<div class="btn_booked">
+    <div class="bookedbtn" id = "review_bookedbtn" >
+        <p>預約教室審核</p>
+    </div>
+    <div class="bookedbtn" id = "history_bookedbtn" >
+        <p>預約教室歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "key_bookedbtn" >
+        <p>鑰匙管理</p>
+    </div>
+    <div class="bookedbtn" id = "keyhistory_bookedbtn" style="background-color: rgb(242, 241, 241);">
+        <p>鑰匙歷史資料</p>
+    </div>
+    <div class="bookedbtn" id = "classroom_bookedbtn" >
+        <p>教室介面修改</p>
+    </div>
+    <div class="bookedbtn" id = "rule_bookedbtn" >
+        <p>預約規則修改</p>
+    </div>
+</div>
+<!-- 預約教室歷史資料 -->
+@if (Model != null  && Model.Count > 0) {
+
+    <div class="classroom_management_rectangle">
+    <div class="classroom_management_table-container">
+        <table class="classroom_management_table">
+            <thead>
+                    <tr class="usagetitle">
+                        <th>借用時間</th>
+                        <th>教室</th>
+                        <th>狀態</th>
+                        <th>歸還時間</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @if(Model != null){
+                    foreach (var alreadydata in Model){
+                            <tr class="usagecontent">
+                                <td>
+                                    <div>@Html.Raw(alreadydata.borrow_time?.ToString("yyyy-MM-dd ttHH:mm:ss").Replace(" ", "<br>"))</div>
+                                </td>
+                                <td>
+                                   <div>@Html.Raw(alreadydata.Classroom_id.Replace(" ", "<br>"))</div>
+                                </td>
+                                <td> @if (alreadydata.return_time == null) {
+                                    <text>未歸還</text>
+                                    } else if (alreadydata.return_time != null) {
+                                        <text>已歸還</text>
+                                    }
+                                    </td>
+                                <td>
+                                    @if (alreadydata.return_time != null) {
+                                    <text>@alreadydata.return_time</text>
+                                    } else if (alreadydata.return_time == null) {
+                                        <text>無</text>
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6"><hr size="7"></td> <!-- 使用 colspan 来让分隔线横跨所有列 -->
+                            </tr>
+                    }
+                } else {
+                    <div class="classroom_management_rectangle" >
+                        <p>無預約紀錄</p>
+                    </div>
+                }
+            </tbody>
+
+            @if (Model != null && pagedList != null)
+            {
+                <td class="text-muted" colspan="5">
+                    第 @(pagedList.PageCount < pagedList.PageNumber ? 0 : pagedList.PageNumber) 頁，共 @pagedList.PageCount 頁。
+                    每頁 @pagedList.PageSize 筆資料，全部共有 @pagedList.TotalItemCount 筆資料。
+                </td>
+
+            }
+        </table>
+        <hr>
+        
+    </div>
+</div>
+<div class="page_object">
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="@(pagedList.PageNumber == 1 ? "page-item disabled" : "page-item")">
+                <a class="page-link" href="@Url.Action("history_classroom_management", new { page = 1 })" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            @foreach (var pageNumber in GeneratePageNumbers(pagedList.PageNumber, pagedList.PageCount))
+            {
+                if (pageNumber == -1)
+                {
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                }
+                else
+                {
+                    <li class="@(pagedList.PageNumber == pageNumber ? "page-item active" : "page-item")">
+                        <a class="page-link" href="@Url.Action("history_classroom_management", new { page = pageNumber })">@pageNumber</a>
+                    </li>
+                }
+            }
+            <li class="@(pagedList.PageNumber == pagedList.PageCount ? "page-item disabled" : "page-item")">
+                <a class="page-link" href="@Url.Action("history_classroom_management", new { page = pagedList.PageNumber + 1 })">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+   
+}
+else{
+    <div class="classroom_management_rectangle" >
+        <div class="classroom_management_table-container">
+            <p>無預約教室</p>
+        </div>
+    </div>
+
+}
+<script>
+@functions {
+    public List<int> GeneratePageNumbers(int currentPage, int totalPages)
+    {
+        var pageNumbers = new List<int>();
+
+        // 添加當前頁面
+        pageNumbers.Add(currentPage);
+
+        // 添加當前頁面的前面幾個頁碼
+        for (int i = currentPage - 1; i >= Math.Max(currentPage - 2, 1); i--)
+        {
+            pageNumbers.Insert(0, i);
+        }
+
+        // 添加當前頁面的後面幾個頁碼
+        for (int i = currentPage + 1; i <= Math.Min(currentPage + 2, totalPages); i++)
+        {
+            pageNumbers.Add(i);
+        }
+
+        // 如果開始沒有1，添加省略號
+        if (!pageNumbers.Contains(1))
+        {
+            pageNumbers.Insert(0, 1);
+            pageNumbers.Insert(1, -1); // 使用-1來表示省略號
+        }
+
+        // 如果結尾不是最後一頁，添加省略號
+        if (!pageNumbers.Contains(totalPages))
+        {
+            pageNumbers.Add(-1); // 使用-1來表示省略號
+            pageNumbers.Add(totalPages);
+        }
+
+        return pageNumbers;
+    }
+}
+
+</script>
+
+
+
+<script>
+    // 获取按钮元素
+    var reviewBtn = document.getElementById("review_bookedbtn");
+    var historyBtn = document.getElementById("history_bookedbtn");
+    var keyBtn = document.getElementById("key_bookedbtn");
+     var keyhistoryBtn = document.getElementById("keyhistory_bookedbtn");
+    var classroomBtn = document.getElementById("classroom_bookedbtn");
+    var ruleBtn = document.getElementById("rule_bookedbtn");
+
+    // 添加点击事件处理程序
+    reviewBtn.addEventListener("click", function() {
+        window.location.href = "booked_classroom_management"; // 将页面重定向到“review_page.html”
+    });
+
+    historyBtn.addEventListener("click", function() {
+        window.location.href = "history_classroom_management"; // 将页面重定向到“history_page.html”
+    });
+
+    keyBtn.addEventListener("click", function() {
+        window.location.href = "key_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+    keyhistoryBtn.addEventListener("click", function() {
+        window.location.href = "keyhistory_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+
+    classroomBtn.addEventListener("click", function() {
+        window.location.href = "interface_classroom_management"; // 将页面重定向到“classroom_interface_page.html”
+    });
+
+    ruleBtn.addEventListener("click", function() {
+        window.location.href = "rule__classroom_management"; // 将页面重定向到“rule_modify_page.html”
+    });
+</script>
+
+
+
+
+                    
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // 获取按钮元素
+    var reviewBtn = document.getElementById("review_bookedbtn");
+    var historyBtn = document.getElementById("history_bookedbtn");
+    var keyBtn = document.getElementById("key_bookedbtn");
+    var keyhistoryBtn = document.getElementById("keyhistory_bookedbtn");
+    var classroomBtn = document.getElementById("classroom_bookedbtn");
+    var ruleBtn = document.getElementById("rule_bookedbtn");
+
+    // 添加点击事件处理程序
+    reviewBtn.addEventListener("click", function() {
+        window.location.href = "booked_classroom_management"; // 将页面重定向到“review_page.html”
+    });
+
+    historyBtn.addEventListener("click", function() {
+        window.location.href = "history_classroom_management"; // 将页面重定向到“history_page.html”
+    });
+
+    keyBtn.addEventListener("click", function() {
+        window.location.href = "key_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+
+    keyhistoryBtn.addEventListener("click", function() {
+        window.location.href = "keyhistory_classroom_management"; // 将页面重定向到“key_management_page.html”
+    });
+
+    classroomBtn.addEventListener("click", function() {
+        window.location.href = "interface_classroom_management"; // 将页面重定向到“classroom_interface_page.html”
+    });
+
+    ruleBtn.addEventListener("click", function() {
+        window.location.href = "rule__classroom_management"; // 将页面重定向到“rule_modify_page.html”
+    });
+</script>

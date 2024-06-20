@@ -1,0 +1,190 @@
+@{
+    ViewData["Title"] = "DataView1";
+    var userData = Context.Session.GetString("User");
+    var user = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(userData);
+    var Level = user.Level;
+    var studentID = user.studentID;
+    var student_name = user.student_name;
+}
+@functions {
+    public static string FormatTime(DateTime createTime)
+    {
+        var timeSpan = DateTime.Now - createTime;
+
+        if (timeSpan.TotalDays > 365)
+        {
+            return createTime.ToString("yyyy 年 MM 月 dd 日");
+        }
+        else if (timeSpan.TotalDays > 5)
+        {
+            return createTime.ToString(" MM 月 dd 日");
+        }
+        else if (timeSpan.TotalDays >= 1)
+        {
+            return string.Format("{0} 天前", (int)Math.Floor(timeSpan.TotalDays));
+        }
+        else if (timeSpan.TotalHours >= 1)
+        {
+            return string.Format("{0} 小時前", (int)Math.Floor(timeSpan.TotalHours));
+        }
+        else if (timeSpan.TotalMinutes >= 1)
+        {
+            return string.Format("{0} 分鐘前", (int)Math.Floor(timeSpan.TotalMinutes));
+        }
+        else
+        {
+            return "剛剛";
+        }
+    }
+}
+@model Tuple<Share_emp_ViewModel, List<Message_post>>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="~/css/DataView.css" rel="stylesheet" type="text/css">
+</head>
+<div class="internship-details">
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <h5>@Model.Item1.share_emps.item</h5>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            by <cite title="Source Title">@Model.Item1.share_emps.name</cite>
+        </figcaption>
+    </figure>
+
+    <div class="top">
+        <div class="information">
+            <img src="@Model.Item1.userPhoto" alt="buildings" class="rounded-circle me-2" id="rounded-circle" width="30" height="30">
+            <div class="id-company">@Model.Item1.share_emps.name</div>
+            <div class="id-company">@Model.Item1.share_emps.dept</div>
+        </div>
+        
+        <div class="badge bg-secondary">@FormatTime(Model.Item1.share_emps.create_time)</div>
+    </div>
+    <div class="id-label">
+        <div class="Question">公司名稱：</div>
+        <div class="answer">
+            <span class="id-text">@Model.Item1.share_emps.company</span>
+        </div>      
+    </div>
+    @if(Model.Item1.share_emps.location != null){
+        <div class="id-label">
+            <div class="Question">上班地點：</div>
+            <div class="answer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ff7800" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                <span class="id-text">@Model.Item1.share_emps.location</span>
+            </div>      
+        </div>
+    }  
+    <div class="id-label">
+        <div class="Question">擔任職位：</div>
+        <div class="answer">
+            <span class="id-text">@Model.Item1.share_emps.post</span>
+        </div>      
+    </div>
+    @if(Model.Item1.share_emps.emp_status != null){
+        <div class="id-label">
+            <div class="Question">就業狀態：</div>
+            <div class="answer">
+                <span class="id-text">@Model.Item1.share_emps.emp_status</span>
+            </div>      
+        </div>
+    }
+    @if(Model.Item1.share_emps.salary != null)
+    {
+        <div class="id-label">
+            <div class="Question">平均收入（年）：</div>
+            <div class="answer salary">@Model.Item1.share_emps.salary</div>
+        </div>
+    }
+
+    <div class="id-label">
+        <div class="Question">工作內容及福利：</div>
+    </div>
+    <pre class="answer preformatted-text">@Model.Item1.share_emps.content</pre>
+
+    <div class="id-label">
+        <div class="Question">求學/就業經驗：</div>
+    </div>
+    <pre class="answer preformatted-text">@Model.Item1.share_emps.share_intern</pre>
+    
+
+
+    <div class="user-result">
+        @if(Model.Item1.share_emps.like != 0){
+            <img src="~/Resource/thumbs-down.png" alt="讚" height="18" width="18" viewBox="0 0 512 512">@Model.Item1.share_emps.like
+        }
+        <a class="a-text message"><span class="messagre_text">@Model.Item1.share_emps.keep 個收藏</span></a>
+        <a class="a-text"><span class="messagre_text">@ViewBag.MessageCounts 則留言</span></a>
+        <br>
+        </div>
+    </div> 
+</div>
+
+<div class="comment-container">
+    @foreach(var message in Model.Item2)
+    {               
+        <div class="comment-box" id="comment-box-@message.id">
+            <img src="@Model.Item1.MemberPhoto[message.student_Name]" alt="個人頭貼" width="20" height="20" id="userphoto">
+            <div class="comment" id="comment">
+                <div class="author-box">
+                    <div class="comment-author">@message.student_Name</div>
+                    <div class="comment-content">@message.message</div>
+                </div>
+                <div class="comment-time">@FormatTime(message.message_time)</div>               
+            </div>  
+            @if(Level == "管理員" || (studentID == message.student_Id && student_name == message.student_Name) ){
+                <div class="dropdown">
+                    <button class="btn tool" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-three-dots" viewBox="0 0 16 16">
+                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a href="#" class="dropdown-item delete-comment" data-message-id="@message.id">删除</a>
+                        </li>
+                    </ul>
+                </div>  
+            }             
+        </div>              
+    }
+</div>
+
+<div class="container-board">
+    <div class="form-container">
+        <img src="@Model.Item1.Myphoto" alt="UserPhoto" width="32" height="32" class="rounded-circle me-2" id="rounded-circle">
+        <form id="MessageForm">
+            <input type="hidden" name="post_type" value="就業版"/>
+            <div class="message-input">
+                <div type="text" contenteditable="true" class="form-control " placeholder="留言..." id="message" name="message"></div>         
+            </div>   
+        </form>
+        <button type="submit" class="btn" id="send-message">
+            <img src="~/Resource/send.png" alt="傳送" width="16" height="16">
+        </button>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.delete-comment').on('click', function () {
+            var messageId = $(this).data('message-id');
+            var postType = "就業版";
+            if (confirm('確定要刪除這條留言嗎？')) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Career/DeleteMessage', // 假设这是处理删除的后端路由
+                    data: { id: messageId,
+                            postType: postType},
+                    success: function (response) {
+                        if (response.success) {
+                            $('#comment-box-' + messageId).remove(); // 删除成功后移除评论
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>

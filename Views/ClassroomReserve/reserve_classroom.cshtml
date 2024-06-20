@@ -1,0 +1,93 @@
+@{
+    DateTime startTime = DateTime.Parse(ViewBag.starttime as string); // 假設 ViewBag.starttime 是 DateTime 類型
+    DateTime endTime = DateTime.Parse(ViewBag.endTime as string); // 假設 ViewBag.endTime 是 DateTime 類型
+}
+@{
+    ViewData["Title"] = "教室預約"; 
+    var userData = Context.Session.GetString("User");
+}
+
+<div class = "reserve_classroom_rectangle">
+    <div>
+        <p>開始時間&ensp;:&ensp;&ensp; @startTime.ToString("yyyy/MM/dd tt hh:mm")</p>
+        <p>結束時間&ensp;:&ensp;&ensp; @endTime.ToString("yyyy/MM/dd tt hh:mm")</p>
+        <p>借用教室&ensp;:&ensp;&ensp; @ViewBag.ClassroomId</p>
+    </div>
+   
+    <div>
+        <form method="post" action="/ClassroomReserve/reserve_classroom" onsubmit="return validateForm()"> 
+            <div class="row">
+            @if (userData != null)
+            {
+                var user = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(userData);
+                var Student_name = user.student_name;
+                var Student_ID = user.studentID; 
+                var Student_class = user.student_class; 
+
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label">班級：</label>
+                    <label for="exampleFormControlInput1" class="form-label">@Student_class</label>
+                </div>
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label">學號：</label>
+                    <label for="exampleFormControlInput2" class="form-label">@Student_ID</label>
+                </div>
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label">姓名：</label>
+                    <label for="exampleFormControlInput3" class="form-label">@Student_name</label>
+                </div>
+            }
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">用途</label>
+                <textarea class="form-control"name="Use" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <input type="hidden" name="starttime" value="@ViewBag.Reservationstarttime">
+            <input type="hidden" name="endTime" value="@ViewBag.ReservationendTime">
+            <input type="hidden" name="classroomId" value="@ViewBag.ReservationClassroomId">
+            <div class="row second-row">
+                <button type="submit" class="btn btn-primary">確定預約</button>
+                <button type="button" class="btn btn-primary"  onclick="returnToQueryPage()">重新預約</button>
+            </div>
+        </form>
+    </div>
+@if (ViewBag.ReservationSuccess == true)
+{
+    <!-- 顯示小框（模態框） -->
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>預約成功！</p>
+                    <!-- 不顯示 "確認" 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 定義 JavaScript 函數，處理預約成功後的操作 -->
+    <script>
+        // 在文檔準備就緒時自動顯示模態框
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+
+            // 延遲1，然後重新導向到 booking 頁面
+            setTimeout(function() {
+                window.location.href = '@Url.Action("classroom_booking", "ClassroomReserve")';
+            }, 800);
+        });
+    </script>
+}
+else
+{
+    <p>@ViewBag.ErrorMessage</p>
+}
+
+
+<script>
+    function returnToQueryPage() {
+            // 這裡可以使用 JavaScript 進行頁面導航，例如 window.location.href = 'your_query_page_url';
+            window.location.href = '@Url.Action("classroom_booking", "ClassroomReserve")';
+        }
+
+</script>

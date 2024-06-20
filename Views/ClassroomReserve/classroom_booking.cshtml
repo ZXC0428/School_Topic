@@ -1,0 +1,400 @@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core.Fluent
+@using X.PagedList.Web.Common
+@model List<student_platformdb.Appointment_record>
+
+@{
+    ViewData["Title"] = "預約教室"; 
+    var pagedList = (IPagedList)ViewBag.Appointment_record;
+    
+}
+
+
+
+<div class="query-container">
+        <form method="post" action="/ClassroomReserve/classroom_booking" onsubmit="return validateForm()" >
+        <div class="mb-3">
+        <label for="starttime" class="form-label">開始時間</label>
+        <input type="datetime-local" name="starttime" class="form-control" id="starttime" aria-describedby="emailHelp" oninput="validateDate()"  onchange="updateReservation()">
+        </div>
+         <div class="mb-3">
+        <label for="endtime" class="form-label">結束時間</label>
+        <input type="datetime-local" name="endtime" class="form-control" id="endtime" aria-describedby="emailHelp" oninput="validateDate()"  onchange="updateReservation()">
+        </div>
+        <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">教室</label>
+        <select class="form-select" aria-label="Default select example" name="classroom" onchange="updateReservation()">
+        <option value="">請選擇要預約的教室</option>
+        </select>
+        </div>
+        <button type="submit" class="btn btn-primary">預約</button>
+        </form>
+</div>
+
+
+
+@if (!string.IsNullOrEmpty(ViewBag.ReservationMessage))
+{
+    <div class="search-result1">
+        @ViewBag.ReservationMessage
+    </div>
+}
+
+<div id="reservation-container" class="search-result">
+    <p>近14日已預約時段</p>
+    @if (Model != null && Model.Count > 0)
+    {
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr class="usagetitle">
+                        <th>開始時間</th>
+                        <th>結束時間</th>
+                        <th>教室</th>
+                        <th>學號</th>
+                        <th>姓名</th>
+                        <th>狀態</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var classroom in Model)
+                    {
+                        <tr>
+                            <td>
+                                <div>@Html.Raw(classroom.StartTime?.ToString("yyyy-MM-dd ttHH:mm:ss").Replace(" ", "<br>"))</div>
+                            </td>
+                            <td>
+                                <div>@Html.Raw(classroom.EndTime?.ToString("yyyy-MM-dd ttHH:mm:ss").Replace(" ", "<br>"))</div>
+                            </td>
+                            <td>@classroom.Classroom_id</td>
+                            <td id="studentId">@classroom.Student_id</td>
+                            <td id="studentName">@classroom.Student_name</td>
+                            <td>
+                                @if (classroom.State == 0)
+                                {
+                                    <text>待審核</text>
+                                }
+                                else if (classroom.State == 1)
+                                {
+                                    <text>審核成功</text>
+                                }
+                                else if (classroom.State == 2)
+                                {
+                                    <text>審核失敗</text>
+                                }
+                                else if (classroom.State == 3)
+                                {
+                                    <text>預約取消</text>
+                                }
+                                else if (classroom.State == 4)
+                                {
+                                    <text>修改待審核</text>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"><hr size="5"></td> <!-- 使用 colspan 使分隔線橫跨所有列 -->
+                        </tr>
+                    }
+                </tbody>
+                @if (Model != null && pagedList != null)
+            {
+                <td class="text-muted" colspan="5" style="margin-left: 50px;">
+                    第 @(pagedList.PageCount < pagedList.PageNumber ? 0 : pagedList.PageNumber) 頁，共 @pagedList.PageCount 頁。
+                    每頁 @pagedList.PageSize 筆資料，全部共有 @pagedList.TotalItemCount 筆資料。
+                </td>
+
+            }
+            </table>
+        </div>
+        <div class="page_object">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <li class="@(pagedList.PageNumber == 1 ? "page-item disabled" : "page-item")">
+                        <a class="page-link" href="@Url.Action("classroom_booking", new { page = 1 })" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    @foreach (var pageNumber in GeneratePageNumbers(pagedList.PageNumber, pagedList.PageCount))
+                    {
+                        if (pageNumber == -1)
+                        {
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+                        }
+                        else
+                        {
+                            <li class="@(pagedList.PageNumber == pageNumber ? "page-item active" : "page-item")">
+                                <a class="page-link" href="@Url.Action("classroom_booking", new { page = pageNumber })">@pageNumber</a>
+                            </li>
+                        }
+                    }
+                    <li class="@(pagedList.PageNumber == pagedList.PageCount ? "page-item disabled" : "page-item")">
+                        <a class="page-link" href="@Url.Action("classroom_booking", new { page = pagedList.PageNumber + 1 })">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- 添加分页链接 -->
+        
+    }
+    else
+    {
+        <p>無人預約</p>
+    }
+</div>
+
+
+
+<script>
+@functions {
+    public List<int> GeneratePageNumbers(int currentPage, int totalPages)
+    {
+        var pageNumbers = new List<int>();
+
+        // 添加當前頁面
+        pageNumbers.Add(currentPage);
+
+        // 添加當前頁面的前面幾個頁碼
+        for (int i = currentPage - 1; i >= Math.Max(currentPage - 2, 1); i--)
+        {
+            pageNumbers.Insert(0, i);
+        }
+
+        // 添加當前頁面的後面幾個頁碼
+        for (int i = currentPage + 1; i <= Math.Min(currentPage + 2, totalPages); i++)
+        {
+            pageNumbers.Add(i);
+        }
+
+        // 如果開始沒有1，添加省略號
+        if (!pageNumbers.Contains(1))
+        {
+            pageNumbers.Insert(0, 1);
+            pageNumbers.Insert(1, -1); // 使用-1來表示省略號
+        }
+
+        // 如果結尾不是最後一頁，添加省略號
+        if (!pageNumbers.Contains(totalPages))
+        {
+            pageNumbers.Add(-1); // 使用-1來表示省略號
+            pageNumbers.Add(totalPages);
+        }
+
+        return pageNumbers;
+    }
+}
+
+</script>
+
+<!--
+<td>
+    <button type="button" class="btn btn-secondary" onclick="reserveClassroom('小老鼠classroom.Date', '小老鼠classroom.Classtime', '小老鼠classroom.Classroom_id')">預約</button>
+</td>
+-->
+<script>
+    function replaceLastFourChars() {
+    // 選擇所有帶有指定 id 的 td 元素
+    var studentIdElements = document.querySelectorAll("#studentId");
+
+    studentIdElements.forEach(function(element) {
+        var id = element.innerText;
+        var newId;
+
+        if (id.length >= 4) {
+            var lastIndex = id.length - 4;
+            var lastFourChars = id.slice(lastIndex);
+            var maskedChars = lastFourChars.replace(/./g, "*"); // 使用正則表達式將後四碼替換成"*"
+            newId = id.slice(0, lastIndex) + maskedChars;
+        } else {
+            newId = id; // 如果學號長度小於四個字，則保持原樣
+        }
+
+        element.innerText = newId;
+    });
+}
+
+// 調用替換函數
+replaceLastFourChars();
+
+// 定義替換函數
+function replaceMiddleChar() {
+    // 選擇所有帶有指定 id 的 td 元素
+    var studentNameElements = document.querySelectorAll("#studentName");
+
+    studentNameElements.forEach(function(element) {
+        var name = element.innerText;
+        var newName;
+
+        if (name.length >= 3) {
+            var middleIndex = Math.floor(name.length / 2);
+            newName = name.slice(0, middleIndex) + "O" + name.slice(middleIndex + 1); // 將中間一個字替換成"圈"
+        } else if (name.length === 2) {
+            newName = name.slice(0, 1) + "O"; // 將最後一個字替換成"圈"
+        } else {
+            newName = name; // 如果名字長度小於兩個字，則保持原樣
+        }
+
+        element.innerText = newName;
+    });
+}
+
+// 調用替換函數
+replaceMiddleChar();
+</script>
+
+
+
+<script>
+
+    // 從資料庫抓取有開放的教室 監聽
+    document.addEventListener("DOMContentLoaded", function() {
+        // 取得 select 元素
+        var selectElement = document.getElementsByName("classroom")[0];
+
+        // 清空原有選項
+        selectElement.innerHTML = "";
+
+        // 添加固定選項
+        var fixedOption = document.createElement("option");
+        fixedOption.value = "";  // 設定選項值
+        fixedOption.textContent = "請選擇要預約的教室";  // 設定顯示文字
+        selectElement.appendChild(fixedOption);
+
+        // 使用 Fetch API 從後端取得教室資料
+        fetch('/ClassroomReserve/GetClassroom', {
+            method: 'POST', // 請確保這裡使用的是 POST 方法
+            headers: {
+                'Content-Type': 'application/json'
+                // 如果有需要，還可以添加其他 header
+            },
+            body: JSON.stringify({
+                // 如果有需要，可以添加 POST 資料
+            })
+        })
+        .then(response => response.json())
+        .then(classrooms => {
+            // 動態生成選項
+            classrooms.forEach(function(classroom) {
+                var option = document.createElement("option");
+                option.value = classroom.classroom_id; // 使用教室代號作為值
+                option.textContent = classroom.classroom_id; // 使用教室代號作為顯示文字
+                selectElement.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    });
+
+
+    //篩選限制
+    function validateDate() {
+
+        var startTime = new Date(document.getElementById("starttime").value);
+        var endTime = new Date(document.getElementById("endtime").value);
+
+        var today = new Date();
+        today.setHours(0, 0, 0, 0); // Set the time part to 00:00:00 to compare dates
+
+        // 判斷日期
+        if (startTime <= today || endTime <= today) {
+            alert("不得選擇今天之前的日期");
+            document.getElementById("starttime").value = "";
+            document.getElementById("endtime").value = "";
+            return false;
+        }
+
+
+        // 判斷開始時間是否超過結束時間
+        if (startTime > endTime) {
+            alert("開始時間不得超過或等於結束時間");
+            document.getElementById("endtime").value = "";
+            return false;
+        }
+
+    
+
+        return true;
+   
+        
+    }
+
+
+    function updateReservation() {
+
+        var selectedDate = document.getElementById('starttime').value;
+
+        // 使用 Ajax 呼叫後端 API，傳遞選擇的日期
+        $.ajax({
+            url: '/ClassroomReserve/UpdateReservation',
+            type: 'POST',
+            dataType: 'json',  // 指定預期的回應類型為 JSON
+            data: { selectedDate: selectedDate },
+            success: function (result) {
+                // 清空先前的結果
+                $('#reservation-container').empty();
+                // 在此處更新頁面，例如使用 result 中的資料
+               if (result && result.length > 0) {
+                    // 生成表格的 HTML
+                    var tableHTML = '<p>該日已預約時段</p>';
+                    tableHTML += '<table class="table">';
+                    tableHTML += '<thead><tr class="usagetitle"><th>開始時間</th><th>結束時間</th><th>教室</th><th>學號</th><th>姓名</th><th>狀態</th></tr></thead>';
+                    tableHTML += '<tbody>';
+
+                    // 迭代 result 中的每一條記錄，生成對應的 HTML
+                    for (var i = 0; i < result.length; i++) {
+                        var record = result[i];
+
+                        tableHTML += `<tr>
+                                        <td>${formatDateTime(record.startTime)}</td>
+                                        <td>${formatDateTime(record.endTime)}</td>
+                                        <td>${record.classroom_id}</td>
+                                        <td>${record.student_id}</td>
+                                        <td>${record.student_name}</td>
+                                        <td>${getStatusText(record.state)}</td>
+                                    </tr>
+                                    <tr>
+                                    <td colspan="6"><hr size="5"></td> 
+                                </tr>`;
+
+                    }
+
+                    // 根據狀態生成不同的顯示文字
+                    function getStatusText(state) {
+                        if (state === 0) {
+                            return '已預約(待審核)';
+                        } else if (state === 1) {
+                            return '已預約(審核完畢)';
+                        } else if (state === 4) {
+                            return '已預約(修改待審核)';
+                        }
+
+                        // 預設狀態
+                        return '';
+                    }
+
+                    tableHTML += '</tbody></table>';
+
+                    // 將生成的 HTML 插入到頁面上
+                    $('#reservation-container').html(tableHTML);
+                } else {
+                    // 若沒有資料，顯示提示訊息
+                    $('#reservation-container').html('<p>無人預約</p>');
+                }
+            },
+            error: function (error) {
+                console.log('Error:', error);
+            }
+        });
+    }
+
+    // 格式化日期時間
+    function formatDateTime(dateTimeString) {
+        if (dateTimeString) {
+            var options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            var dateTime = new Date(dateTimeString);
+            return dateTime.toLocaleDateString('zh-TW', options);
+        }
+        return ''; // 返回空字符串，以防日期為無效值
+    }
+
+
+</script>

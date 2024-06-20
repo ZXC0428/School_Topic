@@ -1,0 +1,192 @@
+@{
+    ViewData["Title"] = "修改教室資訊"; 
+}
+
+<div class="editClassroom_rectangle">
+    <div class="editClassroom_form" >
+         <!-- 以下是原本的表單部分 -->
+        <form class="row g-3" id="editForm" enctype="multipart/form-data"  method="post" action="/ClassroomReserve/editClassroom" onsubmit="editdateForm()">
+            <div class="col-md-6"> 
+                <label for="classroomid" class="form-label">教室名稱</label>
+                <input class="form-control" name="classroomid" value="" id="classroomid" >
+            </div>
+            <div class="col-md-6">
+                <label for="Equipment" class="form-label">容納人數</label>
+                <input class="form-control" name="Equipment" value="" id="Equipment">
+            </div>
+            <div class="col-md-6">
+                <label for="Capacity" class="form-label">設備</label>
+                <input class="form-control" name="Capacity" value="" id="Capacity" >
+            </div>
+            <div class="col-md-6">
+                <label for="remark" class="form-label">教室現況</label>
+                <input class="form-control" name="remark" value="" id="remark" >
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>選擇一個選項：</label><br>
+                    <input type="radio" id="option1" name="selectOption" value="1">
+                    <label for="option1">開放</label><br>
+                    <input type="radio" id="option2" name="selectOption" value="0">
+                    <label for="option2">不開放預約</label><br>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="photo" class="form-label">教室照片</label><br>
+                <img style="height: 200px; weith:200px;" src="" id="originalPhoto" alt="Original Photo"><br>
+                <label for="photo" class="custom-file-upload">
+                <i class="fa fa-cloud-upload"></i> 上傳圖片
+                </label>
+                <input type="file" id="photo" name="photo" accept="image/*" style="display: none;">
+            </div>
+            <input type="hidden" name="Classroomid_B" id="Classroomid_B" value="">
+            <input type="hidden" name="Equipment_B" id="Equipment_B" value="">
+            <input type="hidden" name="Capacity_B" id="Capacity_B" value="">
+            <input type="hidden" name="remark_B" id="remark_B" value="">
+            <div class="d-flex justify-content-center">
+                <button type="button" id="submitButton" class="btn btn-primary me-2">確定修改</button>
+                <button type="button" class="btn btn-danger"  onclick="returnToQueryPage()">取消修改</button>
+            </div>
+            
+        </form>
+    </div>
+       
+
+</div>
+<script>
+    function returnToQueryPage() {
+            // 這裡可以使用 JavaScript 進行頁面導航，例如 window.location.href = 'your_query_page_url';
+            window.location.href = '@Url.Action("interface_classroom_management", "ClassroomReserve")';
+        }
+
+</script>
+
+
+
+
+<!-- 修改成功跳此框 -->
+@if (ViewBag.ReservationSuccess == true)
+{
+    <!-- 顯示小框（模態框） -->
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>修改成功！</p>
+                    <!-- 不顯示 "確認" 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 在文檔準備就緒時自動顯示模態框
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+
+            // 延遲1，然後重新導向到 booking 頁面
+            setTimeout(function() {
+                window.location.href = '@Url.Action("interface_classroom_management", "ClassroomReserve")';
+            }, 800);
+        });
+    </script>
+
+}
+@if (ViewBag.ReservationSuccess == false)
+{
+    <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>修改失敗!</p>
+                    <!-- 不顯示 "確認" 按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 檢查 localStorage 中的值
+        var Classroom_state = localStorage.getItem('Classroom_state');
+
+        // 如果 Classroom_state 為 null 或者不是 "0"，則預設選項1
+        if (Classroom_state === null || Classroom_state !== "0") {
+            document.getElementById("option1").checked = true;
+        } else {
+            document.getElementById("option2").checked = true;
+        }
+    });
+</script>
+<script>
+    // 取得要修改元素
+    var Classroom_id_B = localStorage.getItem('Classroom_id');
+    var Equipment_B = localStorage.getItem('Equipment');
+    var Capacity_B = localStorage.getItem('Capacity');
+    var remark_B = localStorage.getItem('remark');
+    var Path_B = localStorage.getItem('Path');
+    var Classroom_state = localStorage.getItem('Classroom_state');
+    
+
+    // 更新頁面上的元素
+    document.getElementById('originalPhoto').src = "/images/" + Path_B;
+    document.getElementById('classroomid').value = Classroom_id_B;
+    document.getElementById('Equipment').value = Equipment_B;
+    document.getElementById('Capacity').value = Capacity_B;
+    document.getElementById('remark').value = remark_B;
+
+    // 更新隐藏字段的值
+    document.getElementById('Classroomid_B').value = Classroom_id_B;
+    document.getElementById('Equipment_B').value = Equipment_B;
+    document.getElementById('Capacity_B').value = Capacity_B;
+    document.getElementById('remark_B').value = remark_B;
+
+
+
+    var formData = new FormData(document.getElementById('editForm'));
+
+
+        
+
+document.getElementById('editForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // 阻止表單默認提交行為
+
+    // 向后端发送表单数据
+    fetch('/ClassroomReserve/editClassroom', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        // 處理後端響應
+        console.log(response);
+    })
+    .catch(error => {
+        // 處理錯誤
+        console.error('Error:', error);
+    });
+});
+
+// 新增事件監聽器，只有當按鈕點擊時才執行表單提交
+document.getElementById('submitButton').addEventListener('click', function(event) {
+    // 手動觸發表單提交
+    document.getElementById('editForm').submit();
+});
+
+</script>
+<script>
+   // 监听照片输入框的 change 事件
+document.getElementById('photo').addEventListener('change', function(event) {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var newImage = document.createElement('img');
+        newImage.src = e.target.result;
+        newImage.alt = 'New Photo';
+        document.getElementById('originalPhoto').src = newImage.src; // 更新页面上的照片预览
+        console.log("New Photo File Name:", file.name);
+        document.getElementById('photoName').value = file.name;
+    };
+    reader.readAsDataURL(file);
+});
+   
+</script>

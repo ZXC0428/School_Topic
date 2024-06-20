@@ -1,0 +1,70 @@
+@model List<student_platformdb.Classroom_information>
+@{
+    ViewData["Title"] = "教室資訊"; 
+}
+
+
+@if (Model != null)
+{
+<div>
+    <!--讓教室資訊兩個兩個放-->
+    @for (var i = 0; i < Model.Count; i += 2)
+    {
+        <div class="classroom_information_container">
+            @for (var j = i; j < Math.Min(i + 2, Model.Count); j++)
+            {
+                var classroom = Model[j];
+                <div class="classroom_information_rectangle">
+                    <p>教室名稱&ensp;:&ensp;&ensp;@classroom.Classroom_id</p>
+                    <p>容納人數&ensp;:&ensp;&ensp;@classroom.Equipment 人</p>
+                    <p>設&ensp;&ensp;&ensp;&ensp;備&ensp;:&ensp;&ensp;@classroom.Capacity</p>
+                    <p>教室現況&ensp;:&ensp;&ensp;@classroom.remark</p>
+                    <p>備註&ensp;:&ensp;</p>
+                    <div class="classroom-images-container"> 
+                        @* 將下面的 .classroom-photo 的 img 標籤放在這，以顯示教室照片 *@
+                        <img style="height: 200px; weith:200px;" src="~/images/@classroom.Path" alt="Classroom Photo" class="classroom-photo">
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div> 
+}
+else{
+   <p>模型為空。</p>
+}
+<script>
+    const classroomImageContainers = document.querySelectorAll('.classroom-images-container');
+
+    const imageIndices = {};
+    classroomImageContainers.forEach(container => {
+        const classroomId = container.id;
+        imageIndices[classroomId] = 0;
+
+        // 隱藏非第一張的圖片
+        const images = container.querySelectorAll('.classroom-photo');
+        images.forEach((img, index) => {
+            if (index !== 0) {
+                img.style.display = 'none';
+            }
+        });
+    });
+
+    function showNext(id) {
+        const currentImageIndex = imageIndices[id];
+        const imagesContainer = document.getElementById(id);
+        const images = imagesContainer.querySelectorAll('.classroom-photo');
+
+        imageIndices[id] = (currentImageIndex + 1) % images.length;
+        const nextImage = images[imageIndices[id]];
+
+        nextImage.style.transform = 'translateX(-1%)';
+
+        setTimeout(() => {
+            images.forEach(img => img.style.display = 'none');
+            nextImage.style.display = 'block';
+            nextImage.style.transform = 'translateX(0)';
+        }, 500);
+    }
+</script>
+

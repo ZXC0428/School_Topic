@@ -1,0 +1,80 @@
+@model TA.TATable
+
+@{
+    ViewData["Title"] = "新增課程";
+}
+<style>
+    .addcourse_container{
+        display: flex;
+        flex-direction: column;
+        background-color: #E6D2AF;
+        font-weight: bold;
+        border-radius: 7px; 
+        margin-bottom: 15px;
+        margin-top: 15px;
+        padding: 10px;
+        word-break: break-all;
+
+    }
+</style>
+<div class="addcourse_container">
+    <form asp-action="AddCourse" asp-controller="TAReserve" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="CourseName">課程名稱:</label>
+                    <input type="text" class="form-control" id="CourseName" name="CourseName" value="@Model.CourseName" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Classroom">教學教室:</label>
+                    <input type="text" class="form-control" id="Classroom" name="Classroom" value="@Model.Classroom" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Date">開始日期:</label>
+                    <input type="date" class="form-control" id="Date" name="Date" value="@Model.Date?.ToString("yyyy-MM-dd")" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="EndDate">結束日期:</label>
+                    <input type="date" class="form-control" id="EndDate" name="EndDate" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Startime">開始時間:</label>
+                    <input type="time" class="form-control" id="Startime" name="Startime" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Overtime">結束時間:</label>
+                    <input type="time" class="form-control" id="Overtime" name="Overtime" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Ta_id">TA學號:</label>
+                    <input type="text" class="form-control" id="Ta_id" name="Ta_id" value="@Model.Ta_id" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="TAName">TA姓名:</label>
+                    <input type="text" class="form-control" id="TAName" name="TAName" value="@Model.TAName" required>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">新增課程</button>
+    </form>
+</div>

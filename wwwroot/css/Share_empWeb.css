@@ -1,0 +1,246 @@
+.form-group {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #41434e;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.esc:hover {
+    background-color: #8F754F;
+}
+
+.esc:focus {
+    background-color: #8F754f !important;
+}
+
+.esc:active {
+    background-color: #8F754f;
+}
+
+.nav-link {
+    color: white  !important;
+}
+
+.nav-link:hover {
+    color: rgb(0, 0, 0);
+}
+
+.form-control {
+    width: calc(100% - 10px);
+    min-height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: .5px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid #f0f0f0  !important;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #eb942f  !important;
+}
+
+.form-label:not(.share_content) {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .5px;
+    color: #565656;
+    margin-right: 50px;
+    margin-bottom: 0;
+}
+
+.form-label.question,
+.star {
+    margin-left: 53px;
+}
+
+.star {
+    color: rgb(217, 92, 92);
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(2, 34, 63, 0.2);
+    margin-top: 5px;
+}
+
+.card-header {
+    font-weight: bold;
+    background-color: #D7B377;
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mb-3 {
+    font-weight: bold;
+    color: #494d5c;
+}
+
+.text-center {
+    font-weight: bold;
+    border-color: #D7B377;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: #2B4162 !important;
+    border-color: #fff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    padding: 15px 30px;
+    margin-bottom: 15px;
+}
+
+.btn-primary:hover{
+    background-color: #385F71 !important;
+}
+
+.btn-primary:focus{
+    background-color: #2B4162 !important;
+}
+
+
+.text-danger {
+    font-size: 15px;
+}
+
+
+#control-Content {
+    resize: none;
+    border: 1px solid #ced4da  !important;
+    border-radius: .25rem;
+    width: calc(100% - 50px);
+    height: 215px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.menu-form-label {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .5px;
+    color: #565656;
+    margin-bottom: 0;
+    display: flex;
+    text-align: center;
+}
+
+.form-group-content {
+    font-weight: bold;
+    color: #41434e;
+    font-size: 18px;
+}
+
+.dropdown {
+    margin-top: 15px;
+}
+
+.special-tooltip {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.share_content {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .5px;
+    color: #565656;
+    margin-bottom: 0;
+}
+
+.menu-label {
+    display: flex;
+    align-items: center;
+}
+
+.position-label {
+    display: flex;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+
+    .inf-row {
+        flex-direction: column;
+    }
+
+    img {
+        display: none;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .link-input {
+        margin-left: 50px;
+    }
+
+    .device-right {
+        width: 100%;
+        height: 1000px;
+    }
+
+    .location-menu,
+    .state-menu {
+        width: 80%;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .btn-primary {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+
+    #control-Content {
+        width: calc(100% - 60px);
+        height: 300px;
+    }
+}
+
+@media (min-width: 1400px) {}

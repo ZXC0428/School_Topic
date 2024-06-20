@@ -1,0 +1,187 @@
+@model TA.ViewModels.CoursesViewModel
+
+@{
+    ViewData["Title"] = "課程列表";
+}
+
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <form asp-action="Courseeditor" method="get">
+        <div>
+            <label>開始日期:</label>
+            <input type="date" asp-for="StartDate" />
+            <label>結束日期:</label>
+            <input type="date" asp-for="EndDate" />
+            <label>課程名稱:</label>
+            <input type="text" asp-for="CourseName" />
+            <button type="submit">搜尋</button>
+        </div>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>課程名稱</th>
+                <th>日期</th>
+                <th>開始時間</th>
+                <th>結束時間</th>
+                <th>TA 學號</th>
+                <th>TA 名稱</th>
+                <th>教室</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model.Courses)
+            {
+                <tr>
+                    <td>@course.CourseName</td>
+                    <td>@course.Date?.ToString("yyyy-MM-dd")</td>
+                    <td>@course.Startime?.ToString(@"hh\:mm")</td>
+                    <td>@course.Overtime?.ToString(@"hh\:mm")</td>
+                    <td>@course.Ta_id</td>
+                    <td>@course.TAName</td>
+                    <td>@course.Classroom</td>
+                    <td>
+                        <button class="edit-button btn btn-primary edit-btn" data-toggle="modal" data-target="#courseModal" data-id="@course.Tacourse_id">編輯</button>
+                        <button type="button" class="btn btn-danger delete-btn" data-course-id="@course.Tacourse_id">删除</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="courseModalLabel">編輯課程</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form fields populated by JavaScript -->
+                    <form id="editForm" asp-action="Edit">
+                        <input type="hidden" id="editCourseId" name="Tacourse_id" />
+                        <div class="form-group">
+                            <label>課程名稱:</label>
+                            <input type="text" id="editCourseName" name="CourseName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>日期:</label>
+                            <input type="date" id="editCourseDate" name="Date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>開始時間:</label>
+                            <input type="time" id="editStartTime" name="Startime" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>結束時間:</label>
+                            <input type="time" id="editEndTime" name="Overtime" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>TA 學號:</label>
+                            <input type="text" id="editTaId" name="Ta_id" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>TA 名稱:</label>
+                            <input type="text" id="editTAName" name="TAName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>教室:</label>
+                            <input type="text" id="editClassroom" name="Classroom" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="saveChangesBtn">儲存</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                     <button type="button" class="btn btn-dark" data-dismiss="modal" aria-label="Close">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).on('click', '.edit-button', function() {
+            var row = $(this).closest('tr');
+            var courseId = $(this).data('id');  // 从按钮获取data-id属性
+            console.log("Course ID:", courseId); // 查看是否正确获取到ID
+            $('#editCourseId').val(courseId); // 将ID赋值到隐藏的表单字段，以便提交
+            $('#editCourseName').val(row.find('td:eq(0)').text()); // 課程名稱
+            $('#editCourseDate').val(row.find('td:eq(1)').text()); // 日期
+            $('#editStartTime').val(row.find('td:eq(2)').text()); // 開始時間
+            $('#editEndTime').val(row.find('td:eq(3)').text()); // 結束時間
+            $('#editTaId').val(row.find('td:eq(4)').text()); // TA 學號
+            $('#editTAName').val(row.find('td:eq(5)').text()); // TA 名稱
+            $('#editClassroom').val(row.find('td:eq(6)').text()); // 教室
+
+            $('#courseModal').modal('show'); // 顯示模態彈窗
+        });
+
+
+        $(document).ready(function() {
+            // 編輯按鈕的處理
+            $('#saveChangesBtn').click(function() {
+                var updatedCourse = {
+                    Tacourse_id: $('#editCourseId').val(),
+                    CourseName: $('#editCourseName').val(),
+                    Date: $('#editCourseDate').val(),
+                    Startime: $('#editStartTime').val(),
+                    Overtime: $('#editEndTime').val(),
+                    Ta_id: $('#editTaId').val(),
+                    TAName: $('#editTAName').val(),
+                    Classroom: $('#editClassroom').val()
+                };
+                
+                $.ajax({
+                    url: '/TAReserve/UpdateCourse', // 注意: 修改为您的实际路由
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(updatedCourse),
+                    success: function(response) {
+                        // 处理成功逻辑，例如刷新页面或显示成功消息
+                        alert('课程更新成功');
+                        $('#courseModal').modal('hide');
+                    },
+                });
+            });
+            $(document).ready(function () {
+                $('.delete-btn').click(function () {
+                    var courseId = $(this).data('course-id');
+                    console.log("Course ID:", courseId); 
+                    if (confirm('要刪除此課程嗎')) {
+                        $.ajax({
+                            url: '/TAReserve/Delete/' + courseId,
+                            method: 'POST',
+                            success: function (response) {
+                                location.reload();
+                            },
+                        });
+                    }
+                });
+            });       
+
+            $('.close, #cancelBtn').click(function(event) {
+                $('#courseModal').modal('hide');
+                event.preventDefault(); // 阻止任何默认行为
+            });
+
+
+        });
+
+
+    </script>
+
+
+
+</body>
+
+
